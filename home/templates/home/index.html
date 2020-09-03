@@ -11,18 +11,100 @@
 {% endblock %}
 
 {% block content %}
-
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    The new collections are here
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                    </h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Slider container -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                {% for slide in homeslide %}
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <!--Bootstrap Card-->
+                        <div class="card">
+                        <img src="{{ slide.image.url }}" class="card-img-top img-height" alt="...">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title text-light font-weight-bold text-center">{{ slide.name }}</h5>
+                            <p class="card-text text-light text-center">{{ slide.added }}</p>
+                        </div>
+                        </div>
+                    </div>
+                {% endfor %}
                 </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+                <div class="card my-3">
+                    <div class="card-body">
+                        <h5 class="card-title display-4 text-center">Hunt Interiors</h5>
+                        <p class="card-text font-weight-bold text-justified">
+                            Hunt Interiors founded in 2005, Hunt Interiors soon became the company of choice of many discerning homeowners in London and the Southeast.
+                            <br><br>
+                            Our customers rely on us for our expertise and range of specialised services.
+                            <br><br>
+                            Our professional site take-over task force is also available to those dissatisfied with their existing design/build team. It's never too late to save your project.
+                            <br><br>
+                            With a network of highly skilled tradesmen (all with exceptional years of experience) we also offer interior design consultants if needed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section-index">
+        <div class="row">
+            <div class="col-md-6 section-index-img">
+                <img src="media/media/photo1.jpg" class="rounded img-fluid" alt=""/>
+            </div>
+            <div class="col-md-6">
+                <h4>Property Maintenance</h4>
+                <p class="text-muted">
+                    If you own or are planning on owning a property for rental or live abroad, be sure to have a reliable (maintenance provider)!
+                    We have some great plans available for landlords and clients who don't want to use an estate agent, who will only hand the job 
+                    out to an under-qualified person who has no skills and just wants to rush the job and mask the problem, we are dedicated to SOLVING THE PROBLEM!
+                    <br><br>
+                    After a site visit, we will assess the problem, the client will receive pictures of the job before we start, this will be sent to them via email 
+                    or WhatsApp, you can also talk freely on the application anywhere in the world, The job will not start until the client gives the full go-ahead. 
+                    Our mobile phones are on 24hrs a day 365 days of the year, our vans are fully loaded and can deal with any situation put in front of us. 
+                    Plywood is always carried on board for burglaries or forced entries. We are happy to deal with the tenant on your behalf if instructed by the landlord.
+                    <br><br>
+                    Our concept is for us to take care of the situation, where the client has no stress or problems with a company who knows what they are doing.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Kitchens</h4>
+                <p class="text-muted">
+                    We have installed many brands of kitchens: MFI, Yonaka, Wicks, B&Q, Magnet, Ikea, DIY Kitchens, Howdens and many more.
+                    <br><br>
+                    We can design and plan your kitchen, we will send a surveyor over who will go through everything in fine detail after this has 
+                    been done you will receive a kitchen floor plan, which our installation team can work from. We will remove your old kitchen and dispose of it free of charge.
+                    <br><br>
+                    Our kitchen installations come with a warranty.
+                </p>
+            </div>
+            <div class="col-md-6 section-index-img">
+                <img src="media/media/photo2.jpg" class="rounded img-fluid" alt=""/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 section-index-img">
+                    <img src="media/media/photo3.jpg" class="rounded img-fluid" alt=""/>
+            </div>
+            <div class="col-md-6">
+                <h4>Bespoke Shelving</h4>
+                <p class="text-muted">
+                    We specialise in M.D.F shelving Floating shelving with no visible brackets, alcove shelving.
+                </p>
             </div>
         </div>
     </div>

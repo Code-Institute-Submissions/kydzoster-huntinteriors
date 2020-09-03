@@ -3,12 +3,54 @@ html {
 }
 
 body {
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background-color: orange;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
 }
+
+/* Index page */
+.img-height{
+    height: 25rem;
+}
+
+.animal-img{
+    height: 40rem;
+    width: 35rem;
+}
+
+.section-index{
+    margin-top:-15%;
+    padding: 10%;
+    font-size: 20px;
+}
+.section-index h4{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.section-index .row
+{
+    margin-top: 10%;
+}
+.section-index-img 
+{
+    text-align: center;
+}
+.section-index-img img{
+    width: 40%;
+}
+
+
+
+
+
+
+
+
+
 
 /* from Bulma */
 .icon {
