@@ -69,6 +69,7 @@ body {
     width: fit-content;
 }
 
+/* Homepage shop button */
 .shop-now-button {
     background: black;
     color: white;
@@ -100,7 +101,7 @@ body {
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
+/* Screen size for extra large monitors */
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;
@@ -116,7 +117,7 @@ body {
         left: 0;
         z-index: 1030;
     }
-
+    /* added space in home page between navbar and slider */
     .header-container {
         padding-top: 164px;
     }
