@@ -1,30 +1,17 @@
 from django.db import models
-import datetime
 
 
-DESIGN_CHOICES = (
-    ('Interiors', 'INTERIORS'),
-    ('Exteriors', 'EXTERIORS'),
-)
-
-
-class Home(models.Model):
-    name = models.CharField(max_length=28, null=False, blank=False)
-    image = models.ImageField(upload_to='media/', default=None)
-    description = models.TextField(max_length=400, default=None)
-    design = models.CharField(
-        choices=DESIGN_CHOICES, max_length=9, default=None
-        )
-    added = models.DateField(default=datetime.date.today)
+class Slides(models.Model):
+    title = models.CharField(max_length=28, null=False, blank=False)
+    image = models.ImageField(upload_to='media/slides/', default=None)
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class MainContent(models.Model):
     title = models.CharField(max_length=28, null=False, blank=False)
-    description = models.TextField(max_length=1500, default=None)
-    added = models.DateField(default=datetime.date.today)
+    description = models.TextField()
 
     def __str__(self):
         return self.title
@@ -32,9 +19,8 @@ class MainContent(models.Model):
 
 class SubContent(models.Model):
     title = models.CharField(max_length=28, null=False, blank=False)
-    image = models.ImageField(upload_to='media/', default=None)
-    description = models.TextField(max_length=1500, default=None)
-    added = models.DateField(default=datetime.date.today)
+    image = models.ImageField(upload_to='media/content/', default=None)
+    description = models.TextField()
 
     def __str__(self):
         return self.title

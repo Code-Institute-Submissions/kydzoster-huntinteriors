@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from .models import Home, MainContent, SubContent
+from .models import Slides, MainContent, SubContent
 
 
 def index(request):
-    homeslide = Home.objects.all()
+    slides = Slides.objects.all()
     maincontent = MainContent.objects.all()
     subcontent = SubContent.objects.all()
 
     context = {
-        'homeslide': homeslide,
+        'slides': slides,
         'maincontent': maincontent,
         'subcontent': subcontent,
     }
