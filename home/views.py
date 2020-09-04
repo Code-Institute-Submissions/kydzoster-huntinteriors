@@ -1,10 +1,17 @@
 from django.shortcuts import render
-from .models import Home
+from .models import Home, MainContent, SubContent
 
 
 def index(request):
     homeslide = Home.objects.all()
-    context = {'homeslide': homeslide}
+    maincontent = MainContent.objects.all()
+    subcontent = SubContent.objects.all()
+
+    context = {
+        'homeslide': homeslide,
+        'maincontent': maincontent,
+        'subcontent': subcontent,
+    }
     return render(request, 'home/index.html', context)
 
 
