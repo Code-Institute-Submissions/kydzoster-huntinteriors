@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
+from django.db.models import Q
 from .models import Gallery
 
 
@@ -6,9 +8,27 @@ from .models import Gallery
 def gallery(request):
 
     gallery = Gallery.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(
+                    request,
+                    "Please, provide a valid search criteria!"
+                    )
+                return redirect(reverse('gallery'))
+
+            queries = Q(name__icontains=query) |\
+                Q(design__icontains=query) |\
+                Q(description__icontains=query)
+            gallery = gallery.filter(queries)
 
     context = {
-        'gallery': gallery
+        'gallery': gallery,
+        'search_term': query,
+
     }
     return render(request, 'gallery/gallery.html', context)
 
