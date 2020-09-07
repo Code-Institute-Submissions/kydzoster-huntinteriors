@@ -23,21 +23,21 @@
                 <div class="product-container col-10 offset-1">
                     <div class="row mt-1 mb-2"></div>
                     <div class="row">
-                        {% for gal in gallery %}
+                        {% for gallery in gallery %}
                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                 <div class="card h-100 border-0">
                                     <div class="card h-100 border-0">
-                                        {% if gal.image %}
-                                        <a href="">
-                                            <img class="card-img-top img-fluid" src="{{ gal.image.url }}" alt="{{ gal.name }}">
+                                        {% if gallery.image %}
+                                        <a href="{% url 'gallery_detail' gallery.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ gallery.image.url }}" alt="{{ gallery.name }}">
                                         </a>
                                         {% else %}
-                                        <a href="">
-                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ gal.name }}">
+                                        <a href="{% url 'gallery_detail' gallery.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ gallery.name }}">
                                         </a>
                                         {% endif %}
                                         <div class="card-body pb-0">
-                                            <p class="mb-0">{{ gal.name }}</p>
+                                            <p class="mb-0">{{ gallery.name }}</p>
                                         </div>
                                     </div>
                                 </div>
