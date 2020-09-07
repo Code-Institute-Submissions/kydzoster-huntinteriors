@@ -7,13 +7,13 @@ DESIGN_CHOICES = (
 )
 
 
-class Details(models.Model):
+class Gallery(models.Model):
 
     class Meta:
-        verbose_name_plural = 'Details'
+        verbose_name_plural = 'Gallery'
 
     name = models.CharField(max_length=28, null=False, blank=False)
-    image = models.ImageField(upload_to='media/details/', default=None)
+    image = models.ImageField(upload_to='media/gallery/', default=None)
     description = models.TextField()
     design = models.CharField(
         choices=DESIGN_CHOICES, max_length=9, default=None

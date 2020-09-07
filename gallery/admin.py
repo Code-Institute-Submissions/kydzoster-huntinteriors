@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Details
+from .models import Gallery
 
 
-class DetailsAdmin(admin.ModelAdmin):
+class GalleryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'image',
@@ -13,4 +13,4 @@ class DetailsAdmin(admin.ModelAdmin):
     ordering = ('name',)
 
 
-admin.site.register(Details, DetailsAdmin)
+admin.site.register(Gallery, GalleryAdmin)
