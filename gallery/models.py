@@ -14,10 +14,10 @@ class Gallery(models.Model):
 
     name = models.CharField(max_length=28, null=False, blank=False)
     image = models.ImageField(upload_to='media/gallery/', default=None)
-    description = models.TextField()
     design = models.CharField(
         choices=DESIGN_CHOICES, max_length=9, default=None
         )
+    description = models.TextField()
 
     def __str__(self):
         return self.name

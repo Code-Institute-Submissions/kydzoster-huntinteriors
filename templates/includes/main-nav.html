@@ -12,16 +12,10 @@
                 Gallery
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="gallery-link">
-                <a href="" class="dropdown-item">By Interiors</a>
-                <a href="" class="dropdown-item ">By Exteriors</a>
+                <a href="{% url 'gallery' %}?q=interiors" class="dropdown-item">By Interiors</a>
+                <a href="{% url 'gallery' %}?q=exteriors" class="dropdown-item ">By Exteriors</a>
                 <a href="{% url 'gallery' %}" class="dropdown-item">All Gallery</a>
             </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="property-maintenance" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Property Maintenance
-            </a>
         </li>
 
         <li class="nav-item dropdown">

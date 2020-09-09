@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from .models import Gallery
+from .forms import GalleryForm
 
 
 # Will show all gallery, sorting and search
@@ -11,6 +12,7 @@ def gallery(request):
     query = None
 
     if request.GET:
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -42,3 +44,14 @@ def gallery_detail(request, gallery_id):
         'gallery_detail': gallery_detail
     }
     return render(request, 'gallery/gallery_detail.html', context)
+
+
+# Will add images to gallery
+def add_gallery(request):
+    form = GalleryForm()
+    template = 'gallery/add_gallery.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

@@ -15,7 +15,18 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Gallery</h2>
+                <h2 class="logo-font">
+                {% for gallery in gallery|slice:":1" %}
+                    {% if gallery.design == 'Interiors' %}
+                        <p>Gallery: {{ gallery.design }}</p>
+                    {% elif gallery.design == 'Exteriors' %}
+                        <p>Gallery: {{ gallery.design }}</p>
+                    {% else %}
+                        <!--This does not work-->
+                        <p>Gallery</p>
+                    {% endif %}
+                {% endfor %}
+                </h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
