@@ -48,7 +48,18 @@ def gallery_detail(request, gallery_id):
 
 # Will add images to gallery
 def add_gallery(request):
-    form = GalleryForm()
+    if request.method == 'POST':
+        form = GalleryForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request,
+                'Image was successfully added to the Gallery!'
+                )
+            return redirect(reverse('add_gallery'))
+    else:
+        form = GalleryForm()
+
     template = 'gallery/add_gallery.html'
     context = {
         'form': form,

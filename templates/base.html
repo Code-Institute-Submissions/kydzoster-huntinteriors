@@ -113,16 +113,17 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
-        <div id="delivery-banner" class="row text-center">
+        <div id="message-banner" class="row text-center">
+        <hr>
             <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>                
-            </div>            
+                {% if messages %}
+                    {% for message in messages %}
+                        <h4 class="logo-font my-1">{{ message }}</h4>                
+                    {% endfor %}
+                {% endif %}
+            </div>
         </div>
     </header>
-
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
 
     {% block page_header %}
     {% endblock %}
@@ -131,6 +132,13 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script>
+        const message_ele = document.getElementById('message-banner');
+
+        setTimeout(() => {
+        message_ele.style.display = 'none';
+        }, 3000);
+    </script>
     {% endblock %}
 
         <!-- Swiper JS -->
