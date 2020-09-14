@@ -9,7 +9,7 @@ class TitleForm(forms.ModelForm):
         fields = '__all__'
 
 
-class SubTitleForm(forms.ModelForm):
+class SubContentForm(forms.ModelForm):
 
     class Meta:
         model = SubContent

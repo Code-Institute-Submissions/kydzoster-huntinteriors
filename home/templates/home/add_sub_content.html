@@ -17,19 +17,19 @@
             <div class="col-12 col-md-6">
                 <hr>
                 <h2 class="logo-font mb-4">Site Management</h2>
-                <h5 class="text-muted">Add Title</h5>
+                <h5 class="text-muted">Add Sub Content</h5>
                 <hr>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_title' %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'add_sub_content' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'manage' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Add Title</button>
+                        <button class="btn btn-black rounded-0" type="submit">Add Content</button>
                     </div>
                 </form>
             </div>            
