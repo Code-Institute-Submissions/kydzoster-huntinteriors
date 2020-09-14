@@ -18,3 +18,9 @@ def index(request):
 def search(request):
     context = {}
     return render(request, 'home/search.html', context)
+
+
+# Will show management
+def manage(request):
+
+    return render(request, 'management/manage.html')

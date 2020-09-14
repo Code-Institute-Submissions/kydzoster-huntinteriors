@@ -21,9 +21,6 @@
                         <p>Gallery: {{ gallery.design }}</p>
                     {% elif gallery.design == 'Exteriors' %}
                         <p>Gallery: {{ gallery.design }}</p>
-                    {% else %}
-                        <!--This does not work-->
-                        <p>Gallery</p>
                     {% endif %}
                 {% endfor %}
                 </h2>
@@ -38,15 +35,9 @@
                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                 <div class="card h-100 border-0">
                                     <div class="card h-100 border-0">
-                                        {% if gallery.image %}
                                         <a href="{% url 'gallery_detail' gallery.id %}">
                                             <img class="card-img-top img-fluid" src="{{ gallery.image.url }}" alt="{{ gallery.name }}">
                                         </a>
-                                        {% else %}
-                                        <a href="{% url 'gallery_detail' gallery.id %}">
-                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ gallery.name }}">
-                                        </a>
-                                        {% endif %}
                                         <div class="card-body pb-0">
                                             <p class="mb-0">{{ gallery.name }}</p>
                                         </div>
