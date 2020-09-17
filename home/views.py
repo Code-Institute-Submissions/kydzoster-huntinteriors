@@ -42,15 +42,15 @@ def sub_detail(request, sub_id):
 # Will add a sub content to the home
 @login_required
 def add_content(request):
+
     if request.method == 'POST':
         form = SubContentForm(request.POST, request.FILES)
         if form.is_valid():
-            sub = form.save()
+            subcontent = form.save()
             messages.success(request, 'New content was successfully added!')
-            return redirect(reverse('sub_detail', args=[sub.id]))
+            return redirect(reverse('sub_detail', args=[subcontent.id]))
     else:
         form = SubContentForm()
-
     template = 'home/add_sub_content.html'
     context = {
         'form': form,
@@ -61,30 +61,33 @@ def add_content(request):
 # Will edit sub content
 @login_required
 def edit_content(request, sub_id):
-    sub = get_object_or_404(SubContent, pk=sub_id)
+
+    subcontent = get_object_or_404(SubContent, pk=sub_id)
     if request.method == 'POST':
         form = SubContentForm(
-            request.POST, request.FILES, instance=sub)
+            request.POST, request.FILES, instance=subcontent)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated Content!')
-            return redirect(reverse('sub_detail', args=[sub.id]))
+            messages.success(
+                request, f'{subcontent.title} successfully updated Content!')
+            return redirect(reverse('sub_detail', args=[subcontent.id]))
     else:
-        form = SubContentForm(instance=sub)
-        messages.success(request, f'You are editing {sub.name}')
+        form = SubContentForm(instance=subcontent)
+        messages.success(request, f'You are editing {subcontent.title}')
 
     template = 'home/edit_sub_content.html'
     context = {
         'form': form,
-        'sub': sub,
+        'subcontent': subcontent,
     }
     return render(request, template, context)
 
 
-# Will delete sub content
+# Will delete sub content from home page
 @login_required
 def delete_content(request, sub_id):
-    sub = get_object_or_404(SubContent, pk=sub_id)
-    sub.delete()
-    messages.success(request, 'Content deleted!')
+
+    subcontent = get_object_or_404(SubContent, pk=sub_id)
+    subcontent.delete()
+    messages.success(request, f'{subcontent.title} was successfully deleted!')
     return redirect(reverse('home'))

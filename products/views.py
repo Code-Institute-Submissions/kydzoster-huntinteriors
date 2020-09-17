@@ -56,9 +56,6 @@ def image_detail(request, product_id):
 # will add image to gallery
 @login_required
 def add_image(request):
-    if not request.user.is_superuser:
-        messages.error(request, 'Only site owner can do that!')
-        return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -66,11 +63,6 @@ def add_image(request):
             product = form.save()
             messages.success(request, 'Image was successfully added!')
             return redirect(reverse('image_detail', args=[product.id]))
-        else:
-            messages.error(
-                request,
-                'Failed to add product. Please ensure the form is valid.'
-                )
     else:
         form = ProductForm()
     template = 'products/add_image.html'
@@ -83,9 +75,6 @@ def add_image(request):
 # Will edit image in the gallery
 @login_required
 def edit_image(request, product_id):
-    if not request.user.is_superuser:
-        messages.error(request, 'Only site owner can do that!')
-        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
@@ -108,9 +97,6 @@ def edit_image(request, product_id):
 # Will delete an image from the gallery
 @login_required
 def delete_image(request, product_id):
-    if not request.user.is_superuser:
-        messages.error(request, 'Only site owner can do that!')
-        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
