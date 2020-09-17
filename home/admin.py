@@ -9,12 +9,6 @@ class SlidesAdmin(admin.ModelAdmin):
     )
 
 
-class MainContentAdmin(admin.ModelAdmin):
-    list_display = (
-        'title',
-    )
-
-
 class SubContentAdmin(admin.ModelAdmin):
     list_display = (
         'title',
@@ -23,5 +17,5 @@ class SubContentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Slides, SlidesAdmin)
-admin.site.register(MainContent, MainContentAdmin)
+admin.site.register(MainContent)
 admin.site.register(SubContent, SubContentAdmin)

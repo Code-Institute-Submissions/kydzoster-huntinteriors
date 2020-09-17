@@ -44,9 +44,7 @@
                 <div class="card my-3">
                 {% for main in maincontent %}
                     <div class="card-body">
-                    <a href="{% url 'title_detail' main.id %}">
                         <h5 class="card-title display-4 text-center">{{ main.title }}</h5>
-                    </a>
                         <p class="card-text font-weight-bold text-justified">{{ main.description | linebreaks }}</p>
                     </div>
                 {% endfor %}
@@ -71,8 +69,6 @@
                 <h4>{{ sub.title }}</h4>
             </a>
                 <p class="text-muted">{{ sub.description | linebreaks }}</p>
-                {% if request.user.is_superuser %}
-                {% endif %}
             </div>
         </div>
         {% else %}
@@ -82,8 +78,6 @@
                 <h4>{{ sub.title }}</h4>
             </a>
                 <p class="text-muted">{{ sub.description | linebreaks }}</p>
-                {% if request.user.is_superuser %}
-                {% endif %}
             </div>
             {% if sub.image %}
                 <div class="col-md-6 section-index-img">
