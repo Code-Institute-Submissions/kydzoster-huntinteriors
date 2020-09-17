@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category
 from .forms import ProductForm
@@ -53,7 +54,12 @@ def image_detail(request, product_id):
 
 
 # will add image to gallery
+@login_required
 def add_image(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Only site owner can do that!')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -75,7 +81,12 @@ def add_image(request):
 
 
 # Will edit image in the gallery
+@login_required
 def edit_image(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Only site owner can do that!')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -83,8 +94,6 @@ def edit_image(request, product_id):
             form.save()
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('image_detail', args=[product.id]))
-        else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -97,7 +106,12 @@ def edit_image(request, product_id):
 
 
 # Will delete an image from the gallery
+@login_required
 def delete_image(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Only site owner can do that!')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.info(request, f'{product.name} was successfully deleted!')
