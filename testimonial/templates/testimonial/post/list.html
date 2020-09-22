@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Testimonials{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div id="test-content">
+        <h1>Testimonials</h1>
+        {% for post in posts %}
+            <h2><a href="{{ post.get_absolute_url }}">
+                {{ post.title }}
+            </a></h2>
+            <p class="date">
+                Published {{ post.publish }} by {{ post.author }}
+            </p>
+            {{ post.body|truncatewords:30|linebreaks }}
+        {% endfor %}
+        {% include "pagination.html" with page=posts %}
+    </div>
+    <div id="test-sidebar">
+        <h2>Testimonials</h2>
+        <p>This section is a Testimonial section, feel free to leave a comment.</p>
+    </div>
+{% endblock %}

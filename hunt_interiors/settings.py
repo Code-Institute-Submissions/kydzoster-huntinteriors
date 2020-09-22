@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'products',
     'social_django',
     'django_extensions',
+    'testimonial.apps.TestimonialConfig',
 ]
 
 MIDDLEWARE = [

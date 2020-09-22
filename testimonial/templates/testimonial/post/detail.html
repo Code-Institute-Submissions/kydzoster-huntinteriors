@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Testimonials{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div id="test-content">
+        <h1>{{ post.title }}</h1>
+        <p class="date">
+            Published {{ post.publish }} by {{ post.author }}
+        </p>
+        {{ post.body|linebreaks }}
+    </div>
+    <div id="test-sidebar">
+        <h2>Testimonials</h2>
+        <p>This section is a Testimonial section, feel free to leave a comment.</p>
+    </div>
+{% endblock %}
