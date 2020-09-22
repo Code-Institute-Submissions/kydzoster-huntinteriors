@@ -6,7 +6,7 @@ from .models import Post
 
 class TestamentListView(ListView):
     model = Post
-    template_name = 'testament/home.html'
+    template_name = 'testament/testament.html'
 
 
 class TestamentDetailView(DetailView):
@@ -29,4 +29,4 @@ class TestamentUpdateView(UpdateView):
 class TestamentDeleteView(DeleteView):
     model = Post
     template_name = 'testament/post_delete.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('testament')

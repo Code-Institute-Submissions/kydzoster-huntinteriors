@@ -22,10 +22,10 @@ class TestamentTests(TestCase):
         self.assertEqual(f'{self.post.body}', 'Nice body content')
 
     def test_post_list_view(self):
-        response = self.client.get(reverse('home'))
+        response = self.client.get(reverse('testament'))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Nice body content')
-        self.assertTemplateUsed(response, 'testament/home.html')
+        self.assertTemplateUsed(response, 'testament/testament.html')
 
     def test_post_detail_view(self):
         response = self.client.get('/testament/post/1/')

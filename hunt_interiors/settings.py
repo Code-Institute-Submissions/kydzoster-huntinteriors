@@ -47,9 +47,6 @@ INSTALLED_APPS = [
     'products',
     'social_django',
     'django_extensions',
-    'testimonial.apps.TestimonialConfig',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
     'testament.apps.TestamentConfig',
 ]
 
@@ -91,7 +88,8 @@ TEMPLATES = [
 ]
 
 # redirect to dashboard after a successful login if no next parameter
-LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 # redirect to user login
 LOGIN_URL = 'login'
 # redirect user to logout
