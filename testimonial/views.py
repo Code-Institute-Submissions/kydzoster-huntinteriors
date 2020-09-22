@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post
+from .forms import CommentForm
 
 
 def post_list(request):
@@ -30,8 +31,28 @@ def post_detail(request, year, month, day, post):
         Post, slug=post, status='published',
         publish__year=year, publish__month=month, publish__day=day)
 
+    # This QuerySet retrieves a list of active comments for this post
+    comments = post.comments.filter(active=True)
+    new_comment = None
+
+    if request.method == 'POST':
+        # A comment was posted
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            # Create Comment object but don't save to database yet
+            new_comment = comment_form.save(commit=False)
+            # Assign the current post to the comment
+            new_comment.post = post
+            # Save the comment to the database
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+
     context = {
-        'post': post
+        'post': post,
+        'comments': comments,
+        'new_comment': new_comment,
+        'comment_form': comment_form,
         }
 
     return render(request, 'testimonial/post/detail.html', context)

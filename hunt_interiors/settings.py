@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'social_django',
     'django_extensions',
     'testimonial.apps.TestimonialConfig',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'testament.apps.TestamentConfig',
 ]
 
 MIDDLEWARE = [
