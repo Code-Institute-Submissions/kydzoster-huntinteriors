@@ -229,6 +229,13 @@ input[type=submit] {
 .social li.facebook { background:#3b5399; }
 .social li.google { background:#de1710; }
 
+.image-detail {
+    max-width:300px;
+    max-height:300px;
+    float:left;
+    margin:0 20px 20px 0;
+    margin-top:20px;
+}
 
 
 /* -------------------------------- Media Queries */

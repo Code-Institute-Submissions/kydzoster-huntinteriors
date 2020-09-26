@@ -11,5 +11,13 @@
 {% endblock %}
 {{% block content %}
   <h1>Dashboard</h1>
-  <p>Welcome to your dashboard. You can <a href="{% url 'edit' %}">edit your profile</a> or <a href="{% url 'password_change' %}">change your password</a>.</p>
+  {% if request.user.is_authenticated %}
+  <p>Welcome to your dashboard, {{ request.user.first_name }}! </p>
+  <img src="{{ user.profile.photo.url }}" class="image-detail">
+  <p>First name: {{ request.user.first_name }}</p>
+  <p>Last name: {{ request.user.last_name }}</p>
+  <p>Email: {{ request.user.email }}</p>
+  {% endif %}
+  
+  <p>You can <a href="{% url 'edit' %}">edit your profile</a> or <a href="{% url 'password_change' %}">change your password</a>.</p>
 {% endblock %}

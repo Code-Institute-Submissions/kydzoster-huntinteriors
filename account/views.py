@@ -48,11 +48,11 @@ def register(request):
 
             return render(
                 request,
-                'registration/register_done.html', {'new_user': new_user})
+                'account/register_done.html', {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
     return render(
-        request, 'registration/register.html', {'user_form': user_form})
+        request, 'account/register.html', {'user_form': user_form})
 
 
 @login_required
@@ -75,6 +75,6 @@ def edit(request):
         profile_form = ProfileEditForm(instance=request.user.profile)
     return render(
         request,
-        'account/dashboard.html',
+        'account/edit.html',
         {'user_form': user_form, 'profile_form': profile_form}
         )
