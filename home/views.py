@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from .models import Slides, MainContent, SubContent
 from .forms import SubContentForm
 
@@ -21,6 +22,30 @@ def index(request):
 def search(request):
     context = {}
     return render(request, 'home/search.html', context)
+
+
+def contact(request):
+    if request.method == "POST":
+        sender_name = request.POST['sender-name']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        send_mail(
+            'Message was sent by: ' + sender_name,  # subject
+            message,  # message
+            email,  # sender
+            ['mail@mail.com'],  # receiver
+            fail_silently=True,
+        )
+
+        context = {
+            'sender_name': sender_name,
+            }
+
+        return render(
+            request, 'contact/contact.html', context)
+    else:
+        return render(request, 'contact/contact.html')
 
 
 # Will show management

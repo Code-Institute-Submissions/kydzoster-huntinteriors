@@ -50,6 +50,96 @@ body {
     z-index: -1;
 }
 
+/* Contact page */
+
+.contact-area {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-area .google-maps {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 470px; }
+
+@media only screen and (max-width: 767px) {
+    .contact-area .google-maps {
+        height: 280px;
+    }
+}
+
+.contact-area .google-maps iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.contact-information {
+  position: relative;
+  z-index: 1;
+  padding: 30px 50px;
+  background-color: #00aeef;
+  border-radius: 3px; }
+
+@media only screen and (max-width: 767px) {
+    .contact-information {
+        margin-bottom: 100px;
+    }
+}
+
+.contact-information h5 {
+    color: #ffffff;
+}
+
+.contact-information p {
+    color: #ffffff;
+}
+
+.contact-form {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form .form-control {
+    width: 100%;
+    height: 46px;
+    padding: 0 15px;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.contact-form .form-control:focus {
+    box-shadow: none;
+    border-color: #0598ce;
+}
+
+.contact-form textarea.form-control {
+    height: 110px;
+    padding: 15px;
+}
+
+.contact-send-btn {
+    position: relative;
+    z-index: 1;
+    min-width: 170px;
+    height: 46px;
+    line-height: 42px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-radius: 2px;
+    background-color: #0598ce;
+    -webkit-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+    border: 2px solid #0598ce;
+}
+
 /* Back to top button */
 
 .btt-button {
