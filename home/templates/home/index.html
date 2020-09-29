@@ -44,10 +44,11 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-6">
                 <div class="card my-3">
-                {% for main in maincontent %}
+                {% for title in title %}
                     <div class="card-body">
-                        <h5 class="card-title display-4 text-center">{{ main.title }}</h5>
-                        <p class="card-text font-weight-bold text-justified">{{ main.description | linebreaks }}</p>
+                        <a href="{% url 'title_detail' title.id %}">
+                        <h5 class="card-title display-4 text-center">{{ title.title }}</h5></a>
+                        <p class="card-text font-weight-bold text-justified">{{ title.description | linebreaks }}</p>
                     </div>
                 {% endfor %}
                 </div>
