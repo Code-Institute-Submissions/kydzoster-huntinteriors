@@ -60,8 +60,16 @@ def sub_detail(request, sub_id):
     context = {
         'subcontent': subcontent,
     }
-
     return render(request, 'home/sub_detail.html', context)
+
+
+# Will show specific slides content details
+def slides_detail(request, slides_id):
+    slides = Slides.objects.get(pk=slides_id)
+    context = {
+        'slides': slides,
+    }
+    return render(request, 'home/slides_detail.html', context)
 
 
 # Will add a sub content to the home

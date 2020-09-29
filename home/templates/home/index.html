@@ -18,12 +18,14 @@
             <div class="col-md-12">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                    {% for slide in slides %}
+                    {% for slides in slides %}
                         <div class="swiper-slide">
                             <div class="card">
-                            <img src="{{ slide.image.url }}" class="card-img-top img-height" alt="...">
+                            <a href="{% url 'slides_detail' slides.id %}">
+                            <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="..."></a>
                             <div class="card-body bg-dark">
-                                <h5 class="card-title text-light font-weight-bold text-center">{{ slide.title }}</h5>
+                                
+                                <h5 class="card-title text-light font-weight-bold text-center">{{ slides.title }}</h5>
                             </div>
                             </div>
                         </div>
