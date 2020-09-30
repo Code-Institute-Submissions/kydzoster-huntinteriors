@@ -15,7 +15,8 @@ def index(request):
         'slides': slides,
         'title': title,
         'subcontent': subcontent,
-    }
+        }
+
     return render(request, 'home/index.html', context)
 
 

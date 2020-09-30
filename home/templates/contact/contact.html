@@ -34,14 +34,23 @@
             <div class="row">
                 <!-- Contact Information -->
                 <div class="col-12 col-md-4 mt-4">
+                {% for contact in contact %}
                     <div class="contact-information">
                         <h5>Address</h5>
-                        <p>17 Crawford Gardens, Kent, Margate, CT92PU</p>
-                        <h5>Phone</h5>
-                        <p>071234567890</p>
+                        <p>{{ contact.address }}</p>
+                        <h5>Mob</h5>
+                        <p>{{ contact.mob }}</p>
+                        <h5>Tel</h5>
+                        <p>{{ contact.tel }}</p>
                         <h5>Email</h5>
-                        <p class="mb-0">es@es.com</p>
+                        <p class="mb-0">{{ contact.email }}</p>
                     </div>
+                {% endfor %}
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="#">Edit</a>
+                    </small>
+                    {% endif %}
                 </div>
 
                 <!-- Contact Form -->

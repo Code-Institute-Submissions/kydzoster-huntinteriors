@@ -1,5 +1,5 @@
 from django import forms
-from .models import SubContent, Slides, MainContent
+from .models import SubContent, Slides, MainContent, Contact
 
 
 class SubContentForm(forms.ModelForm):
@@ -26,6 +26,16 @@ class TitleForm(forms.ModelForm):
 
     class Meta:
         model = MainContent
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+
+class ContactForm(forms.ModelForm):
+
+    class Meta:
+        model = Contact
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
