@@ -12,28 +12,28 @@
 {% block title %}Testaments{% endblock title %}
 
 {% block content %}
+<div class="container">
+    <div class="card m-auto" style="max-width:150px">
+        <div class="card-header">
+            <a class="btn btn-warning text-white" href="{% url 'testament_add' %}">Add Testamonial</a>
+        </div>
+    </div>
+    <br>
   {% for testament in object_list %}
-    <div class="card">
+    <div class="card m-auto" style="max-width:850px">
       <div class="card-header">
         <span class="font-weight-bold">{{ testament.title }}</span> &middot;
         <span class="text-muted">by {{ testament.author }} | {{ testament.date }}</span>
       </div>
       <div class="card-body">
         <!-- Changes start here! -->
-        <p>{{ testament.body }}</p>
-        <a href="{% url 'testament_edit' testament.pk %}">Edit</a> |
-        <a href="{% url 'testament_delete' testament.pk %}">Delete</a>
-      </div>
-      <div class="card-footer">
-        {% for comment in testament.comments.all %}
-          <p>
-            <span class="font-weight-bold">{{ comment.author }} &middot;</span>
-            {{ comment }}
-          </p>
-        {% endfor %}
+        <p style="max-width:100%">{{ testament.body }}</p>
+        <a class="btn btn-outline-warning" href="{% url 'testament_edit' testament.pk %}">Edit</a> 
+        <a class="btn btn-warning text-white" href="{% url 'testament_delete' testament.pk %}">Delete</a>
       </div>
       <!-- Changes end here! -->
     </div>
     <br />
   {% endfor %}
+</div>
 {% endblock content %}

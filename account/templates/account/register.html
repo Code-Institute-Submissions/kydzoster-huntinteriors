@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}Create an account{% endblock %}
 
@@ -12,11 +13,18 @@
 {% endblock %}
 
 {% block content %}
+<div class="container bg-white shadow p-3 signup-form">
   <h1>Create an account</h1>
-  <p>Please, sign up using the following form:</p>
   <form method="post">
-    {{ user_form.as_p }}
     {% csrf_token %}
-    <p><input type="submit" value="Create my account"></p>
+    {% for field in user_form %}
+    <div class="form-group">
+    {{field|as_crispy_field}}
+    </div>
+    {% endfor %}
+    <div class="text-center">
+    <input type="submit" value="Create my account" class="btn btn-warning"/>
+    </div>
   </form>
+</div>
 {% endblock %}

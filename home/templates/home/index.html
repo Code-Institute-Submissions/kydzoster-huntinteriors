@@ -11,7 +11,8 @@
 {% endblock %}
 
 {% block content %}
-<section>
+
+<section class="container">
     <!-- Slider -->
     <div class="container">
         <div class="row">
@@ -41,29 +42,28 @@
 <section>
     <!-- Main Content -->
     <div class="container">
-        <div class="row d-flex justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-lg-6">
-                <div class="card my-3">
+                <div class="shadow card my-3">
                 {% for title in title %}
                     <div class="card-body">
-                        <a href="{% url 'title_detail' title.id %}">
+                        <a class="text-black" href="{% url 'title_detail' title.id %}">
                         <h5 class="card-title display-4 text-center">{{ title.title }}</h5></a>
                         <p class="card-text font-weight-bold text-justified">{{ title.description | linebreaks }}</p>
                     </div>
                 {% endfor %}
-                </div>
             </div>
         </div>
     </div>
 </section>
-<section>
+<section class="container">
     <!-- Subcontent -->
     <div class="section-index">
     {% for sub in subcontent %}
         {% if forloop.counter|divisibleby:2 %}
-        <div class="row">
+        <div class="row mt-3">
             {% if sub.image %}
-                <div class="col-md-6 section-index-img">
+                <div class="col-md-6 section-index-img text-center">
                     <img src="{{ sub.image.url }}" class="rounded img-fluid" alt=""/>
                 </div>
             {% endif %}
@@ -75,7 +75,7 @@
             </div>
         </div>
         {% else %}
-        <div class="row">
+        <div class="row mt-5 mb-5">
             <div class="col-md-6">
             <a href="{% url 'sub_detail' sub.id %}">
                 <h4>{{ sub.title }}</h4>

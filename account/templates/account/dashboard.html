@@ -9,15 +9,21 @@
         </div>
     </div>
 {% endblock %}
-{{% block content %}
-  <h1>Dashboard</h1>
+{% block content %}
+<div class="container bg-white shadow p-5" style="max-width:550px">
+  <h1 class="text-black">Dashboard</h1>
   {% if request.user.is_authenticated %}
-  <p>Welcome to your dashboard, {{ request.user.first_name }}! </p>
-  <img src="{{ user.profile.photo.url }}" class="image-detail">
-  <p>First name: {{ request.user.first_name }}</p>
-  <p>Last name: {{ request.user.last_name }}</p>
-  <p>Email: {{ request.user.email }}</p>
+  <h5 class="text.muted mb-2 text-bold">Welcome to your dashboard, {{ request.user.first_name }}! </h5>
+  <div class="container-fluid p-2">
+  {% if user.profile.photo %}
+    <img src="{{ user.profile.photo.url }}" class="image-detail">{% endif %}
+    <p>First name: {{ request.user.first_name }}</p>
+    <p>Last name: {{ request.user.last_name }}</p>
+    <p>Email: {{ request.user.email }}</p>
   {% endif %}
-  
-  <p>You can <a href="{% url 'edit' %}">edit your profile</a> or <a href="{% url 'password_change' %}">change your password</a>.</p>
+  </div>
+  <a href="{% url 'edit' %}" class="btn btn-outline-secondary mr-1">Edit profile</a>
+  <a class="btn btn-outline-secondary ml-1 mr-1" href="{% url 'password_change' %}">Change password</a>
+  <a href="{% url 'testament_add' %}" class="btn btn-outline-secondary ml-1">Add a Testamonial</a>
+</div>
 {% endblock %}

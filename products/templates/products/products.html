@@ -11,55 +11,32 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container-fluid">
+    <div class="container bg-white shadow pb-5">
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Products</h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
-        <div class="row">
-            <div class="product-container col-10 offset-1">
+        <div class="row justify-content-center align-items-center">
+            <div class="product-container justify-content-center align-items-center">
                 <div class="row mt-1 mb-2"></div>
-                <div class="row">
+                <div class="row flex-wrap justify-content-center align-items-center">
                     {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                <a href="{% url 'image_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
-                                    {% if request.user.is_superuser %}
-                                    <small class="">
-                                        <a href="{% url 'edit_image' product.id %}">Edit</a> | 
-                                        <a class="text-danger" href="{% url 'delete_image' product.id %}">Delete</a>
-                                    </small>
-                                    {% endif %}
-                                </div>
+                        <div class="card m-1" style="width: 18rem;">
+                            <a href="{% url 'image_detail' product.id %}">
+                                <img class="card-img-top img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                            <div class="card-body">
+                                <h4 class="mb-0">{{ product.name }}</h4>
+                               
                             </div>
+                            <div class="card-footer bg-light">
+                                {% if request.user.is_superuser %}
+                                    <a class="btn btn-outline-secondary" href="{% url 'edit_image' product.id %}">Edit</a>
+                                    <a class="btn" style="background-color:#ffdb87; color:dark-gray" href="{% url 'delete_image' product.id %}">Delete</a>
+                                {% endif %}</div>
                         </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
