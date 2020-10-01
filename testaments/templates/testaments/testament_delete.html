@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -10,9 +10,11 @@
 {% endblock %}
 
 {% block content %}
-<h1>Delete</h1>
+<div class="container bg-white shadow p-4" style="max-width:550px">
+<h3>Are you sure you want to delete {{testament.title}}?</h3>
 <form action="" method="post">{% csrf_token %}
-<p>Are you sure you want to delete "{{ testament.title }}"?</p>
-<button class="btn btn-danger ml-2" type="submit">Confirm</button>
-</form>
+{{ form|crispy }}
+<div class="text-center">
+<button class="btn btn-warning" type="submit">Yes, delete</button></div>
+</form></div>
 {% endblock content %}

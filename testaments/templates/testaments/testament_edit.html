@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -10,9 +10,11 @@
 {% endblock %}
 
 {% block content %}
+<div class="container bg-white shadow p-4" style="max-width:550px">
 <h1>Edit</h1>
 <form action="" method="post">{% csrf_token %}
-{{ form.as_p }}
-<button class="btn btn-info ml-2" type="submit">Update</button>
-</form>
+{{ form|crispy }}
+<div class="text-center">
+<button class="btn btn-warning ml-2" type="submit">Update</button></div>
+</form></div>
 {% endblock content %}

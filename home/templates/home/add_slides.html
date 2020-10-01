@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-{% extends "base.html" %}
+{% extends "home/base_management.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,29 +10,15 @@
     </div>
 {% endblock %}
 
-{% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Site Management</h2>
-                <h5 class="text-muted">Add Slides</h5>
-                <hr>
-            </div>
-        </div>
+{% block site_management %}
 
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_slides' %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'manage' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Add Slides</button>
-                    </div>
-                </form>
-            </div>            
+    <form method="POST" action="{% url 'add_slides' %}" class="m-auto" enctype="multipart/form-data">
+        <h4 class="mb-2">Add a Slide</h4>
+        {% csrf_token %}
+        {{ form | crispy }}
+        <div class="text-center">
+            <a class="btn btn-outline-secondary" href="{% url 'manage' %}">Cancel</a>
+            <button class="btn btn-outline-warning" type="submit">Add Slides</button>
         </div>
-    </div>
+    </form>
 {% endblock %}

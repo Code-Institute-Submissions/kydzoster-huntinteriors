@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-{% extends "base.html" %}
+{% extends "home/base_management.html" %}
 {% load static %}
 
 {% block page_header %}
@@ -11,28 +10,12 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Site Management</h2>
-                <h5 class="text-muted">Edit contact</h5>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'edit_contact' contact.id %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'manage' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Edit Content</button>
-                    </div>
-                </form>
-            </div>            
-        </div>
+<form method="POST" action="{% url 'edit_contact' contact.id %}" class="m-auto" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <div class="text-right">
+        <a class="btn btn-outline-secondary" href="{% url 'manage' %}">Cancel</a>
+        <button class="btn btn-outline-warning" type="submit">Edit Content</button>
     </div>
+</form>
 {% endblock %}

@@ -13,12 +13,6 @@
 
 {% block content %}
 <div class="container">
-    <div class="card m-auto" style="max-width:150px">
-        <div class="card-header">
-            <a class="btn btn-warning text-white" href="{% url 'testament_add' %}">Add Testamonial</a>
-        </div>
-    </div>
-    <br>
   {% for testament in object_list %}
     <div class="card m-auto" style="max-width:850px">
       <div class="card-header">
@@ -27,9 +21,17 @@
       </div>
       <div class="card-body">
         <!-- Changes start here! -->
-        <p style="max-width:100%">{{ testament.body }}</p>
+        <p style="max-width:50%">{{ testament.body }}</p>
         <a class="btn btn-outline-warning" href="{% url 'testament_edit' testament.pk %}">Edit</a> 
         <a class="btn btn-warning text-white" href="{% url 'testament_delete' testament.pk %}">Delete</a>
+      </div>
+      <div class="card-footer">
+        {% for comment in testament.comments.all %}
+          <p>
+            <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+            {{ comment }}
+          </p>
+        {% endfor %}
       </div>
       <!-- Changes end here! -->
     </div>

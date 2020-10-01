@@ -1,7 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
 {% load static %}
-
-
 <html lang="en">
   <head>
 
@@ -19,7 +17,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    {% endblock %}
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block extra_css %}
-        <!-- Swiper CSS -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     {% endblock %}
@@ -61,7 +58,7 @@
                 </form>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <!--Shopping and account list-->
+                <!--Account list-->
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <!--Main menu-->
@@ -76,7 +73,7 @@
                             {% if request.user.is_authenticated %}
                                 Hello, {{ request.user.first_name }}!
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'manage' %}" class="dropdown-item">Product Management</a>
+                                    <a href="{% url 'manage' %}" class="dropdown-item">Site Management</a>
                                 {% endif %}
                                 <a href="{% url 'dashboard' %}" class="dropdown-item">My Dashboard</a>
                                 <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
@@ -124,10 +121,10 @@
         {% endif %}
     {% block page_header %}
     {% endblock %}
-    <main>
+    <main class="container">
     {% block content %}
     {% endblock %}
-    </main class="container">
+    </main>
     {% block postloadjs %}
     <script>
         $(window).on('load',function(){

@@ -11,8 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container-fluid">
+    <div class="container bg-white shadow p-3">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container my-5">
@@ -28,8 +27,8 @@
                 </div>
                 {% if request.user.is_superuser %}
                     <small class="ml-3">
-                        <a href="{% url 'edit_content' subcontent.id %}">Edit</a> | 
-                        <a class="text-danger" href="{% url 'delete_content' subcontent.id %}">Delete</a>
+                        <a class="btn btn-outline-secondary" href="{% url 'edit_content' subcontent.id %}">Edit</a> 
+                        <a class="btn btn-outline-warning" href="{% url 'delete_content' subcontent.id %}">Delete</a>
                     </small>
                 {% endif %}
             </div>

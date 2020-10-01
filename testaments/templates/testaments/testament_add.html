@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -10,9 +10,11 @@
 {% endblock %}
 
 {% block content %}
-<h1>New Testament</h1>
+<div class="container bg-white shadow p-4" style="max-width:550px">
+<h1>Add a testament</h1>
 <form action="" method="post">{% csrf_token %}
-{{ form.as_p }}
-<button class="btn btn-success ml-2" type="submit">Save</button>
-</form>
+{{ form|crispy }}
+<div class="text-center">
+<button class="btn btn-warning" type="submit">Add</button></div>
+</form></div>
 {% endblock content %}
