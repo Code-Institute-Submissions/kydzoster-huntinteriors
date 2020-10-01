@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['kydzoster-hunt-interiors.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['hunt-int.herokuapp.com', 'localhost']
 
 
 # Application definition
