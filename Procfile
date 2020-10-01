@@ -1,1 +1,1 @@
-web: gunicorn hunt-int.wsgi:application
+web: gunicorn hunt-int.wsgi --log-file -
