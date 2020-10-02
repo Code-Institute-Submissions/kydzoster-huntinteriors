@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 {% extends "base.html" %}
 {% load static %}
 
@@ -14,7 +14,7 @@
 
 <section class="container">
     <!-- Slider -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="swiper-container">
@@ -25,7 +25,6 @@
                             <a href="{% url 'slides_detail' slides.id %}">
                             <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="..."></a>
                             <div class="card-body bg-dark">
-                                
                                 <h5 class="card-title text-light font-weight-bold text-center">{{ slides.title }}</h5>
                             </div>
                             </div>
@@ -43,8 +42,7 @@
     <!-- Main Content -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="shadow card my-3">
+                <div class="shadow card my-3 col-md-12">
                 {% for title in title %}
                     <div class="card-body">
                         <a class="text-black" href="{% url 'title_detail' title.id %}">
@@ -58,13 +56,13 @@
 </section>
 <section class="container">
     <!-- Subcontent -->
-    <div class="section-index">
+    <div class="section-index my-5">
     {% for sub in subcontent %}
         {% if forloop.counter|divisibleby:2 %}
         <div class="row mt-3">
             {% if sub.image %}
                 <div class="col-md-6 section-index-img text-center">
-                    <img src="{{ sub.image.url }}" class="rounded img-fluid" alt=""/>
+                    <img src="{{ sub.image.url }}" class="rounded img-fluid first-image" alt=""/>
                 </div>
             {% endif %}
             <div class="col-md-6">
@@ -75,7 +73,7 @@
             </div>
         </div>
         {% else %}
-        <div class="row mt-5 mb-5">
+        <div class="row mt-5 mb-5 upper-index">
             <div class="col-md-6">
             <a href="{% url 'sub_detail' sub.id %}">
                 <h4>{{ sub.title }}</h4>
@@ -83,7 +81,7 @@
                 <p class="text-muted">{{ sub.description | linebreaks }}</p>
             </div>
             {% if sub.image %}
-                <div class="col-md-6 section-index-img">
+                <div class="col-md-6 section-index-img text-center">
                     <img src="{{ sub.image.url }}" class="rounded img-fluid" alt=""/>
                 </div>
             {% endif %}

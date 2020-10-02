@@ -12,13 +12,15 @@
 {% endblock %}
 
 {% block content %}
+<div class="container bg-white p-4 shadow" style="max-width:720px">
   <h1>Edit your account</h1>
   <p>You can edit your account using the following form:</p>
   <!-- enctype enables file uploads -->
   <form method="post" enctype="multipart/form-data">
-    {{ user_form.as_p }}
-    {{ profile_form.as_p }}
+    {{ user_form|crispy}}
+    {{ profile_form|crispy }}
     {% csrf_token %}
-    <p><input type="submit" value="Save changes"></p>
-  </form>
+    <div class="text-center">
+    <input type="submit" class="btn btn-warning" value="Save changes"></div>
+  </form></div>
 {% endblock %}
