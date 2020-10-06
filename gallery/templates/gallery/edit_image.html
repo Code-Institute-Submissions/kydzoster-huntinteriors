@@ -12,15 +12,15 @@
 
 {% block content %}
     <div class="container bg-white shadow p-4 mb-4" style="max-width:750px">
-            <h2 class="logo-font mb-4">Product Management</h2>
+            <h2 class="logo-font mb-4">Img Management</h2>
             <hr>
 
             <div class="">
-                <form method="POST" action="{% url 'edit_image' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'edit_image' img.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'gallery' %}">Cancel</a>
                         <button class="btn btn-outline-secondary" type="submit">Update Image</button>
                     </div>
                 </form>

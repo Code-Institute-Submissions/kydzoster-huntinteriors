@@ -22,8 +22,12 @@
                     {% for slides in slides %}
                         <div class="swiper-slide">
                             <div class="card">
-                            <a href="{% url 'slides_detail' slides.id %}">
-                            <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="..."></a>
+                            {% if request.user.is_superuser %}
+                                <a href="{% url 'slides_detail' slides.id %}">
+                                <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="..."></a>
+                            {% else %}
+                                <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="...">
+                            {% endif %}
                             <div class="card-body bg-dark">
                                 <h5 class="card-title text-light font-weight-bold text-center">{{ slides.title }}</h5>
                             </div>
@@ -42,12 +46,17 @@
     <!-- Main Content -->
     <div class="container">
         <div class="row justify-content-center">
-                <div class="shadow card my-3 col-md-12">
+                <div class="shadow card mt-5 mb-3 col-md-10">
                 {% for title in title %}
                     <div class="card-body">
+                    {% if request.user.is_superuser %}
                         <a class="text-black" href="{% url 'title_detail' title.id %}">
                         <h5 class="card-title display-4 text-center">{{ title.title }}</h5></a>
                         <p class="card-text font-weight-bold text-justified">{{ title.description | linebreaks }}</p>
+                    {% else %}
+                        <h5 class="card-title display-4 text-center">{{ title.title }}</h5>
+                        <p class="card-text font-weight-bold text-justified">{{ title.description | linebreaks }}</p>
+                    {% endif %}
                     </div>
                 {% endfor %}
             </div>
@@ -59,33 +68,41 @@
     <div class="section-index my-5">
     {% for sub in subcontent %}
         {% if forloop.counter|divisibleby:2 %}
-        <div class="row mt-3">
-            {% if sub.image %}
-                <div class="col-md-6 section-index-img text-center">
-                    <img src="{{ sub.image.url }}" class="rounded img-fluid first-image" alt=""/>
+            <!-- This will be 2nd -->
+            <div class="row mb-2">
+                {% if sub.image %}
+                    <div class="col-md-6 section-index-img text-center">
+                        <img src="{{ sub.image.url }}" class="rounded img-fluid" alt="{{ sub.image.url }}"/>
+                    </div>
+                {% endif %}
+                <div class="col-md-6">
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'sub_detail' sub.id %}">
+                        <h4>{{ sub.title }}</h4></a>
+                    {% else %}
+                        <h4>{{ sub.title }}</h4>
+                    {% endif %}
+                    <p class="text-muted">{{ sub.description | linebreaks }}</p>
                 </div>
-            {% endif %}
-            <div class="col-md-6">
-            <a href="{% url 'sub_detail' sub.id %}">
-                <h4>{{ sub.title }}</h4>
-            </a>
-                <p class="text-muted">{{ sub.description | linebreaks }}</p>
             </div>
-        </div>
         {% else %}
-        <div class="row mt-5 mb-5 upper-index">
-            <div class="col-md-6">
-            <a href="{% url 'sub_detail' sub.id %}">
-                <h4>{{ sub.title }}</h4>
-            </a>
-                <p class="text-muted">{{ sub.description | linebreaks }}</p>
-            </div>
-            {% if sub.image %}
-                <div class="col-md-6 section-index-img text-center">
-                    <img src="{{ sub.image.url }}" class="rounded img-fluid" alt=""/>
+            <!-- This will be 1st -->
+            <div class="row my-2">
+                <div class="col-md-6">
+                    {% if request.user.is_superuser %}
+                        <h4><a href="{% url 'sub_detail' sub.id %}">
+                        {{ sub.title }}</a></h4>
+                    {% else %}
+                        <h4>{{ sub.title }}</h4>
+                    {% endif %}
+                    <p class="text-muted">{{ sub.description | linebreaks }}</p>
                 </div>
-            {% endif %}
-        </div>
+                {% if sub.image %}
+                    <div class="col-md-6 section-index-img text-center">
+                        <img src="{{ sub.image.url }}" class="rounded img-fluid" alt="{{ sub.image.url }}"/>
+                    </div>
+                {% endif %}
+            </div>
         {% endif %}
     {% endfor %}
     </div>

@@ -18,7 +18,7 @@ class Category(models.Model):
         return self.name
 
 
-class Product(models.Model):
+class Img(models.Model):
     category = models.CharField(
         choices=DESIGN_CHOICES, max_length=9, default=None
         )

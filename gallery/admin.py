@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Img, Category
 
 
-class ProductAdmin(admin.ModelAdmin):
+class ImgAdmin(admin.ModelAdmin):
     list_display = (
         'category',
         'name',
@@ -18,5 +18,5 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(Product, ProductAdmin)
+admin.site.register(Img, ImgAdmin)
 admin.site.register(Category, CategoryAdmin)

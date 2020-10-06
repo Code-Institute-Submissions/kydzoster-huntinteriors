@@ -52,11 +52,8 @@ h2 {
 }
 
 .section-index-img img{
-    height: 80%;
+    max-height: 80%;
 }
-
-.first-image{
-    height: 100%!important;}
 
 
 /*---------------- Contact ----------------*/

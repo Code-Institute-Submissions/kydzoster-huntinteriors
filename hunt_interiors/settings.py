@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     # Custom
     'home',
     'crispy_forms',
-    'products',
+    'gallery',
     'social_django',
     'django_extensions',
     'testaments.apps.TestamentsConfig',
