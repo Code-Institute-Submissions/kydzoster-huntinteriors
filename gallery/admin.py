@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Img, Category
+from .models import Img
 
 
 class ImgAdmin(admin.ModelAdmin):
@@ -12,11 +12,4 @@ class ImgAdmin(admin.ModelAdmin):
     ordering = ('category',)
 
 
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = (
-        'name',
-    )
-
-
 admin.site.register(Img, ImgAdmin)
-admin.site.register(Category, CategoryAdmin)

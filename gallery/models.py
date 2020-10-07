@@ -7,17 +7,6 @@ DESIGN_CHOICES = (
 )
 
 
-class Category(models.Model):
-
-    class Meta:
-        verbose_name_plural = 'Categories'
-
-    name = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.name
-
-
 class Img(models.Model):
     category = models.CharField(
         choices=DESIGN_CHOICES, max_length=9, default=None

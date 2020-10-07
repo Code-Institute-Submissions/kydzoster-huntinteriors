@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Img, Category
+from .models import Img
 from .forms import ImgForm
 
 
@@ -18,7 +18,6 @@ def all_gallery(request):
         if 'category' in request.GET:
             categories = request.GET['category']
             gallery = gallery.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
