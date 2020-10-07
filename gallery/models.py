@@ -8,6 +8,10 @@ DESIGN_CHOICES = (
 
 
 class Img(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Images'
+
     category = models.CharField(
         choices=DESIGN_CHOICES, max_length=9, default=None
         )
