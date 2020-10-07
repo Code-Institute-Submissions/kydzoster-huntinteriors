@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'social_django',
     'django_extensions',
     'testaments.apps.TestamentsConfig',
-    'products',
+    'furnitures',
 ]
 
 MIDDLEWARE = [
