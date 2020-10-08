@@ -38,8 +38,8 @@ h2 {
 }
 
 .img-height{
-    height: 25rem;
-    max-width:25rem!important;
+    height: 22rem;
+    max-width: 20rem!important;
 }
 
 .section-index > .row:first-of-type > .col-md-6 {
@@ -52,7 +52,8 @@ h2 {
 }
 
 .section-index-img img{
-    max-height: 80%;
+    height: 25rem;
+    width: 25rem!important;
 }
 
 

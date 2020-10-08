@@ -24,9 +24,9 @@
                             <div class="card">
                             {% if request.user.is_superuser %}
                                 <a href="{% url 'slides_detail' slides.id %}">
-                                <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="..."></a>
+                                <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="{{ slides.image.url }}"></a>
                             {% else %}
-                                <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="...">
+                                <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="{{ slides.image.url }}">
                             {% endif %}
                             <div class="card-body bg-dark">
                                 <h5 class="card-title text-light font-weight-bold text-center">{{ slides.title }}</h5>
@@ -63,6 +63,67 @@
         </div>
     </div>
 </section>
+
+<section>
+<!-- Test Content -->
+    <div class="container">
+    {% for sub in subcontent %}
+        {% if forloop.counter|divisibleby:2 %}
+            <div class="row justify-content-center mb-3">
+                <div class="col-md-10 card px-3 py-3">
+                    <div class="row d-flex">
+                        <div class="col-md-4 align-self-center mr-auto">
+                            {% if sub.image %}
+                            <div class=" section-index-img">
+                                <img src="{{ sub.image.url }}" class="rounded img-fluid img-thumbnail" alt="{{ sub.image.url }}"/>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 align-self-center shadow card mr-3">
+                            {% if request.user.is_superuser %}
+                                <a href="{% url 'sub_detail' sub.id %}">
+                                <h4>{{ sub.title }}</h4></a>
+                            {% else %}
+                                <h4>{{ sub.title }}</h4>
+                            {% endif %}
+                            <p class="text-muted text-justify">{{ sub.description | linebreaks }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="row justify-content-center mb-3">
+                <div class="col-md-10 card px-3 py-3">
+                    <div class="row d-flex">
+                        <div class="col-md-6 align-self-center mr-auto shadow card ml-3">
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'sub_detail' sub.id %}">
+                                    <h4>{{ sub.title }}</h4></a>
+                                {% else %}
+                                    <h4>{{ sub.title }}</h4>
+                                {% endif %}
+                                <p class="text-muted">{{ sub.description | linebreaks }}</p>
+                        </div>
+                        <div class="col-md-4 align-self-center">
+                            {% if sub.image %}
+                            <div class=" section-index-img">
+                                <img src="{{ sub.image.url }}" class="rounded img-fluid img-thumbnail" alt="{{ sub.image.url }}"/>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</section>
+
+
+
+
+
+
 <section class="container">
     <!-- Subcontent -->
     <div class="section-index my-5">
