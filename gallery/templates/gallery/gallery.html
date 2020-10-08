@@ -11,15 +11,26 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container bg-white shadow pb-5">
-        <div class="row">
-            <div class="col text-center mt-3">
-                <h1 class="text-black mb-5">Gallery - {{ category.name }}</h1>
+
+<div class="container h-100 mb-5">
+    <div class="row h-100 d-flex justify-content-end">
+        <div class="col-7 col-md-6 my-auto">
+            <h1 class="display-4 logo-font text-black">
+                Gallery
+            </h1>
+            <p style="font-size: 30px">Like what you see?</p>
+            <div class="my-5">
+                <h4>
+                    <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3 float-right">Get a Quote</a>
+                </h4>
             </div>
         </div>
+    </div>
+</div>
+
+    <div class="container shadow my-5 py-3">
         <div class="row justify-content-center align-items-center">
             <div class="img-container justify-content-center align-items-center">
-                <div class="row mt-1 mb-2"></div>
                 <div class="row flex-wrap justify-content-center align-items-center">
                     {% for img in gallery %}
                         <div class="card m-1" style="width: 18rem;">
@@ -27,8 +38,7 @@
                                 <img class="card-img-top img" src="{{ img.image.url }}" alt="{{ img.name }}">
                             </a>
                             <div class="card-body">
-                                <h4 class="mb-0">{{ img.name }}</h4>
-                               
+                                <h4 class="mb-0 text-center">{{ img.name }}</h4>
                             </div>
                             {% if request.user.is_superuser %}
                             <div class="card-footer bg-light">

@@ -30,4 +30,13 @@
     <br />
   {% endfor %}
 </div>
+
+
+{% for testament in object_list %}
+    {{ testament.title }}
+    {{ testament.author }} | {{ testament.date }}
+    {{ testament.body }}
+{% endfor %}
+
+
 {% endblock content %}
