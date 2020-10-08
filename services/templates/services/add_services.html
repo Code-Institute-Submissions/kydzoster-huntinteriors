@@ -11,13 +11,13 @@
 {% endblock %}
 
 {% block site_management %}
-    <form method="POST" action="{% url 'add_content' %}" class="m-auto" enctype="multipart/form-data">
-        <h4 class="mb-2">Add Content</h4>
+    <form method="POST" action="{% url 'add_services' %}" class="m-auto" enctype="multipart/form-data">
+        <h4 class="mb-2">Add services</h4>
         {% csrf_token %}
         {{ form | crispy }}
         <div class="text-center">
             <a class="btn btn-outline-secondary" href="{% url 'manage' %}">Cancel</a>
-            <button class="btn btn-outline-warning" type="submit">Add Content</button>
+            <button class="btn btn-outline-warning" type="submit">Add services</button>
         </div>
     </form>
 {% endblock %}

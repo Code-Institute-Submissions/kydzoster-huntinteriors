@@ -2,19 +2,17 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
-from .models import Slides, MainContent, SubContent
-from .forms import SubContentForm, SlidesForm, TitleForm
+from .models import Slides, MainContent
+from .forms import SlidesForm, TitleForm
 
 
 def index(request):
     slides = Slides.objects.all()
     title = MainContent.objects.all()
-    subcontent = SubContent.objects.all()
 
     context = {
         'slides': slides,
         'title': title,
-        'subcontent': subcontent,
     }
     return render(request, 'home/index.html', context)
 
@@ -51,16 +49,6 @@ def manage(request):
     return render(request, 'management/manage.html')
 
 
-# Will show specific sub content details
-@login_required
-def sub_detail(request, sub_id):
-    subcontent = get_object_or_404(SubContent, pk=sub_id)
-    context = {
-        'subcontent': subcontent,
-    }
-    return render(request, 'home/sub_detail.html', context)
-
-
 # Will show specific slides content details
 @login_required
 def slides_detail(request, slides_id):
@@ -81,25 +69,6 @@ def title_detail(request, title_id):
     return render(request, 'home/title_detail.html', context)
 
 
-# Will add a sub content to the home
-@login_required
-def add_content(request):
-
-    if request.method == 'POST':
-        form = SubContentForm(request.POST, request.FILES)
-        if form.is_valid():
-            subcontent = form.save()
-            messages.success(request, 'New content was successfully added!')
-            return redirect(reverse('sub_detail', args=[subcontent.id]))
-    else:
-        form = SubContentForm()
-    template = 'home/add_sub_content.html'
-    context = {
-        'form': form,
-    }
-    return render(request, template, context)
-
-
 # Will add a slides to the home
 @login_required
 def add_slides(request):
@@ -115,31 +84,6 @@ def add_slides(request):
     template = 'home/add_slides.html'
     context = {
         'form': form,
-    }
-    return render(request, template, context)
-
-
-# Will edit sub content
-@login_required
-def edit_content(request, sub_id):
-
-    subcontent = get_object_or_404(SubContent, pk=sub_id)
-    if request.method == 'POST':
-        form = SubContentForm(
-            request.POST, request.FILES, instance=subcontent)
-        if form.is_valid():
-            form.save()
-            messages.success(
-                request, f'{subcontent.title} successfully updated Content!')
-            return redirect(reverse('sub_detail', args=[subcontent.id]))
-    else:
-        form = SubContentForm(instance=subcontent)
-        messages.success(request, f'You are editing {subcontent.title}')
-
-    template = 'home/edit_sub_content.html'
-    context = {
-        'form': form,
-        'subcontent': subcontent,
     }
     return render(request, template, context)
 
@@ -192,16 +136,6 @@ def edit_title(request, title_id):
         'title': title,
     }
     return render(request, template, context)
-
-
-# Will delete sub content from home page
-@login_required
-def delete_content(request, sub_id):
-
-    subcontent = get_object_or_404(SubContent, pk=sub_id)
-    subcontent.delete()
-    messages.success(request, f'{subcontent.title} was successfully deleted!')
-    return redirect(reverse('home'))
 
 
 # Will delete slides from home page

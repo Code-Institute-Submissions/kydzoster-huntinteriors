@@ -52,8 +52,54 @@ h2 {
 }
 
 .section-index-img img{
-    height: 25rem;
-    width: 25rem!important;
+    max-width: 25rem;
+    min-width: 25rem;
+}
+
+
+/*---------------- Services ----------------*/
+
+.serv-box{
+    background-color: fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.serv-img{
+    max-width: 25rem;
+    min-width: 25rem;
+}
+
+.serv-img img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.serv-info{
+    max-width: calc(100% - 25rem);
+    padding: 95px 110px 88px;
+}
+
+.serv-info > h3{
+    color: #070c1f;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 29px;
+}
+
+.serv-info p{
+    color: #070c1f;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 500;
+    margin-bottom: 52px;
+    max-width: 50rem;
+}
+
+.block{
+    display: block;
 }
 
 

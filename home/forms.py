@@ -1,15 +1,5 @@
 from django import forms
-from .models import SubContent, Slides, MainContent, Contact
-
-
-class SubContentForm(forms.ModelForm):
-
-    class Meta:
-        model = SubContent
-        fields = '__all__'
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+from .models import Slides, MainContent, Contact
 
 
 class SlidesForm(forms.ModelForm):

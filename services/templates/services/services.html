@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<section class="block">
+        <!--TEST SECTION-->
+    <div class="container">
+    {% for serv in services %}
+            <div class="serv-box">
+                {% if serv.image %}
+                <div class="serv-img">
+                    <img src="{{ serv.image.url }}" alt="{{ serv.image.url }}" class="w-100"/>
+                </div>
+                {% endif %}
+                <div class="serv-info">
+                    <h3>{{ serv.title }}</h3>
+                    <p>{{ serv.description | truncatewords:25}}</p>
+                    <a href="{% url 'services_detail' serv.id %}"><p class="text-info">Read More</p></a>
+                </div>
+            </div>
+    {% endfor %}
+    </div>
+</section>
+{% endblock %}

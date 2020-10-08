@@ -23,18 +23,6 @@ class MainContent(models.Model):
         return self.title
 
 
-class SubContent(models.Model):
-    class Meta:
-        verbose_name_plural = 'Sub Content'
-
-    title = models.CharField(max_length=28, null=False, blank=False)
-    image = models.ImageField()
-    description = models.TextField()
-
-    def __str__(self):
-        return self.title
-
-
 class Contact(models.Model):
     class Meta:
         verbose_name_plural = 'Contact'
