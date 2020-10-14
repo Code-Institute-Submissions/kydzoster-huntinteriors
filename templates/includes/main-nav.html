@@ -27,11 +27,12 @@
                 Shop
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Bed</a>
-                <a href="" class="dropdown-item">Sofa</a>
-                <a href="" class="dropdown-item">Chair</a>
-                <a href="" class="dropdown-item">Table</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Furniture</a>
+                <a href="{% url 'products' %}?category=bed" class="dropdown-item">Bed</a>
+                <a href="{% url 'products' %}?category=sofa" class="dropdown-item">Sofa</a>
+                <a href="{% url 'products' %}?category=chair" class="dropdown-item">Chair</a>
+                <a href="{% url 'products' %}?category=table" class="dropdown-item">Table</a>
+                
             </div>
         </li>
 
