@@ -5,8 +5,8 @@
 
 
 {% block content %}
+<!-- Slider Section-->
 <section class="container">
-    <!-- Slider -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -36,6 +36,7 @@
     </div>
 </section>
 
+<!-- Title Section-->
 <section id="about" class="ls section-about s-pt-xl-140 s-pt-lg-120 s-pt-md-80 s-pt-50 s-pb-xl-145 s-pb-lg-125 s-pb-md-85 s-pb-55 text-center text-sm-left">
     <div class="container">
     {% for title in title %}
@@ -49,12 +50,12 @@
                     <p>{{ title.description | linebreaks }}</p>
                     <div class="divider-50 hidden-below-md"></div>
                     <div class="divider-30 hidden-above-md"></div>
-                    <a href="./" class="btn btn-maincolor medium-btn">learn more</a>
+                    <a href="{% url 'services' %}" class="btn btn-maincolor medium-btn">learn more</a>
                     <span>or</span>
-                    <a href="shop-left.html" class="btn btn-with-border">go to catalog</a>
+                    <a href="{% url 'products' %}" class="btn btn-with-border">browse a shop</a>
                 </div>
                 <div class="col-lg-6">
-                    <img src="images/aboutimg.jpg" style="padding-top: 4px; width: 600px;">
+                    <img src="{{ title.image.url }}" style="padding-top: 4px; width: 600px;">
                 </div>
                 {% else %}
                 <div class="col-lg-6">
@@ -64,16 +65,107 @@
                     <p>{{ title.description | linebreaks }}</p>
                     <div class="divider-50 hidden-below-md"></div>
                     <div class="divider-30 hidden-above-md"></div>
-                    <a href="./" class="btn btn-maincolor medium-btn">learn more</a>
+                    <a href="{% url 'services' %}" class="btn btn-maincolor medium-btn">learn more</a>
                     <span>or</span>
-                    <a href="shop-left.html" class="btn btn-with-border">go to catalog</a>
+                    <a href="{% url 'products' %}" class="btn btn-with-border">browse a shop</a>
                 </div>
                 <div class="col-lg-6">
-                    <img src="images/aboutimg.jpg" style="padding-top: 4px; width: 600px;">
+                    <img src="{{ title.image.url }}" style="padding-top: 4px; width: 600px;">
                 </div>
                 {% endif %}
         </div>
     {% endfor %}
     </div>
+</section>
+
+<!-- Shop Section -->
+<section class="ls  s-pt-xl-140 s-pt-lg-120 s-pt-md-80 s-pt-50 s-pb-xl-140 s-pb-lg-120 s-pb-md-80 s-pb-50 text-center text-sm-left" style="margin-top: -150px;">
+				<div class="container">
+					<div class="row c-gutter-0">
+						<div class="col-12">
+							<h6 class="special-heading sub-title text-center"><span>Shop</span></h6>
+							<h2 class="special-heading text-center">Recently Added Products</h2>
+							<div class="divider-40 hidden-below-md"></div>
+							<div class="divider-30 hidden-above-md"></div>
+							<div class="product_tabs">
+
+								<div class="tab-content">
+
+									<div class="tab-pane fade show active" id="tab01_pane" role="tabpanel" aria-labelledby="tab01">
+
+										<div class="col-12 columns-3">
+											<ul class="products">
+                                            
+												<li class="product">
+                                                    {% for product in products %}
+                                                    {% if product.image %}
+													<a class="woocommerce-LoopProduct-link" href="{% url 'product_detail' product.id %}">
+														<img src="{{ product.image.url }}" alt="{{ product.name }}">
+														<h2>{{ product.name }}</h2>
+												    {% endif %}
+														<div class="product-description-short">
+															<p>
+																<span>Category:</span>
+																<span><strong>{{ product.category }}</strong></span>
+															</p>
+														</div>
+														<span class="price">
+															
+															<ins>
+																<span>
+																	<p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+																</span>
+															</ins>
+														</span>
+													</a>
+                                                    {% endfor %}
+													<a rel="nofollow" href="shop-cart.html" class="button product_type_simple add_to_cart_button">Add to cart</a>
+													<a href="cart.html" class="added_to_cart wc-forward" title="View cart">View cart</a>
+												</li>
+											</ul>
+                                            
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+</section>
+
+<!-- Testamonial Section -->
+<section class="ls testimonials-section s-pt-xl-135 s-pt-lg-115 s-pt-md-75 s-pt-55 s-pb-xl-145 s-pb-lg-125 s-pb-md-85 s-pb-55">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<h2 class="special-heading text-center">What Our Clients Say</h2>
+			
+							<div class="divider-60 hidden-below-md"></div>
+							<div class="divider-40 hidden-above-md"></div>
+							<div >
+								purrrrrrrrrrrrrrrrrr
+                                {% for testament in object_list %}
+                                <div class="quote-item">
+									<blockquote>
+										<p>
+											<em>
+                                            {{ testament.body }}
+											</em>
+										</p>
+									</blockquote>
+									<div class="quote-image">
+										<img src="#" alt="">
+									</div>
+									<div class="quote-title">
+										<p>
+											by {{ testament.author }} | {{ testament.date }}
+										</p>
+									</div>
+								</div>
+                                {% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
 </section>
 {% endblock %}
