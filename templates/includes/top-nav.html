@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<div class="row align-items-center">
+    <!--Social Links-->
+    <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 text-md-left text-center">
+        <span class="social-icons">
+            <a href="#" class="fab fab fa-facebook-f " title="facebook"></a>
+            <a href="#" class="fab fa-linkedin-in " title="linkedin"></a>
+            <a href="#" class="fab fa-instagram " title="instagram"></a>
+        </span>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12 d-flex justify-content-md-end justify-content-center align-items-center">
+        <!--Search Box-->
+        <div class="dropdown widget_search">
+            <a class="dropdown-toggle dropdown-toggle-split" href="#" id="headerSearchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-search"></i>
+            </a>
+            <div class="dropdown-menu ls ms " aria-labelledby="headerSearchDropdown">
+                <form method="GET" role="search" class="search-form" action="{% url 'products' %}">
+                    <label for="search-form-top">
+                        <span class="screen-reader-text">Search for:</span>
+                    </label>
+                    <input type="search" id="search-form-top" class="search-field" placeholder="Search keyword" value="" name="search">
+                    <button type="submit" class="search-submit">
+                        <span class="screen-reader-text">Search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!--Account menu-->
+        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+            <li class="list-inline-item dropdown">
+                <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="text-center">
+                        <div><i class="fas fa-user fa-lg"></i></div>
+                        <p class="my-0">My Account</p>
+                    </div>
+                </a>
+                <!--Account Dropdown menu-->
+                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    {% if request.user.is_authenticated %}
+                        Hello, {{ request.user.first_name }}!
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'manage' %}" class="dropdown-item">Site Management</a>
+                        {% endif %}
+                        <a href="{% url 'dashboard' %}" class="dropdown-item">My Dashboard</a>
+                        <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
+                    {% else %}
+                        <a href="{% url 'register' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'login' %}" class="dropdown-item">Login</a>
+                    {% endif %}
+                </div>
+            </li>
+            <!--Shopping Bag-->
+            <li class="list-inline-item">
+                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                    <div class="text-center">
+                        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                        <p class="my-0">
+                            {% if grand_total %}
+                                ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                                $0.00
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -18,6 +18,13 @@ class ContactAdmin(admin.ModelAdmin):
     )
 
 
+class MainAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+        'image',
+    )
+
+
 admin.site.register(Slides, SlidesAdmin)
-admin.site.register(MainContent)
+admin.site.register(MainContent, MainAdmin)
 admin.site.register(Contact, ContactAdmin)

@@ -1,155 +1,99 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-  <head>
+    <head>
 
-    {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
+        {% block meta %}
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% endblock %}
 
-    {% block extra_meta %}
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
-    {% endblock %}
+        {% block extra_meta %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        {% endblock %}
 
-    {% block corecss %}
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    {% endblock %}
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% block extra_css %}
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    {% endblock %}
+        {% block corecss %}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    {% endblock %}
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
+            <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        {% block extra_css %}
+            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        {% endblock %}
 
-    {% block corejs %}
-        <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    {% endblock %}
+        {% block corejs %}
+            <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        {% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
+        {% block extra_js %}
+        {% endblock %}
 
-    <title>Hunt Interiors {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
-    <header class="container-fluid fixed-top shadow">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <!--Logo-->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>Hunt</strong> Interiors</h2>
-                </a>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <!--Search box-->
-                <form method="GET" action="{% url 'products' %}">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <!--Account list-->
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <!--Main menu-->
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
-                        </a>
-                        <!--Dropdown menu-->
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                Hello, {{ request.user.first_name }}!
-                                {% if request.user.is_superuser %}
-                                    <a href="{% url 'manage' %}" class="dropdown-item">Site Management</a>
-                                {% endif %}
-                                <a href="{% url 'dashboard' %}" class="dropdown-item">My Dashboard</a>
-                                <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'register' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <!--Shopping Bad-->
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        $0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                {% include 'includes/mobile-top-header.html' %}
-                {% include 'includes/main-nav.html' %}
-            </nav>
-        </div>
-        
-    </header>
-        {% if messages %}
-           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        {% for message in messages %}
-                        <p>{{ message }}</p>
-                        {% endfor %}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                    </div>
+        <title>Hunt Interiors {% block extra_title %}{% endblock %}</title>
+    </head>
+
+    <body>
+    <div id="canvas">
+        <div id="box_wrapper">
+            <section class="page_topline topline-1 ls s-borderbottom py-9">
+                <div class="container">
+                    {% include 'includes/top-nav.html' %}
                 </div>
-            </div> 
-        {% endif %}
-    {% block page_header %}
-    {% endblock %}
-    <main class="container">
-    {% block content %}
-    {% endblock %}
-    </main>
-    {% block postloadjs %}
-    <script>
-        $(window).on('load',function(){
-        $('#exampleModal').modal('show');
-    });;
-    </script>
-    {% endblock %}
+            </section>
+            <header class="page_header header-1 ls s-py-20 ">
+				<div class="container">
+                    {% include 'includes/main-nav.html' %}
+				</div>
+                <!-- header toggler -->
+                <span class="toggle_menu"><span></span></span>
+            </header>
+            <!-- Modal Messages -->
+            {% if messages %}
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                {% for message in messages %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            {% endif %}
 
-        <!-- Swiper JS -->
+            {% block page_header %}
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
+            
+            <footer class="page_footer text-center text-sm-left  ds ms s-pt-60 s-pb-60 s-pt-md-85 s-pb-md-90 s-pt-lg-125 s-pb-lg-130 s-pt-xl-150 s-pb-xl-145 c-gutter-30 s-parallax c-mb-50 c-mb-lg-0">
+                {% include 'includes/footer.html' %}
+            </footer>
+        </div>
+    </div>
+    {% block postloadjs %}
+        <script>
+            $(window).on('load',function(){
+            $('#exampleModal').modal('show');
+        });;
+        </script>
+    {% endblock %}
+    <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
