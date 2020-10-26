@@ -3,52 +3,37 @@
 {% load static %}
 
 {% block content %}
-
 <!-- Page Title -->
-<section class="page-title overlay" style="background-image: url({% static 'images/background/property.jpg' %});">
+<section class="page-title overlay" style="background-image: url({% static 'images/background/cta-2.png' %});">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="text-white font-weight-bold">Gallery</h2>
-                <ol class="breadcrumb">
+                <ul class="breadcrumb">
                     <li>
                         <a href="{% url 'home' %}">Home</a>
                     </li>
-                    <li>Gallery</li>
-                </ol>
+                    <li>|</li>
+                    <li>
+                        <a href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 <!-- /Page Title -->
-
-    <div class="container shadow my-5 py-3">
-        <div class="row justify-content-center align-items-center">
-            <div class="img-container justify-content-center align-items-center">
-                <div class="row flex-wrap justify-content-center align-items-center">
-                    {% for img in gallery %}
-                        <div class="card m-1" style="width: 18rem;">
-                            <a href="{% url 'image_detail' img.id %}">
-                                <img class="card-img-top img" src="{{ img.image.url }}" alt="{{ img.name }}">
-                            </a>
-                            <div class="card-body">
-                                <h4 class="mb-0 text-center">{{ img.name }}</h4>
-                            </div>
-                            {% if request.user.is_superuser %}
-                            <div class="card-footer bg-light">
-                                <a class="btn btn-outline-secondary" href="{% url 'edit_image' img.id %}">Edit</a>
-                                <a class="btn" style="background-color:#ffdb87; color:dark-gray" href="{% url 'delete_image' img.id %}">Delete</a>
-                            </div>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                </div>
+<!-- Gallery -->
+<section class="container my-5">
+    <div class="row">
+        {% for img in gallery %}
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="{% url 'image_detail' img.id %}" class="d-block mb-4">
+                    <img class="img-fluid" src="{{ img.image.url }}" alt="">
+                </a>
             </div>
-        </div>
+        {% endfor %}
     </div>
-    <div class="btt-button shadow-sm rounded-0 border border-black">
-        <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-        </a>	
-    </div>
+</section>
+<!-- /Gallery -->
 {% endblock %}

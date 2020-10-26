@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
-
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
+{% load static %}
 {% block title %}Testaments{% endblock title %}
 
 {% block content %}
-<div class="container">
-  {% for testament in object_list %}
-    <div class="card m-auto" style="max-width:850px">
+<!-- Page Title -->
+    <section class="page-title overlay" style="background-image: url({% static 'images/background/property.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-white font-weight-bold">Testimonials</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <a href="{% url 'testament_list' %}">Testimonials</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- /Page Title -->
+<section class="container my-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="content-section">
+          <h3 class="text-center">Have something to say?</h3>
+          <ul class="list-group align-items-center text-center">
+            <li class="list-group-item list-group-item-light mt-1">
+              <div class="col-sm-12 text-center text-inline">
+                <a href="{% url 'testament_add' %}"><button class="btn btn-primary btn-sm mr-1">Add Testimonial</button></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-8">
+        {% for testament in object_list %}
+    <div class="card m-auto">
       <div class="card-header">
         <span class="font-weight-bold">{{ testament.title }}</span> &middot;
         <span class="text-muted">by {{ testament.author }} | {{ testament.date }}</span>
       </div>
       <div class="card-body">
-        <p style="max-width:50%">{{ testament.body }}</p>
+        <p>{{ testament.body | linebreaks }}</p>
         {% if request.user.is_authenticated %}
-        <a class="btn btn-outline-warning" href="{% url 'testament_edit' testament.pk %}">Edit</a> 
-        <a class="btn btn-warning text-white" href="{% url 'testament_delete' testament.pk %}">Delete</a>
+        <div class="col-sm-12">
+            <a href="{% url 'testament_edit' testament.pk %}"><button class="btn btn-primary btn-sm mr-2">Edit</button></a>
+            <a href="{% url 'testament_delete' testament.pk %}"><button class="btn btn-primary btn-sm mr-2">Delete</button></a>
+        </div>
         {% endif %}
       </div>
     </div>
     <br />
   {% endfor %}
-</div>
-
-
-{% for testament in object_list %}
-    {{ testament.title }}
-    {{ testament.author }} | {{ testament.date }}
-    {{ testament.body }}
-{% endfor %}
-
-
+      </div>
+    </div>
+</section>
 {% endblock content %}
+

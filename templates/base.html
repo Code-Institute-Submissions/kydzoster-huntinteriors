@@ -145,8 +145,31 @@ preloader end -->
                 $('.search-form').removeClass('open');
             });
         </script>
-
+        <!--mixitup filter-->
+    <script>
+        var containerEl = document.querySelector('[data-ref~="mixitup-container"]');
+        var mixer;
+        if (containerEl) {
+            mixer = mixitup(containerEl, {
+                selectors: {
+                    target: '[data-ref~="mixitup-target"]'
+                }
+            });
+        }
+    </script>
     {% endblock %}
+    <!--mixitup filter-->
+    <script>
+        var containerEl = document.querySelector('[data-ref~="mixitup-container"]');
+        var mixer;
+        if (containerEl) {
+            mixer = mixitup(containerEl, {
+                selectors: {
+                    target: '[data-ref~="mixitup-target"]'
+                }
+            });
+        }
+    </script>
 <!--Modal-->
 <script>
     $(window).on('load',function(){

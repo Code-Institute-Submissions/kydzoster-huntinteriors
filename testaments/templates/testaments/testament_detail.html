@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
-
-{% block page_header %}
-    <div class="container header-container">
+{% load static %}
+{% block content %}
+<!-- Page Title -->
+    <section class="page-title overlay" style="background-image: url({% static 'images/background/property.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-white font-weight-bold">Testimonials</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            <a href="{% url 'testament_list' %}">Testimonials</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- /Page Title -->
+<!-- Edit Testimonial -->
+<section class="d-flex justify-content-center my-5" >
+    <div class="container">
         <div class="row">
-            <div class="col"></div>
+            <div class="col-lg-10 mx-auto">
+                <div class="signup">
+                    <div class="row no-gutters">
+                        <div class="col-12">
+                            <div class="signup-form">
+                            <span><p class="float-right">Back to <a href="{% url 'testament_list' %}">All Testaments</a>.</p></span>
+                            <h3>{{ object.title }}</h3>
+                            <p class="mb-40">{{ object.body | linebreaks }}</p>
+                            </div>
+                        </div>
+                        <div class="col-10 mx-5 mb-5">
+                                <a href="{% url 'testament_edit' testament.pk %}"><button class="btn btn-primary btn-sm mr-2">Edit</button></a>
+                                <a href="{% url 'testament_delete' testament.pk %}"><button class="btn btn-primary btn-sm ml-2">Delete</button></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-{% endblock %}
-
-{% block content %}
-<div class="testament-entry">
-<h2>{{ object.title }}</h2>
-<p>by {{ object.author }} | {{ object.date }}</p>
-<p>{{ object.body }}</p>
-</div>
-<p><a href="{% url 'testament_edit' testament.pk %}">Edit</a> |
-<a href="{% url 'testament_delete' testament.pk %}">Delete</a></p>
-<p>Back to <a href="{% url 'testament_list' %}">All Testaments</a>.</p>
+</section>
+<!-- /Edit Testimonial -->
 {% endblock content %}
+
