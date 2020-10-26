@@ -17,82 +17,157 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    {% endblock %}
             <link rel="stylesheet" href="{% static 'css/base.css' %}">
-            <link rel="stylesheet" href="{% static 'css/main.css' %}">
         {% block extra_css %}
             <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
             <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+            <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+            <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+            <!-- themify icon -->
+            <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
         {% endblock %}
 
         {% block corejs %}
-            <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+            <!-- magnific popup -->
+            <script src="{% static 'js/jquery.magnific.popup.min.js' %}"></script>
+            <script src="{% static 'js/mixitup.min.js' %}"></script>
+            <!-- slick slider -->
+            <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+            <!-- Main Script -->
+            <script src="{% static 'js/script.js' %}"></script>
         {% endblock %}
 
         {% block extra_js %}
+            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         {% endblock %}
 
         <title>Hunt Interiors {% block extra_title %}{% endblock %}</title>
     </head>
 
     <body>
-    <div id="canvas">
-        <div id="box_wrapper">
-            <section class="page_topline topline-1 ls s-borderbottom py-9">
-                <div class="container">
+
+<!-- preloader start
+<div class="preloader">
+    <img src="{% static 'images/preloader.gif' %}" alt="preloader">
+</div>
+preloader end -->
+
+    <header>
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
                     {% include 'includes/top-nav.html' %}
                 </div>
-            </section>
-            <header class="page_header header-1 ls s-py-20 ">
-				<div class="container">
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     {% include 'includes/main-nav.html' %}
-				</div>
-                <!-- header toggler -->
-                <span class="toggle_menu"><span></span></span>
-            </header>
-            <!-- Modal Messages -->
-            {% if messages %}
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                {% for message in messages %}
-                                    <p>{{ message }}</p>
-                                {% endfor %}
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Search Form -->
+        <div class="search-form">
+            <a href="#" class="close" id="searchClose">
+                <i class="ti-close"></i>
+            </a>
+            <div class="container">
+                <form action="#" class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <h3>Search Here</h3>
+                        <div class="input-wrapper">
+                            <input type="text" class="form-control" name="search" id="search" placeholder="Search for Products" required>
+                            <button>
+                                <i class="ti-search"></i>
+                            </button>
                         </div>
                     </div>
-                </div> 
-            {% endif %}
-
-            {% block page_header %}
-            {% endblock %}
-
-            {% block content %}
-            {% endblock %}
-            
-            <footer class="page_footer text-center text-sm-left  ds ms s-pt-60 s-pb-60 s-pt-md-85 s-pb-md-90 s-pt-lg-125 s-pb-lg-130 s-pt-xl-150 s-pb-xl-145 c-gutter-30 s-parallax c-mb-50 c-mb-lg-0">
-                {% include 'includes/footer.html' %}
-            </footer>
+                </form>
+            </div>
         </div>
-    </div>
+    </header>
+    <!-- Modal Messages -->
+    {% if messages %}
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+    
+    <footer class="bg-secondary">
+        {% include 'includes/footer.html' %}
+    </footer>
     {% block postloadjs %}
         <script>
             $(window).on('load',function(){
-            $('#exampleModal').modal('show');
-        });;
+                $('#exampleModal').modal('show');
+            });;
         </script>
+        
+        <!--Preloader js-->
+        <script>
+            $(window).on('load', function () {
+                $('.preloader').fadeOut(700);
+            });
+        </script>
+        <!--Search Form Open-->
+        <script>
+            $('#searchOpen').on('click', function () {
+                $('.search-form').addClass('open');
+            });
+            $('#searchClose').on('click', function () {
+                $('.search-form').removeClass('open');
+            });
+        </script>
+
     {% endblock %}
+<!--Modal-->
+<script>
+    $(window).on('load',function(){
+    $('#exampleModal').modal('show');
+});;
+</script>
+<!--Back to top-->
+<script type="text/javascript">
+    $('.back-to-top').on('click',function (e) {
+        window.scrollTo(0,0)
+    });
+</script>
+<script type="text/javascript">
+    // about slider
+    $('.about-slider').slick({
+        arrows: true,
+        autoplay: true,
+        prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'ti-arrow-left\'></i></button>',
+        nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'ti-arrow-right\'></i></button>'
+    });
+</script>
     <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

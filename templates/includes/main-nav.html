@@ -1,49 +1,47 @@
 <!DOCTYPE html>
-<div class="row ">
-    <!--Logo-->
-    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-8 col-12">
-        <a href="{% url 'home' %}" class="logo">
-            <img src="static/logo.png" alt="" style="width: 200px;" >
-        </a>
-    </div>
-    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 d-flex align-items-center justify-content-end ">
-        <!-- main nav start -->
-        <nav class="top-nav">
-            <ul class="nav sf-menu">
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'home' %}" id="home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'services' %}" id="services">Services</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="#" id="gallery" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gallery
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="gallery-link">
-                        <a href="{% url 'gallery' %}?q=interiors" class="dropdown-item">Interiors</a>
-                        <a href="{% url 'gallery' %}?q=exteriors" class="dropdown-item ">Exteriors</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Shop
-                    </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                        <a href="{% url 'products' %}" class="dropdown-item">All Furniture</a>
-                        <a href="{% url 'products' %}?category=bed" class="dropdown-item">Bed</a>
-                        <a href="{% url 'products' %}?category=sofa" class="dropdown-item">Sofa</a>
-                        <a href="{% url 'products' %}?category=chair" class="dropdown-item">Chair</a>
-                        <a href="{% url 'products' %}?category=table" class="dropdown-item">Table</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'testament_list' %}" id="testimonials">Testimonials</a>
-                </li>
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'contact' %}" id="contact-us">Contact Us</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+<a  href="{% url 'home' %}">
+    <span class="logoka">Hunt Interiors</span>
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Gallery
+            </a>
+            <div class="dropdown-menu" >
+                <a class="dropdown-item" href="{% url 'gallery' %}?q=interiors">Interiors</a>
+                <a class="dropdown-item" href="{% url 'gallery' %}?q=exteriors">Exteriors</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Shop
+            </a>
+            <div class="dropdown-menu" >
+                <a class="dropdown-item" href="{% url 'products' %}">All Furniture</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=bed">Bed</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=sofa">Sofa</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=chair">Chair</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=table">Table</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'testament_list' %}">Testimonials</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link btn btn-primary btn-sm" href="{% url 'contact' %}">Contact Us</a>
+        </li>
+    </ul>
 </div>

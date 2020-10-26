@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Dashboard{% endblock %}
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
+
 {% block content %}
-<div class="container bg-white shadow p-5" style="max-width:700px">
-  <h1 class="text-black">Dashboard</h1>
-  {% if request.user.is_authenticated %}
-  <h5 class="text.muted mb-2 text-bold">Welcome to your dashboard, {{ request.user.first_name }}! </h5>
-  <div class="row p-3">
-  {% if user.profile.photo %}
-  <div class="col">
-    <img src="{{ user.profile.photo.url }}" class="image-detail"></div>{% endif %}
-    <div class="col">
-    <p>First name: {{ request.user.first_name }}</p>
-    <p>Last name: {{ request.user.last_name }}</p>
-    <p>Email: {{ request.user.email }}</p></div>
-  {% endif %}
-  </div>
-  <div class="text-center">
-  <a href="{% url 'edit' %}" class="btn btn-outline-secondary mr-1">Edit profile</a><a class="btn btn-outline-secondary ml-1" href="{% url 'password_change' %}">Change password</a></p>
-</div>
-</div>
+    <!-- Page Title -->
+    <section class="page-title overlay" style="background-image: url({% static 'images/background/property.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-white font-weight-bold">Dashboard</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Page Title -->
+    <!-- Dashboard -->
+    <section class="d-flex justify-content-center my-5" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="signup">
+                        <div class="row no-gutters">
+                            <div class="col-md-5 signup-greeting overlay" style="background-image: url({% static 'images/background/property.jpg' %});">
+                                <img src="{% static 'images/logo-white.png' %}" alt="logo" style="width: 200px;height: 50px;">
+                                <h4>Dashboard</h4>
+                                <p>Here you can edit your personal details or change your password!</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="signup-form">
+                                    {% if request.user.is_authenticated %}
+                                        <div class="col-lg-12">
+                                            <h4>Welcome to your dashboard, {{ request.user.first_name }}!</h4>
+                                            <p>First name: {{ request.user.first_name }}</p>
+                                            <p>Last name: {{ request.user.last_name }}</p>
+                                            <p>Email: {{ request.user.email }}</p>
+                                        </div>
+                                    {% endif %}
+                                    <div class="col-lg-12">
+                                        <div class="text-center">
+                                            <a href="{% url 'edit' %}"><button class="btn btn-primary btn-sm mr-1">Edit Profile</button></a>
+                                            <a href="{% url 'password_change' %}"><button class="btn btn-primary btn-sm ml-1">Change Password</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Dashboard -->
 {% endblock %}
+
+ 

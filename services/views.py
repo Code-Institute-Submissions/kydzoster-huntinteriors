@@ -74,4 +74,4 @@ def delete_services(request, serv_id):
     services = get_object_or_404(Services, pk=serv_id)
     services.delete()
     messages.success(request, f'{services.title} was successfully deleted!')
-    return redirect(reverse('home'))
+    return redirect(reverse('services'))

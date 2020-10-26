@@ -2,49 +2,58 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
-
-    <div class="container h-100">
-        <div class="row h-100 d-flex justify-content-end">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    Services
-                </h1>
-                <p style="font-size: 30px">Please review our services</p>
-                <div class="my-5 pb-5">
-                    <h4>
-                        <a href="{% url 'contact' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3 float-right">Get a Quote</a>
-                    </h4>
-                </div>
+<!-- Page Title -->
+<section class="page-title overlay" style="background-image: url({% static 'images/background/property.jpg' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-white font-weight-bold">Services</h2>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>|</li>
+                    <li>
+                        <a href="{% url 'services' %}">Services</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-
-<section class="block">
-        <!--TEST SECTION-->
-    <div class="container">
-    {% for serv in services %}
-            <div class="serv-box">
-                {% if serv.image %}
-                <div class="serv-img">
-                    <img src="{{ serv.image.url }}" alt="{{ serv.image.url }}" class="w-100"/>
-                </div>
-                {% endif %}
-                <div class="serv-info">
-                    <h3>{{ serv.title }}</h3>
-                    <p>{{ serv.description | truncatewords:25}}</p>
-                    <a href="{% url 'services_detail' serv.id %}"><p class="text-info">Read More</p></a>
-                </div>
-            </div>
-    {% endfor %}
     </div>
 </section>
+<!-- /Page Title -->
+<!-- Services -->
+<section class="section">
+    <div class="container">
+        {% for serv in services %}
+        <div class="row">
+            <!-- Sidebar -->
+            <aside class="col-lg-4">
+                <!-- Image -->
+                {% if serv.image %}
+                <div class="bg-gray rounded mb-50">
+                    <img class="img-fluid w-100 rounded-top" src="{{ serv.image.url }}" alt="services image">
+                </div>
+                {% endif %}
+                <br>
+            </aside>
+            <!-- /Sidebar -->
+            <!-- Details -->
+            <div class="col-lg-8 mb-5">
+                <div>
+                    <h2>{{ serv.title }}</h2>
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'services_detail' serv.id %}"><p class="text-info">Edit</p></a> 
+                    {% endif %}
+                    <h6 class="text-primary mb-30"></h6>
+                    <p class="mb-40">{{ serv.description | linebreaks }}</p>
+                </div>
+            </div>
+            <!-- /Details -->
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- /Services -->
 {% endblock %}

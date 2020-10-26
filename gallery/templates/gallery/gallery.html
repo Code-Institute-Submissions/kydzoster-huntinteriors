@@ -2,31 +2,25 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
 
-<div class="container h-100 mb-5">
-    <div class="row h-100 d-flex justify-content-end">
-        <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-black">
-                Gallery
-            </h1>
-            <p style="font-size: 30px">Like what you see?</p>
-            <div class="my-5">
-                <h4>
-                    <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3 float-right">Get a Quote</a>
-                </h4>
+<!-- Page Title -->
+<section class="page-title overlay" style="background-image: url({% static 'images/background/property.jpg' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-white font-weight-bold">Gallery</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>Gallery</li>
+                </ol>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!-- /Page Title -->
 
     <div class="container shadow my-5 py-3">
         <div class="row justify-content-center align-items-center">
@@ -57,13 +51,4 @@
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>	
     </div>
-{% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
 {% endblock %}
