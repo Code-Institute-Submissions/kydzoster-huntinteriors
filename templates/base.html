@@ -110,9 +110,6 @@
         </div> 
     {% endif %}
 
-    {% block page_header %}
-    {% endblock %}
-
     {% block content %}
     {% endblock %}
     
@@ -125,47 +122,9 @@
                 $('#exampleModal').modal('show');
             });;
         </script>
-        
-        <!--Preloader js-->
-        <script>
-            $(window).on('load', function () {
-                $('.preloader').fadeOut(700);
-            });
-        </script>
-        <!--Search Form Open-->
-        <script>
-            $('#searchOpen').on('click', function () {
-                $('.search-form').addClass('open');
-            });
-            $('#searchClose').on('click', function () {
-                $('.search-form').removeClass('open');
-            });
-        </script>
-        <!--mixitup filter-->
-    <script>
-        var containerEl = document.querySelector('[data-ref~="mixitup-container"]');
-        var mixer;
-        if (containerEl) {
-            mixer = mixitup(containerEl, {
-                selectors: {
-                    target: '[data-ref~="mixitup-target"]'
-                }
-            });
-        }
-    </script>
+
     {% endblock %}
-    <!--mixitup filter-->
-    <script>
-        var containerEl = document.querySelector('[data-ref~="mixitup-container"]');
-        var mixer;
-        if (containerEl) {
-            mixer = mixitup(containerEl, {
-                selectors: {
-                    target: '[data-ref~="mixitup-target"]'
-                }
-            });
-        }
-    </script>
+
 <!--Modal-->
 <script>
     $(window).on('load',function(){
