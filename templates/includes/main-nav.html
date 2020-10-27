@@ -12,16 +12,15 @@
         <li class="nav-item">
             <a class="nav-link" href="{% url 'services' %}">Services</a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+        <div class="nav-item dropdown show">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
                 Gallery
             </a>
-            <div class="dropdown-menu" >
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
                 <a class="dropdown-item" href="{% url 'gallery' %}?q=interiors">Interiors</a>
                 <a class="dropdown-item" href="{% url 'gallery' %}?q=exteriors">Exteriors</a>
             </div>
-        </li>
+        </div>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">

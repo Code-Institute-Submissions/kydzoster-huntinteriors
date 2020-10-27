@@ -11,8 +11,7 @@ class SlidesAdmin(admin.ModelAdmin):
 
 class ContactAdmin(admin.ModelAdmin):
     list_display = (
-        'address',
-        'tel',
+        'instagram',
         'mob',
         'email',
     )
@@ -21,7 +20,6 @@ class ContactAdmin(admin.ModelAdmin):
 class MainAdmin(admin.ModelAdmin):
     list_display = (
         'title',
-        'image',
     )
 
 
