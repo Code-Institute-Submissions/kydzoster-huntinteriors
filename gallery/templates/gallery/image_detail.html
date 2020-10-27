@@ -23,30 +23,38 @@
     </div>
 </section>
 <!-- /Page Title -->
-    <div class="container bg-white shadow p-3">
-        <h1 class="text-black mb-5">Site Management</h1>
+<!-- Image -->
+<section class="section">
+    <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
-                    <a href="{{ img.image.url }}" target="_blank">
-                        <img class="card-img-top img-fluid" src="{{ img.image.url }}" alt="{{ img.name }}">
-                    </a>
+            <!-- Sidebar -->
+            <aside class="col-lg-4">
+                <!-- Image -->
+                <div class="bg-gray rounded mb-50">
+                    <img class="img-fluid w-100 rounded-top" src="{{ img.image.url }}" alt="image detail">
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="img-details-container mb-5 mt-md-5">
-                    <p class="mb-0">Name: {{ img.name }}</p>
-                    <small class="text-muted">Design: {{ img.category }}</small>
-                    <p class="mt-3">Description: {{ img.description }}</p>
+                <br>
+            </aside>
+            <!-- /Sidebar -->
+            <!-- Details -->
+            <div class="col-lg-8 mb-5">
+                <div>
+                    <h2>{{ img.name }}</h2>
+                    <h6 class="text-primary mb-30"></h6>
+                    <p class="mb-40"><span class="font-weight-bold">Design: </span>{{ img.category }}</p>
+                    <p class="mb-40"><span class="font-weight-bold">Description: </span>{{ img.description }}</p>
                 </div>
                 {% if request.user.is_superuser %}
-                    <small class="ml-3">
-                        <a class="btn btn-outline-secondary" href="{% url 'edit_image' img.id %}">Edit</a> 
-                        <a class="btn btn-outline-warning" href="{% url 'delete_image' img.id %}">Delete</a>
-                        <a class="btn btn-outline-info" href="{% url 'add_image' %}">Add Another Image</a>
-                    </small>
+                <div class="col-sm-12">
+                    <a href="{% url 'edit_image' img.id %}"><button class="btn btn-primary btn-sm mr-2">Edit</button></a>
+                    <a href="{% url 'delete_image' img.id %}"><button class="btn btn-primary btn-sm ml-2">Delete</button></a>
+                    <a href="{% url 'add_image' %}"><button class="btn btn-secondary btn-sm ml-2">Add Another Image</button></a>
+                </div>
                 {% endif %}
             </div>
+            <!-- /Details -->
         </div>
     </div>
+</section>
+<!-- /Image -->
 {% endblock %}

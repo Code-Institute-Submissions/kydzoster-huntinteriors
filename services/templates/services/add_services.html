@@ -33,10 +33,11 @@
                         <div class="col-12">
                             <div class="signup-form">
                                 <form method="POST" action="{% url 'add_services' %}" enctype="multipart/form-data">
+                                    <h3>Add a Service</h3>
                                     {% csrf_token %}
                                     {{ form | crispy }}
                                     <div class="col-sm-12 text-center">
-                                        <a href="{% url 'manage' %}"><button class="btn btn-primary btn-sm">Cancel</button></a>
+                                        <a class="btn btn-primary btn-sm text-white" href="{% url 'manage' %}">Cancel</a>
                                         <button class="btn btn-primary btn-sm" type="submit">Add Services</button>
                                     </div>
                                 </form>

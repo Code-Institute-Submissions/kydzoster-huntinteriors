@@ -48,26 +48,22 @@
     </head>
 
     <body>
-
-<!-- preloader start
-<div class="preloader">
-    <img src="{% static 'images/preloader.gif' %}" alt="preloader">
-</div>
-preloader end -->
-
     <header>
+        <div class="navigation">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a  href="{% url 'home' %}">
+                    <span class="logoka"><img src="{% static 'images/logo.png' %}" alt="" style="width: 200px;" ></span>
+                </a>
+                    {% include 'includes/main-nav.html' %}
+                </nav>
+            </div>
+        </div>
         <div class="top-header">
             <div class="container">
                 <div class="row">
                     {% include 'includes/top-nav.html' %}
                 </div>
-            </div>
-        </div>
-        <div class="navigation">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    {% include 'includes/main-nav.html' %}
-                </nav>
             </div>
         </div>
         <!-- Search Form -->

@@ -53,6 +53,9 @@
             {% for title in title %}
                 <div class="about-content">
                     <h3 class="section-title section-title-border-half">{{ title.title }}</h3>
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'edit_title' title.id %}"><p class="text-info">Edit</p></a> 
+                    {% endif %}
                     <p class="text-dark">{{ title.description | linebreaks }}</p>
                     <a href="{% url 'services' %}" class="btn btn-primary mb-md-50 mt-4">Learn More</a>
                 </div>

@@ -23,13 +23,31 @@
     </div>
 </section>
 <!-- /Page Title -->
-<form method="POST" action="{% url 'add_image' %}" class="m-auto" enctype="multipart/form-data">
-    <h4 class="mb-2">Add an Image</h4>
-    {% csrf_token %}
-    {{ form | crispy }}
-    <div class="text-center">
-        <a class="btn btn-outline-secondary" href="{% url 'manage' %}">Cancel</a>
-        <button class="btn btn-outline-warning" type="submit">Add Image</button>
+<!-- Add Image -->
+<section class="d-flex justify-content-center my-5" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="signup">
+                    <div class="row no-gutters">
+                        <div class="col-12">
+                            <div class="signup-form">
+                                <form method="POST" action="{% url 'add_image' %}" enctype="multipart/form-data">
+                                    <h3>Add an Image</h3>
+                                    {% csrf_token %}
+                                    {{ form | crispy }}
+                                    <div class="col-sm-12 text-center">
+                                        <a class="btn btn-primary btn-sm text-white" href="{% url 'manage' %}">Cancel</a>
+                                        <button class="btn btn-primary btn-sm" type="submit">Add Image</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</form>
+</section>
+<!-- /Add Image -->
 {% endblock %}

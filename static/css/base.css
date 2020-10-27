@@ -141,6 +141,30 @@ h6 .h6 {
   color: #fff;
 }
 
+.border-white {
+    border: 1px solid white !important;
+}
+
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.btn-white {
+    background: #303032;
+    color: #fff;
+}
+
+.btn-white:hover,
+.btn-white:active,
+.btn-white:focus {
+    background: #303032;
+    color: #fff;
+}
+
 .btn-sm {
   padding: 13px 40px !important;
 }

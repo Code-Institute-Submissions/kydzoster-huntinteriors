@@ -23,20 +23,31 @@
     </div>
 </section>
 <!-- /Page Title -->
-    <div class="container bg-white shadow p-4 mb-4" style="max-width:750px">
-            <h2 class="logo-font mb-4">Img Management</h2>
-            <hr>
-
-            <div class="">
-                <form method="POST" action="{% url 'edit_image' img.id %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'gallery' %}">Cancel</a>
-                        <button class="btn btn-outline-secondary" type="submit">Update Image</button>
+<!-- Edit Image -->
+<section class="d-flex justify-content-center my-5" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="signup">
+                    <div class="row no-gutters">
+                        <div class="col-12">
+                            <div class="signup-form">
+                                <form method="POST" action="{% url 'edit_image' img.id %}" enctype="multipart/form-data">
+                                    <h3>Edit Image</h3>
+                                    {% csrf_token %}
+                                    {{ form | crispy }}
+                                    <div class="col-sm-12 text-center">
+                                        <a href="{% url 'gallery' %}"><button class="btn btn-primary btn-sm">Cancel</button></a>
+                                        <button class="btn btn-primary btn-sm" type="submit">Update Image</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                </form>
-            </div>            
-
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+<!-- /Edit Image -->
 {% endblock %}

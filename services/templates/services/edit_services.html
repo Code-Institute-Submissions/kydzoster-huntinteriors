@@ -33,6 +33,7 @@
                         <div class="col-12">
                             <div class="signup-form">
                                 <form method="POST" action="{% url 'edit_services' services.id %}" enctype="multipart/form-data">
+                                    <h3>Edit Service</h3>
                                     {% csrf_token %}
                                     {{ form | crispy }}
                                     <div class="col-sm-12 text-center">
