@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'testaments.apps.TestamentsConfig',
     'furnitures',
     'services',
+    'bag',
 ]
 
 MIDDLEWARE = [

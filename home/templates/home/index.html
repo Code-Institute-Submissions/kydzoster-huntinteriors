@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-<!-- hero area 
+<!-- hero area -->
 <section>
     <div class="hero-slider-2 position-relative overlay">
         <div class="hero-slider-item py-160" style="background-image: url({% static 'images/banner/banner-3.jpeg' %});">
@@ -25,34 +25,8 @@
         </div>
     </div>
 </section>
-/hero-area -->
-
-<!-- Slider -->
-<section class="container-fluid px-0">
-        <div class="row no-gutters">
-            <div class="col-md-12">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                    {% for slides in slides %}
-                        <div class="swiper-slide">
-                            <div class="card">
-                            {% if request.user.is_superuser %}
-                                <a href="{% url 'slides_detail' slides.id %}">
-                                <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="{{ slides.image.url }}"></a>
-                            {% else %}
-                                <img src="{{ slides.image.url }}" class="card-img-top img-height" alt="{{ slides.image.url }}">
-                            {% endif %}
-                            </div>
-                        </div>
-                    {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
-<!-- /Slider -->
-
-<!-- cta -->
+<!-- /hero-area -->
+<!-- Notification -->
 <section class="bg-primary py-4 text-center text-lg-left">
     <div class="container">
         <div class="row">
@@ -65,8 +39,7 @@
         </div>
     </div>
 </section>
-<!-- /cta -->
-
+<!-- /Notification -->
 <!-- About -->
 <section class="section">
     <div class="container">
@@ -94,7 +67,6 @@
     </div>
 </section>
 <!-- /About -->
-
 <!-- Shop -->
 <section class="section">
     <div class="container">
@@ -102,7 +74,6 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-title section-title-border">Latest Products</h2>
             </div>
-            <!-- team member -->
             <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                 <div class="card text-center p-3">
                 {% for product in products %}
@@ -130,8 +101,6 @@
     </div>
 </section>
 <!-- /Shop -->
-
-
 <!-- Notification -->
 <section class="cta overlay-dark section-sm" style="background-image: url({% static 'images/background/cta-2.png' %});">
     <div class="container">
@@ -144,7 +113,6 @@
     </div>
 </section>
 <!-- /Notification -->
-
 <!-- Testimonial -->
 <section class="section pb-0">
     <div class="container">
@@ -161,7 +129,7 @@
                     <!-- slider item -->
                     {% for testament in object_list %}
                     <div class="outline-0">
-                        <i class="testimonial-icon ti-quote-left"><!--authors image?--></i>
+                        <i class="testimonial-icon ti-quote-left"></i><i class="testimonial-icon ti-quote-right"></i>
                         <p class="text-dark">{{ testament.body }}</p>
                         <h4 class="font-weight-normal">{{ testament.author }}</h4>
                         <h6 class="font-secondary text-color">{{ testament.date }}</h6>
@@ -174,4 +142,3 @@
 </section>
 <!-- /Testimonial -->
 {% endblock %}
-

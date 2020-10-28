@@ -1033,15 +1033,6 @@ a, button {
   outline: 0;
 }
 
-.swiper-slide{
-    width: 100%;
-}
-
-.img-height{
-    height: 42rem;
-    max-width: 40rem!important;
-}
-
 .hero-slider .prevArrow,
 .hero-slider .nextArrow {
   position: absolute;

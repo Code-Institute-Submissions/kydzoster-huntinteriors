@@ -18,8 +18,6 @@
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    {% endblock %}
             <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% block extra_css %}
-            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
             <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
             <!-- themify icon -->
@@ -40,150 +38,102 @@
         {% endblock %}
 
         {% block extra_js %}
-            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         {% endblock %}
 
         <title>Hunt Interiors {% block extra_title %}{% endblock %}</title>
     </head>
-
     <body>
-    <header>
-        <div class="navigation">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a  href="{% url 'home' %}">
-                    <span class="logoka"><img src="{% static 'images/logo.png' %}" alt="" style="width: 200px;" ></span>
-                </a>
-                    {% include 'includes/main-nav.html' %}
-                </nav>
-            </div>
-        </div>
-        <div class="top-header">
-            <div class="container">
-                <div class="row">
-                    {% include 'includes/top-nav.html' %}
+        <header>
+            <div class="navigation">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a  href="{% url 'home' %}">
+                        <span class="logoka"><img src="{% static 'images/logo.png' %}" alt="" style="width: 200px;" ></span>
+                    </a>
+                        {% include 'includes/main-nav.html' %}
+                    </nav>
                 </div>
             </div>
-        </div>
-        <!-- Search Form -->
-        <div class="search-form">
-            <a href="#" class="close" id="searchClose">
-                <i class="ti-close"></i>
-            </a>
-            <div class="container">
-                <form action="#" class="row">
-                    <div class="col-lg-10 mx-auto">
-                        <h3>Search Here</h3>
-                        <div class="input-wrapper">
-                            <input type="text" class="form-control" name="search" id="search" placeholder="Search for Products" required>
-                            <button>
-                                <i class="ti-search"></i>
+            <div class="top-header">
+                <div class="container">
+                    <div class="row">
+                        {% include 'includes/top-nav.html' %}
+                    </div>
+                </div>
+            </div>
+            <!-- Search Form -->
+            <div class="search-form">
+                <a href="#" class="close" id="searchClose">
+                    <i class="ti-close"></i>
+                </a>
+                <div class="container">
+                    <form action="#" class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <h3>Search Here</h3>
+                            <div class="input-wrapper">
+                                <input type="text" class="form-control" name="search" id="search" placeholder="Search for Products" required>
+                                <button>
+                                    <i class="ti-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <!-- Modal Messages -->
+        {% if messages %}
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </header>
-    <!-- Modal Messages -->
-    {% if messages %}
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        {% for message in messages %}
-                            <p>{{ message }}</p>
-                        {% endfor %}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div class="modal-body">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div> 
-    {% endif %}
+            </div> 
+        {% endif %}
 
-    {% block content %}
-    {% endblock %}
-    
-    <footer class="bg-secondary">
-        {% include 'includes/footer.html' %}
-    </footer>
-    {% block postloadjs %}
+        {% block content %}
+        {% endblock %}
+        
+        <footer class="bg-secondary">
+            {% include 'includes/footer.html' %}
+        </footer>
+        {% block postloadjs %}
+        {% endblock %}
+
+        <!--Modal-->
         <script>
             $(window).on('load',function(){
                 $('#exampleModal').modal('show');
             });;
         </script>
-
-    {% endblock %}
-
-<!--Modal-->
-<script>
-    $(window).on('load',function(){
-    $('#exampleModal').modal('show');
-});;
-</script>
-<!--Back to top-->
-<script type="text/javascript">
-    $('.back-to-top').on('click',function (e) {
-        window.scrollTo(0,0)
-    });
-</script>
-<script type="text/javascript">
-    // about slider
-    $('.about-slider').slick({
-        arrows: true,
-        autoplay: true,
-        prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'ti-arrow-left\'></i></button>',
-        nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'ti-arrow-right\'></i></button>'
-    });
-</script>
-    <!-- Swiper JS -->
-        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-        <!-- Initializes Swiper -->
-        <script>
-            var swiper = new Swiper('.swiper-container', {
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 50,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 10,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 10,
-                    },
-                    1440: {
-                        slidesPerView: 4,
-                        spaceBetween: 10,
-                    },
-                    1920: {
-                        slidesPerView: 5,
-                        spaceBetween: 10,
-                    },
-                },
-                autoplay: {
-                    delay: 3500,
-                    disableOnInteraction: false,
-                },
-            })
+        <!--Back to top-->
+        <script type="text/javascript">
+            $('.back-to-top').on('click',function (e) {
+                window.scrollTo(0,0)
+            });
         </script>
-  </body>
+        <script type="text/javascript">
+            // about slider
+            $('.about-slider').slick({
+                arrows: true,
+                autoplay: true,
+                prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'ti-arrow-left\'></i></button>',
+                nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'ti-arrow-right\'></i></button>'
+            });
+        </script>
+    </body>
 </html>
