@@ -241,7 +241,10 @@ a.text-white:hover {
   color: #e84444 !important;
 }
 
-a, button {
+a,
+button,
+.update-link,
+.remove-item {
   cursor: pointer;
 }
 

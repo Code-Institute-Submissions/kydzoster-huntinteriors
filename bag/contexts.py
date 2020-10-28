@@ -1,12 +1,28 @@
 from decimal import Decimal
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+from furnitures.models import Product
 
 
 def bag_contents(request):
-    # empty list
     bag_items = []
     total = 0
     product_count = 0
+    bag = request.session.get('bag', {})
+
+    # for a product from the session
+    for item_id, quantity in bag.items():
+        # get product then
+        product = get_object_or_404(Product, pk=item_id)
+        # add its quantity to the total price and finally
+        total += quantity * product.price
+        # increment product count to the quantity
+        product_count += quantity
+        bag_items.append({
+            'item_id': item_id,
+            'quantity': quantity,
+            'product': product,
+        })
 
     # free delivery if it is less than threshold
     if total < settings.FREE_DELIVERY_THRESHOLD:

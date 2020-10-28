@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, HttpResponse
 
 
 # Renders the bag contents page
@@ -25,3 +25,31 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+
+# Adjust the quantity of the specified product to the specified amount
+def adjust_bag(request, item_id):
+    quantity = int(request.POST.get('quantity'))
+    bag = request.session.get('bag', {})
+
+    if quantity > 0:
+        bag[item_id] = quantity
+    else:
+        bag.pop(item_id)
+
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
+
+
+# Remove the item from the shopping bag
+def remove_from_bag(request, item_id):
+    try:
+        bag = request.session.get('bag', {})
+
+        bag.pop(item_id)
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)
