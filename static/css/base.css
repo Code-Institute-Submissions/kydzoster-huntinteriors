@@ -1716,13 +1716,14 @@ img.arrow-bottom {
 .form-control {
   border-radius: 5px;
   padding: 0 15px 2px;
-  height: 40px;
+  height: 3.3rem;
   margin-bottom: 15px;
   border: 1px solid #e5e5e5;
   font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 900;
+  font-size: 20px;
   color: #666;
+  text-align: center;
 }
 
 .form-control:focus {
