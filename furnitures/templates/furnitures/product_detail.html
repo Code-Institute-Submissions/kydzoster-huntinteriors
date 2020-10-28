@@ -28,9 +28,7 @@
     <div class="container">
         <div class="row">
             <!-- Product Overview -->
-            
             <aside class="col-lg-4 order-lg-1 order-2">
-            <!-- Product bag form -->
             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                 {% csrf_token %}
                 <div class="p-4 rounded border mb-50">
@@ -78,7 +76,6 @@
                 <!-- redirects user back to the same page once the products is added to their bag -->
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
-            <!-- /Product bag form -->
             </aside>
             <!-- Product Content -->
             <div class="col-lg-8 order-lg-2 order-1">
