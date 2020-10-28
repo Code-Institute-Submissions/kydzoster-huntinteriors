@@ -22,6 +22,20 @@ border-radius: 5px;
 margin-bottom: 20px;
 }
 
+/*products - shopping bag content*/
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
 h1 h2 h3 h4 h5 h6 {
   color: #222;
   font-weight: 500;
