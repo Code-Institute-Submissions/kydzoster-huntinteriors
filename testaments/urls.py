@@ -1,10 +1,5 @@
 from django.urls import path
-from .views import (
-    TestamentListView,
-    TestamentUpdateView,
-    TestamentDetailView,
-    TestamentDeleteView,
-    TestamentCreateView,)
+from .views import *
 
 urlpatterns = [
     path(
@@ -20,5 +15,7 @@ urlpatterns = [
         TestamentDeleteView.as_view(),
         name='testament_delete'),
     path('add/', TestamentCreateView.as_view(), name='testament_add'),
+    path('review_list/', TestamentReviewList.as_view(), name='testament_review_list'),
+    path('approve/<int:pk>/', TestamentApproveView.as_view(), name='testament_approve'),
     path('', TestamentListView.as_view(), name='testament_list'),
 ]

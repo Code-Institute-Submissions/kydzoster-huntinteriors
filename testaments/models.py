@@ -8,6 +8,7 @@ class Testament(models.Model):
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,)
+    approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

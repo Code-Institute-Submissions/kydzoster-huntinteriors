@@ -2,18 +2,26 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
-from .models import Slides, MainContent
 from .forms import SlidesForm, TitleForm
+from .models import Slides, MainContent
+from testaments.models import Testament
+from furnitures.models import Product
 
 
 def index(request):
+
     slides = Slides.objects.all()
     title = MainContent.objects.all()
+    testament = Testament.objects.filter(approved=True).order_by('date')
+    product = Product.objects.all().order_by('created_at')
 
     context = {
         'slides': slides,
         'title': title,
+        'products': product,
+        'testaments': testament
     }
+
     return render(request, 'home/index.html', context)
 
 
