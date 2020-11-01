@@ -183,6 +183,10 @@ h6 .h6 {
   padding: 13px 40px !important;
 }
 
+.btn-xsm {
+  padding: 5px 25px !important;
+}
+
 body {
   background-color: #fff;
   overflow-x: hidden;
@@ -605,6 +609,10 @@ button,
   color: #efaf27 !important;
 }
 
+.bg-golden {
+  background-color: #efaf27 !important;
+}
+
 .bg-gray {
   background-color: #f5f5f5;
 }
@@ -967,36 +975,6 @@ button,
   }
 }
 
-.search-form {
-  padding: 230px 0;
-  background: #303032;
-  position: absolute;
-  width: 100%;
-  top: -800px;
-  z-index: 10;
-  transition: 0.3s ease-in;
-}
-
-.search-form .close {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  color: #fff;
-}
-
-.search-form .close i {
-  transition: 0.3s ease;
-  display: inline-block;
-}
-
-.search-form .close:hover i {
-  transform: rotate(90deg);
-}
-
-.search-form.open {
-  top: 0;
-}
-
 .search-form .form-control {
   background: transparent;
   border: 1px solid #e5e5e5;
@@ -1010,7 +988,7 @@ button,
 }
 
 .search-form h3 {
-  font-size: 35px;
+  font-size: 25px;
   color: #fff;
   margin-bottom: 35px;
 }
@@ -1289,8 +1267,8 @@ button,
 }
 
 .testimonial-icon {
-  height: 80px;
-  width: 80px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background: #f5f5f5;
   color: #e84444;
@@ -1716,14 +1694,18 @@ img.arrow-bottom {
 .form-control {
   border-radius: 5px;
   padding: 0 15px 2px;
-  height: 3.3rem;
+  height: 30px;
   margin-bottom: 15px;
   border: 1px solid #e5e5e5;
   font-family: "Open Sans", sans-serif;
-  font-weight: 900;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 15px;
+  font-style: italic;
   color: #666;
-  text-align: center;
+}
+
+.form-control-sm {
+    padding: 5px 10px !important;
 }
 
 .form-control:focus {

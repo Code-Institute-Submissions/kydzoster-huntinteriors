@@ -17,7 +17,7 @@
                                 Hunt Interiors Founded in 2005, Hunt Interiors soon became the company of choice of 
                                 <br>many discerning homeowners in London and the South east. 
                             </p>
-                            <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="#" class="btn btn-primary text-uppercase">more details</a>
+                            <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="{% url 'services' %}" class="btn btn-primary text-uppercase">more details</a>
                         </div>
                     </div>
                 </div>
@@ -67,6 +67,18 @@
     </div>
 </section>
 <!-- /About -->
+<!-- Notification -->
+<section class="cta overlay-dark section-sm" style="background-image: url({% static 'images/background/cta-2.png' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3 class="text-white mb-20">Would you like to see some of our projects?</h3>
+                <a href="{% url 'gallery' %}" class="btn btn-light">View Gallery</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Notification -->
 <!-- Shop -->
 <section class="section">
     <div class="container">
@@ -74,25 +86,22 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-title section-title-border">Latest Products</h2>
             </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                <div class="card text-center p-3">
+            <div class="container">
+                <div class="row">
                     {% for product in products %}
-                        {% if product.image %}
-                            <img class="card-img-top rounded" src="{{ product.image.url }}" alt="{{ product.name }}" />
-                        {% endif %}
-                        <div class="card-body pb-0">
-                            <a href="team-single.html" class="card-title h4 font-primary text-dark">{{ product.name }}</a>
-                            <h6 class="text-color">{{ product.category }}</h6>
-                            <p class="card-text border-bottom pb-3"></p>
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-color d-inline-block py-1 px-3">
-                                        <i class="ti-money">{{ product.price }}</i>
-                                    </a>
-                                </li>
-                                <a rel="nofollow" href="shop-cart.html" class="button product_type_simple add_to_cart_button">Add to cart</a>
-                                <a href="cart.html" class="added_to_cart wc-forward" title="View cart">View cart</a>
-                            </ul>
+                        <div class="col-lg-4 col-sm-6 mb-5">
+                            <div class="card text-center">
+                                {% if product.image %}
+                                <div class="card-img-wrapper overlay-rounded-top">
+                                    <img class="card-img-top rounded-0 shop-img" src="{{ product.image.url }}" alt="Products">
+                                </div>
+                                {% endif %}
+                                <div class="card-body p-0">
+                                    <h4 class="card-title pt-3">{{ product.name }}</h4>
+                                    <p class="card-text mx-2 mb-0 font-weight-bold">${{ product.price }}</p>
+                                    <a href="{% url 'product_detail' product.id %}" class="btn btn-secondary translateY-25">View Item</a>
+                                </div>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
@@ -102,12 +111,12 @@
 </section>
 <!-- /Shop -->
 <!-- Notification -->
-<section class="cta overlay-dark section-sm" style="background-image: url({% static 'images/background/cta-2.png' %});">
+<section class="cta overlay-dark section-sm" style="background-image: url({% static 'images/background/consultation.jpg' %});">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h3 class="text-white mb-20">If you own, or are planing on owning a property for rental or live abroad, be sure to need a reliable (maintenance provider)</h3>
-                <a href="#" class="btn btn-light">Contact Us</a>
+                <h3 class="text-white mb-20">If you own, or are planing on owning a property for rental or live abroad, be sure to secure a reliable (maintenance provider)</h3>
+                <a href="{% url 'contact' %}" class="btn btn-light">Contact Us</a>
             </div>
         </div>
     </div>
@@ -120,7 +129,6 @@
       <div class="col-lg-12 text-center">
         <h2 class="section-title section-title-border">What clients Say</h2>
       </div>
-      This is a testament section.
       <div class="col-lg-5 col-md-5 pr-0 align-self-center">
         <img class="img-fluid w-100" src="{% static 'images/client.png' %}" alt="clients-image" />
       </div>
@@ -128,11 +136,12 @@
         <div class="testimonial-slider p-5">
           <!-- slider item -->
           {% for testament in testaments %}
-          <div class="outline-0">
-            <i class="testimonial-icon ti-quote-left"></i><i class="testimonial-icon ti-quote-right"></i>
-            <p class="text-dark">{{ testament.body }}</p>
-            <h4 class="font-weight-normal">{{ testament.author }}</h4>
+          <div class="outline-0 ">
+            <i class="testimonial-icon ti-quote-left pt-1"></i>
+            <h4 class="font-weight-normal text-capitalize">{{ testament.author }}</h4>
             <h6 class="font-secondary text-color">{{ testament.date }}</h6>
+            <p class="text-dark">{{ testament.body }}</p>
+            <i class="testimonial-icon ti-quote-right float-right pt-1"></i>
           </div>
           {% endfor %}
         </div>

@@ -25,7 +25,7 @@
 <!-- /Page Title -->
 <!-- Products -->
     <div class="overlay"></div>
-    <div class="container-fluid">
+    <div class="container-fluid bg-secondary border-bottom mb-5">
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <!-- Dropdown Sort -->
@@ -45,9 +45,9 @@
                     </div>
                     <!--Product count and search results-->
                     <div class="col-md-6 order-md-first">
-                        <p class="text-muted mt-3 text-center text-md-left">
+                        <p class="text-white mt-3 text-center text-md-left">
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
-                                <span class="small"><a href="{% url 'products' %}">Return</a> | </span>
+                                <span class="medium"><a class="text-white" href="{% url 'products' %}">Return</a> | </span>
                             {% endif %}
                             {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
@@ -75,8 +75,8 @@
                     </div>
                 </div>
             {% endfor %}
-            </div>
         </div>
+    </div>
     <!-- /Shop -->
 
 
