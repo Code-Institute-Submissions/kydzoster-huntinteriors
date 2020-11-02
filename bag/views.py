@@ -1,4 +1,11 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
+from decimal import Decimal
+from furnitures.models import Product
+from django.conf import settings
+from django.http.response import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import stripe
 
 
 # Renders the bag contents page
@@ -53,3 +60,66 @@ def remove_from_bag(request, item_id):
 
     except Exception as e:
         return HttpResponse(status=500)
+
+
+# Stripe addition
+@csrf_exempt
+def stripe_config(request):
+    if request.method == 'GET':
+        stripe_config = {'publicKey': settings.STRIPE_PUBLIC_KEY}
+        return JsonResponse(stripe_config, safe=False)
+
+
+@csrf_exempt
+def create_checkout_session(request):
+    bag_items = []
+    total = 0
+    product_count = 0
+    bag = request.session.get('bag', {})
+
+    for item_id, quantity in bag.items():
+        product = get_object_or_404(Product, pk=item_id)
+        total += quantity * product.price
+        product_count += quantity
+        bag_items.append({
+            'item_id': item_id,
+            'quantity': quantity,
+            'product': product,
+        })
+
+    # free delivery if it is less than threshold
+    if total < settings.FREE_DELIVERY_THRESHOLD:
+        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+        # will notify user how much they need to spend to get a free delivery
+        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+    else:
+        delivery = 0
+        free_delivery_delta = 0
+
+    grand_total = delivery + total
+
+
+    if request.method == 'GET':
+        domain_url = settings.DOMAIN_URL
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        try:
+            print(grand_total)
+            checkout_session = stripe.checkout.Session.create(
+                success_url=domain_url + 'bag/success?session_id=\
+                    {CHECKOUT_SESSION_ID}',
+                cancel_url=domain_url + 'bag/',
+                payment_method_types=['card'],
+                mode='payment',
+                line_items=[
+                    {'price_data': {
+                        'currency': 'usd', 'product_data': {'name': 'Hunt-interiors cart', }, 'unit_amount': round(grand_total*100), }, 'quantity': 1, }],
+            )
+            return JsonResponse({'sessionId': checkout_session['id']})
+        except Exception as e:
+            return JsonResponse({'error': str(e)})
+
+
+def success(request):
+    message = "Thanks for choosing us"
+
+    return render(request, 'bag/success.html', {'message': message})
