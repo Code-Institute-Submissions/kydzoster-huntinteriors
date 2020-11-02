@@ -98,7 +98,6 @@ def create_checkout_session(request):
 
     grand_total = delivery + total
 
-
     if request.method == 'GET':
         domain_url = settings.DOMAIN_URL
         stripe.api_key = settings.STRIPE_SECRET_KEY
