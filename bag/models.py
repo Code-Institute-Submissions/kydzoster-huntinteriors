@@ -16,7 +16,7 @@ class Invoice(models.Model):
     products = models.ManyToManyField(PurchasedProduct)
     shipping_cost = models.DecimalField(
         max_digits=6, decimal_places=2, null=True)
-    checkout_session_id = models.CharField(max_length=40, null=True)
+    checkout_session_id = models.CharField(max_length=255, null=True)
 
     @property
     def grand_total(self):
