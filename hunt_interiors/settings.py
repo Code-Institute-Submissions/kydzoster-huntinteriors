@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 
-DOMAIN_URL = "localhost"
+DOMAIN_URL = "https://glacial-eyrie-71049.herokuapp.com/"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
