@@ -33,6 +33,12 @@
                 {% csrf_token %}
                 <div class="p-4 rounded border mb-50">
                     <h4 class="text-color mb-20">Product Details</h4>
+                    {% if request.user.is_superuser %}
+                    <div class="col-sm-12">
+                        <a class="update-link text-info" href="{% url 'edit_product' product.id %}"><small>Edit</small></a>
+                        <a class="remove-item text-danger" href="{% url 'delete_product' product.id %}"><small>Delete</small></a>
+                    </div>
+                    {% endif %}
                     <ul class="pl-0 mb-20">
                         <li class="py-3 border-bottom">
                             <span class="d-inline-block" style="width: 140px;">Product Name:</span><span class="font-weight-bold text-uppercase">{{ product.name }}</span>
