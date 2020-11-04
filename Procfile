@@ -1,1 +1,1 @@
-web: gunicorn hunt_interiors.wsgi.application
+web: gunicorn hunt_interiors.wsgi
