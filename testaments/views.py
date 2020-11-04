@@ -68,6 +68,7 @@ class TestamentApproveView(UserPassesTestMixin, View):
         testament = Testament.objects.get(pk=pk)
         testament.approved = True
         testament.save()
+
         messages.success(
             request, f'Testament {testament.title} has been approved!')
         return redirect('testament_review_list')

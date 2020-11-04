@@ -1,10 +1,16 @@
 from django.shortcuts import (
     render, redirect, reverse, HttpResponse, get_object_or_404)
-from decimal import Decimal
-from furnitures.models import Product
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.core import mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from decimal import Decimal
+from .models import Invoice, PurchasedProduct
+from furnitures.models import Product
+from urllib.parse import unquote
 import stripe
 
 
@@ -13,7 +19,7 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 
-# Add a quantity of the specified product to the shopping bag
+@login_required
 def add_to_bag(request, item_id):
     # gets quantity from the form
     quantity = int(request.POST.get('quantity'))
@@ -70,15 +76,23 @@ def stripe_config(request):
         return JsonResponse(stripe_config, safe=False)
 
 
+@login_required
 @csrf_exempt
 def create_checkout_session(request):
     bag_items = []
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
+    invoice = Invoice.objects.create(user=request.user)
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
+
+        purchased_product = PurchasedProduct.objects.create(
+            product=product, quantity=quantity)
+
+        invoice.products.add(purchased_product)
+
         total += quantity * product.price
         product_count += quantity
         bag_items.append({
@@ -96,13 +110,15 @@ def create_checkout_session(request):
         delivery = 0
         free_delivery_delta = 0
 
+    invoice.shipping_cost = delivery
+    invoice.save()
+
     grand_total = delivery + total
 
     if request.method == 'GET':
         domain_url = settings.DOMAIN_URL
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
-            print(grand_total)
             checkout_session = stripe.checkout.Session.create(
                 success_url=domain_url + 'bag/success?session_id=\
                     {CHECKOUT_SESSION_ID}',
@@ -111,14 +127,31 @@ def create_checkout_session(request):
                 mode='payment',
                 line_items=[
                     {'price_data': {
-                        'currency': 'usd', 'product_data': {'name': 'Hunt-interiors cart', }, 'unit_amount': round(grand_total*100), }, 'quantity': 1, }],
+                        'currency': 'usd', 'product_data': {
+                            'name': 'Hunt-interiors cart', }, 'unit_amount':
+                                round(grand_total*100), }, 'quantity': 1, }],
             )
+            invoice.checkout_session_id = unquote(checkout_session['id'])
+            invoice.save()
             return JsonResponse({'sessionId': checkout_session['id']})
         except Exception as e:
             return JsonResponse({'error': str(e)})
 
 
 def success(request):
-    message = "Thanks for choosing us"
+    del request.session['bag']
+    invoice = Invoice.objects.get(
+        checkout_session_id=request.GET.get('session_id').replace(' ', ''))
+
+    subject = 'Your invoice'
+    html_message = render_to_string('email.html', {'invoice': invoice})
+    plain_message = strip_tags(html_message)
+    from_email = settings.EMAIL_HOST_USER
+    to = invoice.user.email
+
+    mail.send_mail(subject, plain_message, from_email,
+                   [to], html_message=html_message)
+
+    message = f'{"Thanks For Choosing Hunt-Interiors"}'
 
     return render(request, 'bag/success.html', {'message': message})

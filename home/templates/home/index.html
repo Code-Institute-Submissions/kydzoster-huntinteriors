@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
-<!-- hero area -->
+{% extends "base.html" %} {% block content %}
+<!-- hero area -->{% load static %}
 <section>
     <div class="hero-slider-2 position-relative overlay">
         <div class="hero-slider-item py-160" style="background-image: url({% static 'images/banner/banner-3.jpeg' %});">
@@ -22,49 +19,56 @@
                     </div>
                 </div>
             </div>
+          </div>
         </div>
-    </div>
 </section>
 <!-- /hero-area -->
 <!-- Notification -->
 <section class="bg-primary py-4 text-center text-lg-left">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 align-self-center">
-                <h3 class="text-white">Our customers rely on us for our expertise and range of specialised services. </h3>
-            </div>
-            <div class="col-lg-3 text-lg-right">
-                <a href="{% url 'contact' %}" class="btn btn-light btn-sm">Contact Us</a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 align-self-center">
+        <h3 class="text-white">
+          Our customers rely on us for our expertise and range of specialised
+          services.
+        </h3>
+      </div>
+      <div class="col-lg-3 text-lg-right">
+        <a href="{% url 'contact' %}" class="btn btn-light btn-sm">Contact Us</a>
+      </div>
     </div>
+  </div>
 </section>
 <!-- /Notification -->
 <!-- About -->
 <section class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-            {% for title in title %}
-                <div class="about-content">
-                    <h3 class="section-title section-title-border-half">{{ title.title }}</h3>
-                    {% if request.user.is_superuser %}
-                        <a href="{% url 'edit_title' title.id %}"><p class="text-info">Edit</p></a> 
-                    {% endif %}
-                    <p class="text-dark">{{ title.description | linebreaks }}</p>
-                    <a href="{% url 'services' %}" class="btn btn-primary mb-md-50 mt-4">Learn More</a>
-                </div>
-            {% endfor %}
-            </div>
-            <div class="col-lg-6">
-                <div class="about-slider">
-                    <img class="img-fluid" src="{% static 'images/about/about-1.jpg' %}" alt="about-image">
-                    <img class="img-fluid" src="{% static 'images/about/about-2.jpg' %}" alt="about-image">
-                    <img class="img-fluid" src="{% static 'images/about/about-3.jpg' %}" alt="about-image">
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        {% for title in title %}
+        <div class="about-content">
+          <h3 class="section-title section-title-border-half">
+            {{ title.title }}
+          </h3>
+          {% if request.user.is_superuser %}
+          <a href="{% url 'edit_title' title.id %}">
+            <p class="text-info">Edit</p>
+          </a>
+          {% endif %}
+          <p class="text-dark">{{ title.description | linebreaks }}</p>
+          <a href="{% url 'services' %}" class="btn btn-primary mb-md-50 mt-4">Learn More</a>
         </div>
+        {% endfor %}
+      </div>
+      <div class="col-lg-6">
+        <div class="about-slider">
+          <img class="img-fluid" src="{% static 'images/about/about-1.jpg' %}" alt="about-image" />
+          <img class="img-fluid" src="{% static 'images/about/about-2.jpg' %}" alt="about-image" />
+          <img class="img-fluid" src="{% static 'images/about/about-3.jpg' %}" alt="about-image" />
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!-- /About -->
 <!-- Notification -->
@@ -107,7 +111,7 @@
                 </div>
             </div>
         </div>
-    </div>
+      </div>
 </section>
 <!-- /Shop -->
 <!-- Notification -->
@@ -137,11 +141,11 @@
           <!-- slider item -->
           {% for testament in testaments %}
           <div class="outline-0 ">
-            <i class="testimonial-icon ti-quote-left pt-1"></i>
+            <i class="testimonial-icon ti-quote-right pt-1"></i>
             <h4 class="font-weight-normal text-capitalize">{{ testament.author }}</h4>
             <h6 class="font-secondary text-color">{{ testament.date }}</h6>
             <p class="text-dark">{{ testament.body }}</p>
-            <i class="testimonial-icon ti-quote-right float-right pt-1"></i>
+            <i class="testimonial-icon ti-quote-left float-right pt-1"></i>
           </div>
           {% endfor %}
         </div>

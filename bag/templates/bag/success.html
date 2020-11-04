@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
-    <div class="container m-4">
-        <h1>{{message}}</h1>
-    </div>
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="container m-4">
+  <h1>{{message}}</h1>
+  <h2>Your invoice</h2>
+  <ul>
+  {% for p in invoice.products.all %}
+  <li>{{p.quantity}}X {{p.product}}  ${{p.product.price}}</li>
+  {% endfor %}
+  <p>Delivery: ${{invoice.shipping_cost}}</p>
+  <hr>
+  <strong>Grand total: ${{invoice.grand_total}}</strong>
+  </ul>
+    <h5>You'll recieve an email with your invoice soon</h5>
+</div>
 {% endblock %}

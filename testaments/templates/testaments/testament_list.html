@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}Testaments{% endblock title %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}Testaments{% endblock title %} {% block content %}
 <!-- Page Title -->
-<section class="page-title overlay" style="background-image: url({% static 'images/background/property.jpg' %});">
+<section
+  class="page-title overlay"
+  style="background-image: url({% static 'images/background/property.jpg' %})"
+>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -32,7 +31,11 @@
         <ul class="list-group align-items-center text-center">
           <li class="list-group-item list-group-item-light mt-1">
             <div class="col-sm-12 text-center text-inline">
-              <a href="{% url 'testament_add' %}"><button class="btn btn-primary btn-sm mr-1">Add a Review</button></a>
+              <a href="{% url 'testament_add' %}"
+                ><button class="btn btn-primary btn-sm mr-1">
+                  Add a Review
+                </button></a
+              >
             </div>
           </li>
         </ul>
@@ -43,16 +46,20 @@
       <div class="card m-auto">
         <div class="card-header">
           <span class="font-weight-bold">{{ testament.title }}</span> &middot;
-          <span class="text-muted">by {{ testament.author }} | {{ testament.date }}</span>
+          <span class="text-muted"
+            >by {{ testament.author }} | {{ testament.date }}</span
+          >
         </div>
         <div class="card-body">
           <p>{{ testament.body | linebreaks }}</p>
           {% if request.user == testament.author or request.user.is_superuser %}
           <div class="col-sm-12">
-            <a href="{% url 'testament_edit' testament.pk %}"><button
-                class="btn btn-primary btn-sm mr-2">Edit</button></a>
-            <a href="{% url 'testament_delete' testament.pk %}"><button
-                class="btn btn-primary btn-sm mr-2">Delete</button></a>
+            <a href="{% url 'testament_edit' testament.pk %}"
+              ><button class="btn btn-primary btn-sm mr-2">Edit</button></a
+            >
+            <a href="{% url 'testament_delete' testament.pk %}"
+              ><button class="btn btn-primary btn-sm mr-2">Delete</button></a
+            >
           </div>
           {% endif %}
         </div>

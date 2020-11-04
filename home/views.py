@@ -9,7 +9,6 @@ from furnitures.models import Product
 
 
 def index(request):
-
     slides = Slides.objects.all()
     title = MainContent.objects.all()
     testament = Testament.objects.filter(approved=True).order_by('date')
@@ -44,7 +43,7 @@ def contact(request):
         )
         context = {
             'sender_name': sender_name,
-            }
+        }
         return render(
             request, 'contact/contact.html', context)
     else:
