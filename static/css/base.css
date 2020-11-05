@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:300,400,500,600,700|Work+Sans:400,500,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:300,400,500,600,700");
 
 body {
   font-family: "Poppins", sans-serif;
@@ -13,63 +13,6 @@ p .paragraph {
   font-size: 14px;
   line-height: 25px;
   font-family: "Open Sans", sans-serif;
-}
-.content-section {
-background: #ffffff;
-padding: 10px 20px;
-border: 1px solid #dddddd;
-border-radius: 5px;
-margin-bottom: 20px;
-}
-
-/*products - shopping bag content*/
-.btn-outline-black {
-    background: white;
-    color: black !important;
-    border: 1px solid black;
-}
-
-.btn-outline-black:hover,
-.btn-outline-black:active,
-.btn-outline-black:focus {
-    background: black;
-    color: white !important;
-}
-
-h1 h2 h3 h4 h5 h6 {
-  color: #222;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-}
-
-h1 .h1 {
-  font-size: 60px;
-}
-
-h2 .h2 {
-  font-size: 36px;
-}
-
-h3 .h3 {
-  font-size: 30px;
-}
-
-h4 .h4 {
-  font-size: 20px;
-}
-
-h5 .h5 {
-  font-size: 18px;
-}
-
-h6 .h6 {
-  font-size: 14px;
-}
-
-@media (max-width: 400px) {
-  h1 .h1 {
-    font-size: 30px;
-  }
 }
 
 .logoka {
@@ -1308,8 +1251,9 @@ button,
   position: relative;
 }
 
-.shop-img{
+.img-height{
     max-height: 16rem;
+    min-height: 16rem;
 }
 
 .card-img-wrapper::before {
@@ -1964,3 +1908,13 @@ img.arrow-bottom {
 }
 .social li.facebook { background:#3b5399; }
 .social li.google { background:#de1710; }
+
+/*---------------- Testament ----------------*/
+
+.content-section {
+background: #ffffff;
+padding: 10px 20px;
+border: 1px solid #dddddd;
+border-radius: 5px;
+margin-bottom: 20px;
+}

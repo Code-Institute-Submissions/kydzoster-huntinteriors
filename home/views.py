@@ -12,7 +12,7 @@ def index(request):
     slides = Slides.objects.all()
     title = MainContent.objects.all()
     testament = Testament.objects.filter(approved=True).order_by('date')
-    product = Product.objects.all().order_by('created_at')
+    product = Product.objects.all().order_by('created_at')[:3]
 
     context = {
         'slides': slides,
