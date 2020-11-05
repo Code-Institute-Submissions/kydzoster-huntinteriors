@@ -1256,6 +1256,11 @@ button,
     min-height: 16rem;
 }
 
+.img-width{
+    max-width: 16rem;
+    min-width: 16rem;
+}
+
 .card-img-wrapper::before {
   position: absolute;
   content: "";
