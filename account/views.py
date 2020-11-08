@@ -63,6 +63,7 @@ def edit(request):
 
             user_form.save()
             messages.success(request, 'Profile updated successfully')
+            return render(request, 'account/dashboard.html')
         else:
             messages.error(request, 'Error updating your profile')
     else:
