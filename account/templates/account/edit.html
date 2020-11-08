@@ -21,7 +21,9 @@
                                     <p>You can edit your account using the following form:</p>
                                     <form method="POST" enctype="multipart/form-data">
                                         {{ user_form|crispy}}
+                                        {% if profile_form %}
                                         {{ profile_form|crispy }}
+                                        {% endif %}
                                         {% csrf_token %}
                                         <div class="col-sm-12 text-center">
                                             <button class="btn btn-primary btn-sm">Save</button>

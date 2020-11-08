@@ -113,7 +113,7 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-# This will send confirmation emails to console
+# This will send confirmation emails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # currently emails through server not accessible,
@@ -186,6 +186,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 SOCIAL_AUTH_FACEBOOK_KEY = config('SOCIAL_AUTH_FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = config('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields': 'id,name,email',
+}
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
