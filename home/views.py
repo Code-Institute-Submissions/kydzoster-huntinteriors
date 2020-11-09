@@ -40,7 +40,7 @@ def contact_form(request):
                 name, sender_email)
             message = form.cleaned_data["message"]
             sender = 'kydzoster@gmail.com'
-            recipients = ['customercare@email.com']
+            recipients = ['kydzoster@gmail.com']
             try:
                 send_mail(
                     subject, message, sender, recipients, fail_silently=True)
