@@ -21,15 +21,3 @@ class MainContent(models.Model):
 
     def __str__(self):
         return self.title
-
-
-class Contact(models.Model):
-    class Meta:
-        verbose_name_plural = 'Contact'
-
-    instagram = models.TextField(max_length=50, blank=True)
-    mob = models.CharField(max_length=11, blank=True)
-    email = models.EmailField(max_length=70, blank=True)
-
-    def __str__(self):
-        return self.email

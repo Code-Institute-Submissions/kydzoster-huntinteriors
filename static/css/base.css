@@ -1923,3 +1923,9 @@ border: 1px solid #dddddd;
 border-radius: 5px;
 margin-bottom: 20px;
 }
+
+/*---------------- Contact ----------------*/
+
+#id_name, #id_message, #id_email{
+    width: 100%;
+}

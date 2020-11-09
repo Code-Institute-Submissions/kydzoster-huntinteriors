@@ -1,19 +1,11 @@
 from django.contrib import admin
-from .models import Slides, MainContent, Contact
+from .models import Slides, MainContent
 
 
 class SlidesAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'image',
-    )
-
-
-class ContactAdmin(admin.ModelAdmin):
-    list_display = (
-        'instagram',
-        'mob',
-        'email',
     )
 
 
@@ -25,4 +17,3 @@ class MainAdmin(admin.ModelAdmin):
 
 admin.site.register(Slides, SlidesAdmin)
 admin.site.register(MainContent, MainAdmin)
-admin.site.register(Contact, ContactAdmin)

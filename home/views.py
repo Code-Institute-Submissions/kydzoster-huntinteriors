@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
-from .forms import SlidesForm, TitleForm
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
+from .forms import SlidesForm, TitleForm, ContactForm
 from .models import Slides, MainContent
 from testaments.models import Testament
 from furnitures.models import Product
+from decouple import config
 
 
 def index(request):
@@ -29,25 +31,23 @@ def search(request):
     return render(request, 'home/search.html', context)
 
 
-def contact(request):
-    if request.method == "POST":
-        sender_name = request.POST['sender-name']
-        email = request.POST['email']
-        message = request.POST['message']
-        send_mail(
-            'Message was sent by: ' + sender_name,  # subject
-            message,  # message
-            email,  # sender
-            ['mail@mail.com'],  # receiver
-            fail_silently=True,
-        )
-        context = {
-            'sender_name': sender_name,
-        }
-        return render(
-            request, 'contact/contact.html', context)
-    else:
-        return render(request, 'contact/contact.html')
+def contact_form(request):
+    form = ContactForm()
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = f'Message form {form.cleaned_data["name"]}'
+            message = form.cleaned_data["message"]
+            sender = form.cleaned_data["email"]
+            recipients = config('recipients')
+            try:
+                send_mail(
+                    subject, message, sender, recipients, fail_silently=True
+                    )
+            except BadHeaderError:
+                return HttpResponse('Invalid header found')
+            return HttpResponse('Your email was successfully sent')
+    return render(request, 'contact/contact.html', {'form': form})
 
 
 # Will show management
