@@ -7,7 +7,6 @@ from .forms import SlidesForm, TitleForm, ContactForm
 from .models import Slides, MainContent
 from testaments.models import Testament
 from furnitures.models import Product
-from decouple import config
 
 
 def index(request):
@@ -39,7 +38,7 @@ def contact_form(request):
             subject = f'Message form {form.cleaned_data["name"]}'
             message = form.cleaned_data["message"]
             sender = form.cleaned_data["email"]
-            recipients = config('recipients')
+            recipients = ["kydzoster@gmail.com"]
             try:
                 send_mail(
                     subject, message, sender, recipients, fail_silently=True
