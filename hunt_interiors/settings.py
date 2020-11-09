@@ -113,19 +113,16 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-# This will send confirmation emails
-EMAIL_BACKEND = 'sendgrid_backend.SendgridBacked'
+# This will send emails
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+SENDGRID_API_KEY = config('SENDGRID_API_KEY')
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
-
-# currently emails through server not accessible,
-# due to network not being able to reach [101]
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
-SENDGRID_API_KEY = config('SENDGRID_API_KEY')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
 WSGI_APPLICATION = 'hunt_interiors.wsgi.application'
 
