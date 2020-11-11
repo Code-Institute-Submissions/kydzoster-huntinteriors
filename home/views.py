@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
-from .forms import SlidesForm, TitleForm, ContactForm
+from .forms import SlidesForm, TitleForm
 from .models import Slides, MainContent
 from testaments.models import Testament
 from furnitures.models import Product
@@ -31,28 +29,7 @@ def search(request):
 
 
 def contact_form(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            sender_email = form.cleaned_data['email']
-            subject = "You have a new Feedback from {} : {}".format(
-                name, sender_email)
-            message = form.cleaned_data["message"]
-            sender = 'kydzoster@gmail.com'
-            recipients = ['kydzoster@gmail.com']
-            try:
-                send_mail(
-                    subject, message, sender, recipients, fail_silently=True)
-            except BadHeaderError:
-                return HttpResponse('Invalid header found')
-
-            form.save()
-            messages.add_message(request, messages.INFO, 'Feedback Submitted.')
-            return redirect('contact.html')
-    else:
-        form = ContactForm()
-    return render(request, 'contact.html', {'form': form}
+    return render(request, 'contact/contact.html', {'title': 'Send an email!'})
 
 
 # Will show management
