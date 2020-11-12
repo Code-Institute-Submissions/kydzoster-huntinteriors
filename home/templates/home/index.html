@@ -60,11 +60,16 @@
         </div>
         {% endfor %}
       </div>
-      <div class="col-lg-6">
-        <div class="about-slider">
-          <img class="img-fluid" src="{% static 'images/about/about-1.jpg' %}" alt="about-image" />
-          <img class="img-fluid" src="{% static 'images/about/about-2.jpg' %}" alt="about-image" />
-          <img class="img-fluid" src="{% static 'images/about/about-3.jpg' %}" alt="about-image" />
+      <div class="col-lg-5 ml-5">
+        <div class="about-slider d-none d-lg-block">
+        {% for slides in slides %}
+            {% if request.user.is_superuser %}
+                <a href="{% url 'slides_detail' slides.id %}">
+                <img class="img-fluid" src="{{ slides.image.url }}" alt="about-image" /></a>
+            {% else %}
+                <img class="img-fluid" src="{{ slides.image.url }}" alt="about-image" />
+            {% endif %}
+        {% endfor %}
         </div>
       </div>
     </div>

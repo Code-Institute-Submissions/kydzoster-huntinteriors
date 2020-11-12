@@ -32,7 +32,7 @@ class TestamentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 # only user who created a testimony can delete it
-class TestamentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class TestamentDeleteView(LoginRequiredMixin, DeleteView):
     model = Testament
     template_name = 'testaments/testament_delete.html'
     success_url = reverse_lazy('testament_list')

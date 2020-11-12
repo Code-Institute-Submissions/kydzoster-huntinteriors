@@ -25,16 +25,3 @@ class TitleForm(forms.ModelForm):
 def empty_field(value):
     if value:
         raise forms.ValidationError('Field must be empty')
-
-
-class ContactForm(forms.Form):
-    name = forms.CharField(max_length=80)
-    email = forms.EmailField()
-    message = forms.CharField(widget=forms.Textarea)
-    # targets bots
-    nobotsallowed = forms.CharField(
-        required=False,
-        widget=forms.HiddenInput,
-        label="Leave Empty",
-        validators=[empty_field]
-    )

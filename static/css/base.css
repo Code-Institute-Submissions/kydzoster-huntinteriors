@@ -1319,10 +1319,6 @@ button,
   background-size: cover;
 }
 
-.about-video {
-  min-height: 300px;
-}
-
 .about-slider {
   position: relative;
   border-radius: 10px;
