@@ -25,15 +25,20 @@
 <!-- /Page Title -->
 <!-- Gallery -->
 <section class="container my-5">
-    <div class="row">
-        {% for img in gallery %}
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="{% url 'image_detail' img.id %}" class="d-block mb-4">
-                    <img class="img-height img-width img-fluid" src="{{ img.image.url }}" alt="">
-                </a>
+
+        <div class="container">
+            <div class="row">
+                {% for img in gallery %}
+                    <div class="col-lg-3 col-sm-6 mb-5">
+                        <div class="card text-center">
+                            <a href="{% url 'image_detail' img.id %}" class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img rounded-0 img-height" src="{{ img.image.url }}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
-    </div>
+        </div>
 </section>
 <!-- /Gallery -->
 {% endblock %}
