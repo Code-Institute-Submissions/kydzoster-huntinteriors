@@ -40,9 +40,12 @@
                                     {% if request.user.is_authenticated %}
                                         <div class="col-lg-12">
                                             <h3>Welcome to your dashboard, {{ request.user.first_name }}!</h3>
-                                            <p>First name: {{ request.user.first_name }}</p>
-                                            <p>Last name: {{ request.user.last_name }}</p>
-                                            <p>Email: {{ request.user.email }}</p>
+                                            <p>First name: <span class="text-uppercase font-weight-bold">{{ request.user.first_name }}</span></p>
+                                            <p>Last name: <span class="text-uppercase font-weight-bold">{{ request.user.last_name }}</span></p>
+                                            <p>Email: <span class="text-uppercase font-weight-bold">{{ request.user.email }}</span></p>
+                                            <p>Address: <span class="text-uppercase font-weight-bold">{{ request.user.profile.address }}</span></p>
+                                            <p>City: <span class="text-uppercase font-weight-bold">{{ request.user.profile.city }}</span></p>
+                                            <p>Post Code: <span class="text-uppercase font-weight-bold">{{ request.user.profile.post_code }}</span></p>
                                         </div>
                                     {% endif %}
                                     <div class="col-lg-12">

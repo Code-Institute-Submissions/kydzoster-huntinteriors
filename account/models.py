@@ -7,6 +7,9 @@ class Profile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     photo = models.ImageField(upload_to='users/%Y/%M/%d', blank=True)
+    address = models.CharField(blank=True, max_length=150)
+    city = models.CharField(blank=True, max_length=50)
+    post_code = models.CharField(blank=True, max_length=8)
 
     def __str__(self):
         return f'Profile for user {self.user.username}'
