@@ -139,7 +139,8 @@ def create_checkout_session(request):
 
 
 def success(request):
-    del request.session['bag']
+    if 'bag' in request.session:
+        del request.session['bag']
     invoice = Invoice.objects.get(
         checkout_session_id=request.GET.get('session_id').replace(' ', ''))
 
@@ -154,4 +155,5 @@ def success(request):
 
     message = f'{"Thanks For Choosing Hunt-Interiors"}'
 
-    return render(request, 'bag/success.html', {'message': message})
+    return render(
+        request, 'bag/success.html', {'message': message, 'invoice': invoice})
