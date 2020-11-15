@@ -38,10 +38,9 @@ def contact_form(request):
         message = request.POST.get(
             'message', '')+'\n'+contact_name+'\n'+contact_email
         email = EmailMessage(
-            subject,  # Subject
-            message,  # Body
-            settings.EMAIL_HOST_USER,
-            [kydzoster@gmail.com]
+            subject,
+            message,
+            settings.EMAIL_HOST_USER
         )
         email.fail_silently = False
         email.send()
