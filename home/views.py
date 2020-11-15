@@ -40,7 +40,8 @@ def contact_form(request):
         email = EmailMessage(
             subject,
             message,
-            settings.EMAIL_HOST_USER
+            settings.EMAIL_HOST_USER,
+            [swg1@inbox.lv]
         )
         email.fail_silently = False
         email.send()
