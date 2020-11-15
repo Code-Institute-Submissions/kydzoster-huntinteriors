@@ -12,6 +12,8 @@ from .models import Invoice, PurchasedProduct
 from furnitures.models import Product
 from urllib.parse import unquote
 import stripe
+from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives
 
 
 # Renders the bag contents page
@@ -120,7 +122,7 @@ def create_checkout_session(request):
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
             checkout_session = stripe.checkout.Session.create(
-                success_url=domain_url + 'bag/success?session_id=\
+                success_url=domain_url + 'bag/success/?session_id=\
                     {CHECKOUT_SESSION_ID}',
                 cancel_url=domain_url + 'bag/',
                 payment_method_types=['card'],
@@ -138,9 +140,9 @@ def create_checkout_session(request):
             return JsonResponse({'error': str(e)})
 
 
+@login_required
 def success(request):
-    if 'bag' in request.session:
-        del request.session['bag']
+    del request.session['bag']
     invoice = Invoice.objects.get(
         checkout_session_id=request.GET.get('session_id').replace(' ', ''))
 
@@ -150,10 +152,10 @@ def success(request):
     from_email = settings.EMAIL_HOST_USER
     to = invoice.user.email
 
-    mail.send_mail(subject, plain_message, from_email,
-                   [to], html_message=html_message)
-
+    msg = EmailMultiAlternatives(subject, subject, from_email, [to])
+    msg.attach_alternative(html_message, "text/html")
+    msg.fail_silently = False
+    msg.send()
     message = f'{"Thanks For Choosing Hunt-Interiors"}'
 
-    return render(
-        request, 'bag/success.html', {'message': message, 'invoice': invoice})
+    return render(request, 'bag/success.html', {'message': message})

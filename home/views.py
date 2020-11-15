@@ -5,6 +5,8 @@ from .forms import SlidesForm, TitleForm
 from .models import Slides, MainContent
 from testaments.models import Testament
 from furnitures.models import Product
+from django.conf import settings
+from django.core.mail import EmailMessage
 
 
 def index(request):
@@ -29,6 +31,22 @@ def search(request):
 
 
 def contact_form(request):
+    if request.method == 'POST':
+        contact_name = request.POST.get('name', '')
+        contact_email = request.POST.get('email', '')
+        subject = request.POST.get('subject', '')
+        message = request.POST.get(
+            'message', '')+'\n'+contact_name+'\n'+contact_email
+        email = EmailMessage(
+            subject,  # Subject
+            message,             # Body
+            settings.EMAIL_HOST_USER,
+            [contact_email]
+        )
+        email.fail_silently = False
+        email.send()
+        return render(
+            request, 'contact/contact.html', {'title': 'Send an email!'})
     return render(request, 'contact/contact.html', {'title': 'Send an email!'})
 
 
