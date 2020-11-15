@@ -41,10 +41,11 @@ def contact_form(request):
             subject,
             message,
             settings.EMAIL_HOST_USER,
-            "swg1@inbox.lv",
+            ["swg1@inbox.lv"]
         )
         email.fail_silently = False
         email.send()
+        messages.success(request, 'Message was sent successfully!')
         return render(
             request, 'contact/contact.html', {'title': 'Send an email!'})
     return render(request, 'contact/contact.html', {'title': 'Send an email!'})
