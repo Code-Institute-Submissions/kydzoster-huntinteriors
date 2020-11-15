@@ -39,9 +39,9 @@ def contact_form(request):
             'message', '')+'\n'+contact_name+'\n'+contact_email
         email = EmailMessage(
             subject,  # Subject
-            message,             # Body
+            message,  # Body
             settings.EMAIL_HOST_USER,
-            [contact_email]
+            [kydzoster@gmail.com]
         )
         email.fail_silently = False
         email.send()
