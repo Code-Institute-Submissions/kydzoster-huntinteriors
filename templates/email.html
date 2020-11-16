@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <h1>My Shop</h1>
+  <a href="https://glacial-eyrie-71049.herokuapp.com/" class="f-fallback email-masthead_name"><h3>Hunt Interiors</h3></a>
   <p>
     Invoice no. {{ invoice.id }}<br>
     <span class="secondary">
@@ -9,15 +9,15 @@
     </span>
   </p>
 
-  <h3>Bill to</h3>
+  <h5>Bill to</h5>
   <p>
     {{ invoice.user }}<br>
-    {{ request.user.email }}<br>
-    {{ request.user.profile.address }}<br>
-    {{ request.user.profile.post_code }}, {{ request.user.profile.city }}
+    {{ invoice.user.email }}<br>
+    {{ invoice.user.profile.address<br>
+    {{ invoice.user.profile.post_code }}, {{ invoice.user.profile.city }}
   </p>
 
-  <h3>Items bought</h3>
+  <h5>Items bought</h5>
   <table>
     <thead>
       <tr>
