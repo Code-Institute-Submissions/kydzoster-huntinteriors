@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 {% extends "base.html" %} {% load static %} {% block content %}
-<div class="container m-4">
-  <h1>{{message}}</h1>
-  <h3>Your invoice:</h3>
-  <div class="card m-3 p-3">
-    {% if invoice.user.address %} Delivered to {{invoice.user.address}},
-    {{invoice.user.city}} {% endif %}
-    <ul>
-      {% for p in invoice.products.all %}
-      <li>{{p.quantity}}X {{p.product}} ${{p.product.price}}</li>
-      {% endfor %}
-      <p>Delivery: ${{invoice.shipping_cost}}</p>
-      <hr />
-      <strong>Grand total: ${{invoice.grand_total}}</strong>
-    </ul>
-  </div>
-  <h5>You'll recieve an email with the information soon</h5>
-</div>
+<section class="d-flex justify-content-center my-5" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="signup">
+                    <div class="row no-gutters">
+                        <div class="col-md-5 signup-greeting overlay" style="background-image: url({% static 'images/background/shop.jpg' %});">
+                            <img src="{% static 'images/logo-white.png' %}" alt="logo" style="width: 200px;height: 50px;">
+                            <h4>{{message}}</h4>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="signup-form">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h3>You'll recieve an email with the information soon</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
