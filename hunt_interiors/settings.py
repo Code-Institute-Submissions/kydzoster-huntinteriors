@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'furnitures',
     'services',
     'bag',
-    'django_inlinecss',
 ]
 
 MIDDLEWARE = [
