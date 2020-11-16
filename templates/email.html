@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html>
-<body>
-  <a href="https://glacial-eyrie-71049.herokuapp.com/" class="f-fallback email-masthead_name"><h3>Hunt Interiors</h3></a>
-  <p>
-    Invoice no. {{ invoice.id }}<br>
-    <span>
-      {{ invoice.created_at }}
-    </span>
-  </p>
+    <body>
+        <a href="https://glacial-eyrie-71049.herokuapp.com/" class="f-fallback email-masthead_name"><h3>Hunt Interiors</h3></a>
+        <p>
+            Invoice no. {{ invoice.id }}<br>
+            <span>
+                {{ invoice.created_at }}
+            </span>
+        </p>
 
-  <h5>Bill to</h5>
-  <p>
-    {{ invoice.user }}<br>
-    {{ invoice.user.email }}<br>
-    {{ invoice.user.profile.address }}<br>
-    {{ invoice.user.profile.post_code }}, {{ invoice.user.profile.city }}
-  </p>
+        <h5>Bill to</h5>
+        <p>
+            {{ invoice.user }}<br>
+            {{ invoice.user.email }}<br>
+            {{ invoice.user.profile.address }}<br>
+            {{ invoice.user.profile.post_code }}, {{ invoice.user.profile.city }}
+        </p>
 
-  <h5>Items bought</h5>
-  <table>
-    <tbody>
-      {% for p in invoice.products.all %}
-        <tr>
-          <td>Product: {{ p.product }}</td>
-          <td class="num">Price: ${{ p.product.price }}</td>
-          <td class="num">Quantity: {{ p.quantity }}</td>
-        </tr>
-      {% endfor %}
-      <tr>
-        <td colspan="3">Shipping</td>
-        <td class="num">${{ invoice.shipping_cost }}</td>
-      </tr>
-      <tr>
-        <td colspan="3">Total</td>
-        <td class="num">${{ invoice.grand_total }}</td>
-      </tr>
-    </tbody>
-  </table>
-</body>
+        <h5>Items bought</h5>
+        <table>
+            <tbody>
+                {% for p in invoice.products.all %}
+                    <tr>
+                        <td colspan="3">Product:</td>
+                        <td class="num">{{ p.product }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Price:</td>
+                        <td class="num">${{ p.product.price }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Quantity:</td>
+                        <td class="num">{{ p.quantity }}</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="3">Shipping</td>
+                    <td class="num">${{ invoice.shipping_cost }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td class="num">${{ invoice.grand_total }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
 </html>
