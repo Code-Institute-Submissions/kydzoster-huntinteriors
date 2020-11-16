@@ -12,9 +12,9 @@
   <h3>Bill to</h3>
   <p>
     {{ invoice.user }}<br>
-    {{ invoice.email }}<br>
-    {{ invoice.address }}<br>
-    {{ invoice.postal_code }}, {{ invoice.city }}
+    {{ request.user.email }}<br>
+    {{ request.user.profile.address }}<br>
+    {{ request.user.profile.post_code }}, {{ request.user.profile.city }}
   </p>
 
   <h3>Items bought</h3>
@@ -24,16 +24,14 @@
         <th>Product</th>
         <th>Price</th>
         <th>Quantity</th>
-        <th>Cost</th>
       </tr>
     </thead>
     <tbody>
       {% for p in invoice.products.all %}
-        <tr class="row{% cycle '1' '2' %}">
+        <tr class="row">
           <td>{{ p.product }}</td>
           <td class="num">${{ p.product.price }}</td>
           <td class="num">{{ p.quantity }}</td>
-          <td class="num">${{ p.product.price }}</td>
         </tr>
       {% endfor %}
       <tr class="total">
