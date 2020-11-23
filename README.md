@@ -97,21 +97,21 @@ Hunt Interiors website as an Interior and Exterior designer site should be easy 
 ### Wireframes
 The wireframe developed for this project was built for desktop use, with taking in consideration that mobile users will also use this website.
 Wireframe was created in [Balsamiq](https://balsamiq.com/).
-  - [Desktop devices](https://tour-project.s3-eu-west-1.amazonaws.com/static/images/readme_images/Desktop_wireframes.png)
+  - [Desktop devices](https://github.com/kydzoster/huntinteriors/blob/main/static/images/HuntInt%20Wireframe.pdf)
 
 # Features
 
-Tour Store website is composed by five different applications: `accounts`, `cart`, `checkout`, `search` and `tour_store`. Using MVC architecture from the Django framework, each application holds its own model, view and controller that interacts all together into the `main_tour_folder` which basically is the controller of the overall application.
+Hunt Interiors contains 7 apps: `accounts`, `bag`, `furnitures`, `gallery`, `home`, `services` and `testaments`.
 
 ## Accounts
- The accounts app holds the functionality of register, login, logout and the reset password.
+ The accounts app holds the functionality of dashboard - profile, register, login, logout and the password reset.
 
 ### Register page
 <p align="center">
-<img src="/static/images/readme_images/register.png" width="40%">
+<img src="/static/images/HUNTINT/Account/Register.png" width="40%">
 </p>
 
-  - An username, email and password is required to create an account.
+  - An username, name, email and password is required to create an account.
   - Username must be unique.
   - Password should not be short, must contain at least 8 characters and should not be common.
   - As soon as the user creates its username they are redirected to home page.
@@ -119,13 +119,14 @@ Tour Store website is composed by five different applications: `accounts`, `cart
 ### Login page
 <p align="center">
 
-<img src="/static/images/readme_images/login.png" width="40%">
+<img src="/static/images/HUNTINT/Account/Login.png" width="40%">
 </p>
-  - The login page is a normal page that will ask for the name or email and the user password who already registered their account.
+  - Login page will ask for a username which can be a username or emailaddress and a password to login.
+  - There is also an option to login with facebook or google account
 
-### Reset password
-  - Step 1: at the login page, above of the button you can find the `forgot my password` link in which will lead to a form to add your account email.
-  - Step 2: Add the email from the account you need to reset the password.
+### Forgot Password
+  - Step 1: at the login page, under the password you can find the `forgot password?` link in which will lead to a form to add your account email.
+  - Step 2: Add the email you registered with to reset the password.
   - Step 3: You will receive an email with a link that will allow you to add a different password sending you to a reset password form.
   - Step 4: Add a new password and confirm it.
   - Step 5: Once the password is set you can login with the new password.
