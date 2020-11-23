@@ -36,10 +36,9 @@
                             <div class="form-group col-lg-12">
                                 {{ form|crispy }}
                             </div>
-                            <div class="col-sm-4">
                                 <button class="btn btn-primary btn-sm">Yes, delete</button>
-                            </div>
                         </form>
+                            <a href="{% url 'testament_list' %}"><button class="btn btn-secondary btn-sm mr-2">No, Return</button></a>
                     </div>
                 </div>
             </div>

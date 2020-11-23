@@ -78,28 +78,25 @@ User goals:
 ## Admin goals
 The site owners goals are:
 - To have a Site management tools which provide easy to access most relevant CRUD options with good looking overlay
-- To be able to edit about us information from homepage
-- To be able to add new services, gallery and furnitures from website pages
+- To be able to edit about us information and pictures from homepage
+- To be able to add new services, slides, gallery and furnitures from site management page
 - To be able to view Testamonials from website pages and approve or delete them
 
 
 ## Design choices
-The Tour project website is a tour application that has its main customers, people who want to have a relax and spiritual retreat.
-Therefore, the website design was designed to bring these characteristics to its users. In which all of its design details is aligned to its purpose.
+Hunt Interiors website as an Interior and Exterior designer site should be easy for an eye, but also the one you would remember when visited.
 
 ### Fonts
-- The font used in this project is [Roboto](https://fonts.google.com/specimen/Roboto#about) which is an user friendly mainly used by its creator Google to give a proper reading in different screen sizes.
+- The font used in this project is [Poppins and Sans](https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:300,400,500,600,700).
 
 #### Styling
   - Box shadow in card to give a depth idea and contrast with the background.
   - Scroll effects to give a better experience to users.
-  - Skew-y effect on index page to break standard pattern with linear gradient using light-cyan and Selago colors.
+  - Icons used are [Themify](https://themify.me/)
 
 ### Wireframes
-The wireframes developed for this project was only taken three types of devices, desktop, tablet and mobile.
-In addition, the tool used to develop this wireframes was [Balsamiq](https://balsamiq.com/) giving the ability to a rapid design.
-  - [Mobile devices](https://tour-project.s3-eu-west-1.amazonaws.com/static/images/readme_images/Mobile_wireframes.png)
-  - [Tablet devices](https://tour-project.s3-eu-west-1.amazonaws.com/static/images/readme_images/iPad_wireframes.png)
+The wireframe developed for this project was built for desktop use, with taking in consideration that mobile users will also use this website.
+Wireframe was created in [Balsamiq](https://balsamiq.com/).
   - [Desktop devices](https://tour-project.s3-eu-west-1.amazonaws.com/static/images/readme_images/Desktop_wireframes.png)
 
 # Features
