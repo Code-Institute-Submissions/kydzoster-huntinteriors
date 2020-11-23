@@ -5,8 +5,10 @@
 
 Project Milestone Four - Code Institute
 
-The Tour Store app was developed and deployed by Elias Prado as the last project for the Code Institute Software Development diploma.
-This website is to emulate a touristic retreat webpage that provides for tourists different places to retreat and relax.
+The Hunt Interiors website was developed for Code Institute as a final project.
+This website is for a any client who requires an interior and exterior changes 
+for their property and moreover it is for the site owner to be able to update and create 
+its content without any prior knowledge of websites code using custom made administration tools.
 
 ## Table of contents
 <!--ts-->
@@ -14,8 +16,7 @@ This website is to emulate a touristic retreat webpage that provides for tourist
 1. [UX](#UX)
     1. [User goals](#User-goals)
     2. [Design choices](#Design-choices)
-    3. [Colors](#Colors)
-    4. [Wireframes](#Wireframes)
+    3. [Wireframes](#Wireframes)
 2. [Features](#Features)
     1. [Accounts](#Accounts)
         1. [Register page](#Register-page)
@@ -28,7 +29,6 @@ This website is to emulate a touristic retreat webpage that provides for tourist
     3. [Cart](#Cart)
     4. [Checkout](#Checkout)
     5. [Search](#Search)
-    6. [404 page](#404-page)
     7. [Admin page](#Admin-page)
     8. [Features left to implement](#Features-left-to-implement)
 3. [Technologies](#Technologies)
@@ -50,24 +50,17 @@ This website is to emulate a touristic retreat webpage that provides for tourist
 # UX
 
 ## User goals
-The target audience of Tour Project are:
-- People who want to make a relax or spiritual trip.
-- People who are looking for the best locations.
-- Yoga practitioners who are looking for the best places to improve their spiritual, mind and body development.
+The target audience of Hunt Interiors are:
+- People who need interior and exterior changes to their property.
+- People who want to buy furniture.
+- Homeowners who need a reliable and trustworthy maintenance experts.
 
 User goals:
-- Search for the retreat or destination by its keyword and receive a feedback by the website if it isn't available.
-- Find information about the company such as address phone number and its mission.
-- Finding the destination, the user can find details of it, such as text and picture based content related to the destination.
-- The user can scroll on the retreat page and through different paginations.
-- Also, be able to see a preview image of the destination, date and price on a card container.
-- The user can also add comments to the destination they want.
-- Add one or multiple trips to the shopping cart with the maximum ten people for each tour.
-- Clicking on add he or she will be redirected to the cart page.
-- If the user is not logged in they will be redirected to the login page before go to the cart page.
-- Edit the shopping cart if required.
-- Checkout using card payment.
-- Once the payment is done a success message is sent below the navbar and disappear on three seconds after the user be redirected to the home page.
+- Search a product bar allows to search for any furnitures added to shop
+- Learn more about the company and offered services
+- View recently added furnitures on a homepage
+- View recently posted reviews on a homepage
+
 
 ## Design choices
 The Tour project website is a tour application that has its main customers, people who want to have a relax and spiritual retreat.
