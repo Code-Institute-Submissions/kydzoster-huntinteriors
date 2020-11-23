@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.core import mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from decimal import Decimal
@@ -12,7 +11,6 @@ from .models import Invoice, PurchasedProduct
 from furnitures.models import Product
 from urllib.parse import unquote
 import stripe
-from django.core.mail import EmailMessage
 from django.core.mail import EmailMultiAlternatives
 
 
