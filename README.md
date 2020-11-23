@@ -131,7 +131,7 @@ Hunt Interiors contains 7 apps: `accounts`, `bag`, `furnitures`, `gallery`, `hom
   - Step 4: Add a new password and confirm it.
   - Step 5: Once the password is set you can login with the new password.
 
-  <img src="/static/images/readme_images/passwordreset.png">
+  <img src="/static/images/HUNTINT/Account/PWReset.png">
 
 ## Tour store
 
