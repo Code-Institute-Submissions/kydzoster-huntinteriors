@@ -104,14 +104,14 @@ Wireframe was created in [Balsamiq](https://balsamiq.com/).
 Hunt Interiors contains 7 apps: `accounts`, `bag`, `furnitures`, `gallery`, `home`, `services` and `testaments`.
 
 ## Accounts
- The accounts app holds the functionality of dashboard - profile, register, login, logout and the password reset.
+ The accounts app holds the functionality of dashboard/profile, register, login, logout and the password reset.
 
 ### Register page
 <p align="center">
 <img src="/static/images/HUNTINT/Account/Register.png" width="40%">
 </p>
 
-  - An username, name, email and password is required to create an account.
+  - Username, name, email and password is required to create an account.
   - Username must be unique.
   - Password should not be short, must contain at least 8 characters and should not be common.
   - As soon as the user creates its username they are redirected to home page.
@@ -133,9 +133,9 @@ Hunt Interiors contains 7 apps: `accounts`, `bag`, `furnitures`, `gallery`, `hom
 
   <img src="/static/images/HUNTINT/Account/PWReset.png">
 
-## Tour store
+## Hunt Interiors Base
 
-Tour store app holds all the main pages in which the user will navigate. Such as:
+Hunt Interiors Base holds `nav bar`, `main bar` and `footer`
 
 #### home page
 
