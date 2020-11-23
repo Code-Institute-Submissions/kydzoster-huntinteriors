@@ -60,6 +60,27 @@ User goals:
 - Learn more about the company and offered services
 - View recently added furnitures on a homepage
 - View recently posted reviews on a homepage
+- View My Account to Register a new account
+- View My Account to Login with an email or username or login with a facebook or google account
+- view My Account and edit your personal details or change a password under My Dashboard
+- View My Account to Logout from your profile
+- View services to find out services provided by Hunt Interiors
+- View Gallery to see uploaded images of completed/delivered projects
+- Click on an image to view its description and to view an image upclose/enlarged
+- View Shop to see furnitures sold by Hunt Interiors, sorted by categories
+- View an Item and its description or to choose a quantity and add to a cart or return back to all furnitures
+- After an item has been added to cart view its price and total price, update its quantity or remove it from cart
+- Securely check out and receive an email about a successful purchase
+- View Testamonials/Reviews and add your own review
+- Edit or delete your posted review
+- View contact us to see social platforms operated by Hunt Interiors or send a personalised message
+
+## Admin goals
+The site owners goals are:
+- To have a Site management tools which provide easy to access most relevant CRUD options with good looking overlay
+- To be able to edit about us information from homepage
+- To be able to add new services, gallery and furnitures from website pages
+- To be able to view Testamonials from website pages and approve or delete them
 
 
 ## Design choices
@@ -68,17 +89,6 @@ Therefore, the website design was designed to bring these characteristics to its
 
 ### Fonts
 - The font used in this project is [Roboto](https://fonts.google.com/specimen/Roboto#about) which is an user friendly mainly used by its creator Google to give a proper reading in different screen sizes.
-
-### Colors
-   - Cyan: ![#17a2b8](https://via.placeholder.com/15/17a2b8/000000?text=+) `#17a2b8`
-   - Light-cyan: ![#D7FFFE](https://via.placeholder.com/15/D7FFFE/000000?text=+) `#D7FFFE`
-   - Raven: ![#6c757d](https://via.placeholder.com/15/6c757d/000000?text=+) `#6c757d`
-   - Dark-gray: ![#343a40](https://via.placeholder.com/15/343a40/000000?text=+) `#343a40`
-   - Green: ![#28a745](https://via.placeholder.com/15/28a745/000000?text=+) `#28a745`
-   - White: ![#fff](https://via.placeholder.com/15/fff/000000?text=+) `#fff`
-   - Selago: ![#FFFEFF](https://via.placeholder.com/15/FFFEFF/000000?text=+) `#FFFEFF`
-   - Light: ![#f8f9fa](https://via.placeholder.com/15/f8f9fa/000000?text=+) `#f8f9fa`
-   - These set of colors were chosen to bring a smooth experience to the users as same as to match with the purpose of the application.
 
 #### Styling
   - Box shadow in card to give a depth idea and contrast with the background.

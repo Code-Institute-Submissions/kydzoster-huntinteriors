@@ -52,11 +52,13 @@
         </div>
         <div class="card-body">
           <p>{{ testament.body | linebreaks }}</p>
-          {% if request.user.is_authenticated and request.user == testament.author or request.user.is_superuser %}
+          {% if request.user.is_authenticated and request.user == testament.author %}
           <div class="col-sm-12">
             <a href="{% url 'testament_edit' testament.pk %}"
               ><button class="btn btn-primary btn-sm mr-2">Edit</button></a
             >
+            {% endif %}
+            {% if request.user.is_authenticated and request.user == testament.author or request.user.is_superuser %}
             <a href="{% url 'testament_delete' testament.pk %}"
               ><button class="btn btn-secondary btn-sm mr-2">Delete</button></a
             >
