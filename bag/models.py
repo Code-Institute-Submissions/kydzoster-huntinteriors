@@ -17,6 +17,7 @@ class Invoice(models.Model):
     shipping_cost = models.DecimalField(
         max_digits=6, decimal_places=2, null=True)
     checkout_session_id = models.CharField(max_length=255, null=True)
+    address = models.TextField(null=True)
 
     @property
     def grand_total(self):

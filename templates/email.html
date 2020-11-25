@@ -1,48 +1,108 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <a href="https://glacial-eyrie-71049.herokuapp.com/" class="f-fallback email-masthead_name"><h3>Hunt Interiors</h3></a>
-        <p>
-            Invoice no. {{ invoice.id }}<br>
-            <span>
-                {{ invoice.created_at }}
-            </span>
-        </p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
 
-        <h5>Bill to</h5>
-        <p>
-            {{ invoice.user }}<br>
-            {{ invoice.user.email }}<br>
-            {{ invoice.user.profile.address }}<br>
-            {{ invoice.user.profile.post_code }}, {{ invoice.user.profile.city }}
-        </p>
-
-        <h5>Items bought</h5>
-        <table>
-            <tbody>
-                {% for p in invoice.products.all %}
-                    <tr>
-                        <td colspan="3">Product:</td>
-                        <td class="num">{{ p.product }}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">Price:</td>
-                        <td class="num">${{ p.product.price }}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">Quantity:</td>
-                        <td class="num">{{ p.quantity }}</td>
-                    </tr>
-                {% endfor %}
-                <tr>
-                    <td colspan="3">Shipping</td>
-                    <td class="num">${{ invoice.shipping_cost }}</td>
-                </tr>
-                <tr>
-                    <td colspan="3">Total</td>
-                    <td class="num">${{ invoice.grand_total }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <link rel="stylesheet" href="{% static 'css/email.css' %}">
+    <title>Hunt Interiors</title>
+  </head>
+  <body>
+    <span class="preheader">This is a receipt for your recent purchase on {{ purchase_date }}. No payment is due with this receipt.</span>
+    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td align="center">
+          <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+            <tr>
+              <td class="email-masthead">
+                <a href="https://example.com" class="f-fallback email-masthead_name">
+               Hunt Interiors 
+              </a>
+              </td>
+            </tr>
+            <!-- Email Body -->
+            <tr>
+              <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
+                <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+                  <!-- Body content -->
+                  <tr>
+                    <td class="content-cell">
+                      <div class="f-fallback">
+                        <h1>Hi {{invoice.user}},</h1>
+                        <p>This email is the receipt for your purchase. No payment is due.</p>
+                        
+                        <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                          <tr>
+                            <td>
+                              <h3>Invoice ID: {{invoice.id}}</h3></td>
+                            <td>
+                              <h3 class="align-right">{{invoice.created_at}}</h3></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                              <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <th class="purchase_heading" align="left">
+                                    <p class="f-fallback">Description</p>
+                                  </th>
+                                  <th class="purchase_heading" align="right">
+                                    <p class="f-fallback">Amount</p>
+                                  </th>
+                                </tr>
+                                {% for p in invoice.products.all %}
+                                <tr class="purchase_item">
+                                  <td width="80%"><span class="f-fallback">x{{p.quantity}} {{p.product}}</span></td>
+                                  <td class="align-right" width="20%"><span class="f-fallback">{{p.product.price}}</span></td>
+                                </tr>
+                                {% endfor %}
+                                <tr class="purchase_item">
+                                  <td width="80%"><span class="f-fallback">Delivery</span></td>
+                                  <td class="align-right" width="20%"><span class="f-fallback">{{invoice.shipping_cost}}</span></td>
+                                </tr>
+                                <tr>
+                                  <td width="80%" class="purchase_footer" valign="middle">
+                                    <p class="f-fallback purchase_total purchase_total--label">Total</p>
+                                  </td>
+                                  <td width="20%" class="purchase_footer" valign="middle">
+                                    <p class="f-fallback purchase_total">{{invoice.grand_total}}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <h4>Address: {{invoice.address}}</h4></td>
+                                  <td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+                  <tr>
+                    <td class="content-cell" align="center">
+                      <p class="f-fallback sub align-center">&copy; 2019 Hunt Interiors. <noframes></noframes> rights reserved.</p>
+                      <p class="f-fallback sub align-center">
+                        [Hunt Interiors]
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>

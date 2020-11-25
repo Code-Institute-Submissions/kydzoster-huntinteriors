@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.core import mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from decimal import Decimal
@@ -11,7 +12,9 @@ from .models import Invoice, PurchasedProduct
 from furnitures.models import Product
 from urllib.parse import unquote
 import stripe
+from django.core.mail import EmailMessage
 from django.core.mail import EmailMultiAlternatives
+from django.contrib import messages
 
 
 # Renders the bag contents page
@@ -84,6 +87,26 @@ def create_checkout_session(request):
     product_count = 0
     bag = request.session.get('bag', {})
     invoice = Invoice.objects.create(user=request.user)
+    address = dict()
+    try:
+        address.update({
+            "address": request.user.profile.address,
+            "city": request.user.profile.city,
+            "postal_code": request.user.profile.post_code,
+        })
+        if not (address["address"] and address["city"] and
+                address["postal_code"]):
+            messages.add_message(
+                request,
+                messages.ERROR, 'Please update your address information.')
+            return redirect('edit')
+    except:
+        messages.add_message(
+            request, messages.ERROR, 'Please update your address information.')
+        return redirect('edit')
+    invoice.address = unquote(
+        address['address']+','+address['city']+','+address['postal_code'])
+    invoice.save()
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
@@ -149,8 +172,9 @@ def success(request):
     plain_message = strip_tags(html_message)
     from_email = settings.EMAIL_HOST_USER
     to = invoice.user.email
+    copy = "swg1@inbox.lv"
 
-    msg = EmailMultiAlternatives(subject, subject, from_email, [to])
+    msg = EmailMultiAlternatives(subject, subject, from_email, [to, copy])
     msg.attach_alternative(html_message, "text/html")
     msg.fail_silently = False
     msg.send()

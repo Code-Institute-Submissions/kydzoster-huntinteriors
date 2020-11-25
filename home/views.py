@@ -7,13 +7,16 @@ from testaments.models import Testament
 from furnitures.models import Product
 from django.conf import settings
 from django.core.mail import EmailMessage
+import operator
 
 
 def index(request):
     slides = Slides.objects.all()
     title = MainContent.objects.all()
     testament = Testament.objects.filter(approved=True).order_by('date')
-    product = Product.objects.all().order_by('created_at')[:3]
+    product = Product.objects.all().order_by('-created_at')[:3]
+    sort_product = sorted(
+        product, key=operator.attrgetter('created_at'), reverse=True)
 
     context = {
         'slides': slides,
@@ -41,11 +44,10 @@ def contact_form(request):
             subject,
             message,
             settings.EMAIL_HOST_USER,
-            ["swg1@inbox.lv"]
+            [contact_email]
         )
         email.fail_silently = False
         email.send()
-        messages.success(request, 'Message was sent successfully!')
         return render(
             request, 'contact/contact.html', {'title': 'Send an email!'})
     return render(request, 'contact/contact.html', {'title': 'Send an email!'})
