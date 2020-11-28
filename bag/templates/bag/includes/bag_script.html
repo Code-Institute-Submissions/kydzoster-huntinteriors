@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+        .done(function() {
+            location.reload();
+        });
+    });
+
+    fetch("{% url 'config' %}")
+    .then((result) => { return result.json(); })
+    .then((data) => {
+    // Initialize Stripe.js
+    const stripe = Stripe(data.publicKey);
+
+    // new
+    // Event handler
+    document.querySelector("#submitBtn").addEventListener("click", () => {
+    document.getElementById("submitBtn").innerHTML = "Redirecting..."
+
+        // Get Checkout Session ID
+        fetch("{% url 'checkout_session_create' %}")
+        .then((result) => { return result.json(); })
+        .then((data) => {
+        console.log(data);
+        // Redirect to Stripe Checkout
+        return stripe.redirectToCheckout({sessionId: data.sessionId})
+        })
+        .then((res) => {
+        console.log(res);
+        })
+        .catch((e) => {
+            location.href="/account/edit/"
+            alert("Please update your address information");
+        });
+    });
+    })
+    .catch((e) => {
+        console.log(e)
+    })
+</script>

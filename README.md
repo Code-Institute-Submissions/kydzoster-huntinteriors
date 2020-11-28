@@ -1,7 +1,7 @@
 # Hunt Interiors
 
 
-<img src="static/images/readme_images/mockup.png" >
+<img src="static/images/HUNTINT/mockup.pdf" >
 
 Project Milestone Four - Code Institute
 
@@ -97,14 +97,26 @@ Hunt Interiors website as an Interior and Exterior designer site should be easy 
 ### Wireframes
 The wireframe developed for this project was built for desktop use, with taking in consideration that mobile users will also use this website.
 Wireframe was created in [Balsamiq](https://balsamiq.com/).
-  - [Desktop devices](https://github.com/kydzoster/huntinteriors/blob/main/static/images/HuntInt%20Wireframe.pdf)
+  - [Desktop devices](https://github.com/kydzoster/huntinteriors/blob/main/static/images/HUNTINT/mockup.pdf)
 
 # Features
 
 Hunt Interiors contains 7 apps: `accounts`, `bag`, `furnitures`, `gallery`, `home`, `services` and `testaments`.
 
+## Hunt Interiors Base
+
+Hunt Interiors Base holds `nav bar`, `main bar` and `footer`
+
 ## Accounts
- The accounts app holds the functionality of dashboard/profile, register, login, logout and the password reset.
+ The accounts app holds the functionality of `dashboard/profile`, `register`, `login`, `logout` and the `password reset`.
+
+### Dashboard
+<p align="center">
+<img src="/static/images/HUNTINT/Account/AccountDashboard.png" width="40%">
+</p>
+
+  - Dashboard lets you change or update your account/profile information
+  - Profile must be completed to be able to buy itms from the shop, notification will be given if profile is incomplete.
 
 ### Register page
 <p align="center">
@@ -133,11 +145,8 @@ Hunt Interiors contains 7 apps: `accounts`, `bag`, `furnitures`, `gallery`, `hom
 
   <img src="/static/images/HUNTINT/Account/PWReset.png">
 
-## Hunt Interiors Base
-
-Hunt Interiors Base holds `nav bar`, `main bar` and `footer`
-
-#### home page
+## Home
+Home has 8 sections: 
 
   <img src="/static/images/readme_images/transparent_navbar.png">
 
