@@ -99,7 +99,7 @@
             <!-- Product Content -->
             <div class="col-lg-8 order-lg-2 order-1">
             {% if product.image %}
-                <a href="{{ product.image.url }}" target="_blank">
+                <a href="{{ product.image.url }}" target="_blank" rel="noopener noreferrer">
                     <img class="img-fluid w-100 mb-60" src="{{ product.image.url }}" alt="product image">
                 </a>
             {% endif %}
