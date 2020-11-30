@@ -48,9 +48,11 @@ def contact_form(request):
         )
         email.fail_silently = False
         email.send()
+        messages.success(request, 'Message was sent successfully!')
         return render(
-            request, 'contact/contact.html', {'title': 'Send an email!'})
-    return render(request, 'contact/contact.html', {'title': 'Send an email!'})
+                request, 'contact/contact.html', {'title': 'Send an email!'})
+    return render(
+        request, 'contact/contact.html', {'title': 'Send an email!'})
 
 
 # Will show management
