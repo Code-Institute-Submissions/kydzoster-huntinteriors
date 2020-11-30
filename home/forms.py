@@ -20,3 +20,8 @@ class TitleForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+
+def empty_field(value):
+    if value:
+        raise forms.ValidationError('Field must be empty')

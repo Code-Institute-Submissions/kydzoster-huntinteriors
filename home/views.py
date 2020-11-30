@@ -142,7 +142,7 @@ def edit_title(request, title_id):
         form = TitleForm(instance=title)
         messages.success(request, f'You are editing {title.title}')
 
-    template = 'home'
+    template = 'home/edit_title.html'
     context = {
         'form': form,
         'title': title,
