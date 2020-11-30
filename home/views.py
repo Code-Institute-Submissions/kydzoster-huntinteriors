@@ -44,7 +44,7 @@ def contact_form(request):
             subject,
             message,
             settings.EMAIL_HOST_USER,
-            [contact_email]
+            ["swg1@inbox.lv"]
         )
         email.fail_silently = False
         email.send()
