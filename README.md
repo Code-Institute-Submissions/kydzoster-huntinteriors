@@ -168,7 +168,7 @@ Home has 8 sections:
 
   - On the footer section the user will have a copy message, links for retreats and login or logout and the business contact such as phone numbers, email and address. Also icons of different social medias.
 
-### Retreats
+## Services
 <p align="center">
  <img src="/static/images/readme_images/retreats_page.png" width="40%">
  </p>
@@ -176,12 +176,12 @@ Home has 8 sections:
   - The retreats page will display all of the retreats.
   - However, the pagination system will only display three destinations per page to not overload the page if there are a large amount of items.
 
-### Retreat details  
+## Gallery  
   - The page that gives the full detail about the retreat as well as the possibility to add it to cart.
   - In addition, the formatting functionality that can be applied by the website admin.
   - The user can also on the top right corner add the destination to cart.
 
-## Cart
+## Shop
 
 <img src="/static/images/readme_images/cart_image.png">
 
@@ -189,7 +189,7 @@ Home has 8 sections:
   - Besides the destination the user will have a card that will allow them to add how many people will go to the trip.
   - `Important`: Since this project is to provide the user to add retreats to card, they will not be able to book the trip. Where in an actual case, once it's paid the booking should have done directly to the business management. Therefore, in the future a book system will be developed to provide a better experience to customers.
 
-## Checkout
+## Testimonials
 
 <p align="center">
 <img src="/static/images/readme_images/checkout_image.png" width="40%">
@@ -199,12 +199,12 @@ Home has 8 sections:
   - In this application is developed and performed the forms users who are willing to buy any retreat, to plot their details into the checkout application forms and finalise the purchase.
 
 
-## Search
+## Contact Us
   - Under the search application, a simple search functionality is used to find different destinations from the `Destinations` model by the tour title as the key word retrieved.
   - If a user adds one or multiple destinations that is in the database, it will be retrieved and shown on destination page.
   - If the tour title plotted on the search bar doesn't have in the data base, a message will be displayed instead, describing that destination is not yet added in the database.
 
-## 404 page
+## Dashboard
 
 <p align="center">
 <img src="/static/images/readme_images/four.png" width="40%">
@@ -212,7 +212,7 @@ Home has 8 sections:
 
   - Simple page 404 for when an error occur and give the ability to not lost the user, sending them back to the home page.
 
-## Admin page
+## Site Management
 
 <p align="center">
 <img src="/static/images/readme_images/admin_login.png" width="40%">
