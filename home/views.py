@@ -125,7 +125,7 @@ def edit_slides(request, slides_id):
     return render(request, template, context)
 
 
-# Will edit slides
+# Will edit title
 @login_required
 def edit_title(request, title_id):
 
@@ -142,7 +142,7 @@ def edit_title(request, title_id):
         form = TitleForm(instance=title)
         messages.success(request, f'You are editing {title.title}')
 
-    template = 'home/edit_title.html'
+    template = 'home'
     context = {
         'form': form,
         'title': title,
