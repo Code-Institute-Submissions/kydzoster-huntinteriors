@@ -147,9 +147,8 @@ Hunt Interiors Base holds `nav bar`, `main bar` and `footer`
 
 ## Home
 
-  [<img src="/static/images/HUNTINT/UserAction/Home.png">](https://www.youtube.com/watch?v=jWyOR4HXQWc)
+  [<img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">](https://www.youtube.com/watch?v=jWyOR4HXQWc)
   [![Watch the video]<img src="/static/images/HUNTINT/UserAction/Home.png">](https://www.youtube.com/watch?v=jWyOR4HXQWc)
-  [![Watch the video](<img src="/static/images/HUNTINT/UserAction/Home.png">)](https://www.youtube.com/watch?v=jWyOR4HXQWc)
 
 ## Services
 <p align="center">
