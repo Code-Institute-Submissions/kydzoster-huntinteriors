@@ -146,27 +146,9 @@ Hunt Interiors Base holds `nav bar`, `main bar` and `footer`
   <img src="/static/images/HUNTINT/Account/PWReset.png">
 
 ## Home
-Home has 8 sections: 
 
-  <img src="/static/images/readme_images/transparent_navbar.png">
+  [![Watch the video]](https://www.youtube.com/watch?v=jWyOR4HXQWc)
 
-  - On the home page the navbar is displayed transparent to give a good UI to the project. However, once the user scroll the page down it becomes white to better contrast from the rest of the page and not confuse the user.
-
-    <img src="/static/images/readme_images/top_locations.png">
-
-  - The top location brings a set of three different location or retreats in which users can click and be redirect to the destination page.
-
-    <img src="/static/images/readme_images/testimonials.png">
-
-  - On the testimonials section the three different characters is displayed as one of the Tour Project past customers. Giving their experience to the user and how many stars the service bring in term of value to their lives.
-
-    <img src="/static/images/readme_images/aboutus.png">
-
-  - The about us section (on the left side) details the experience of the business (in which is fictitious) and display a contact form (on the right side) for users to send any query about the business.
-
-   <img src="/static/images/readme_images/footer.png">
-
-  - On the footer section the user will have a copy message, links for retreats and login or logout and the business contact such as phone numbers, email and address. Also icons of different social medias.
 
 ## Services
 <p align="center">
