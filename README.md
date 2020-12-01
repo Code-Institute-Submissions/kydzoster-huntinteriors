@@ -150,8 +150,11 @@ The Home app holds the functionality for `Title`, `Slides`, `Management` and `Co
 
 <p align="center">Click on an image to view video of the Index page</p>
 
-  [<img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">](https://www.youtube.com/watch?v=jWyOR4HXQWc)
+<p align="center">
+  <img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">
+</p>
 
+[!View Video](https://www.youtube.com/watch?v=jWyOR4HXQWc)
 
   <a href="https://www.youtube.com/watch?v=jWyOR4HXQWc"><img src="/static/images/HUNTINT/UserAction/Home.png" width="240" height="180" border="10" target="_blank" rel="noopener"/></a>
 
@@ -216,81 +219,57 @@ The Contact us is a part of Home app.
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Contact.png" width="40%">
  </p>
+
+ - Client can send a personalised message, email to Hunt Interiors.
  
 ## Dashboard
+The Dashboard is a part of Account app.
 
 <p align="center">
-<img src="/static/images/readme_images/four.png" width="40%">
-</p>
+ <img src="/static/images/HUNTINT/UserAction/Dashboard.png" width="40%">
+ </p>
 
-  - Simple page 404 for when an error occur and give the ability to not lost the user, sending them back to the home page.
+  - Dashboard contains user profile information and an ability to edit it and change a password
 
 ## Site Management
+  
+  <p align="center">
+ <img src="/static/images/HUNTINT/AdminActions/Management.png" width="40%">
+ </p>
 
-<p align="center">
-<img src="/static/images/readme_images/admin_login.png" width="40%">
-</p>
+ - Site Admin can have easy to use basic CRUD functionality for `Services`, `Shop`, `Gallery`, `Testamonials` and `About Us and Slides`
 
-  - The admin login page was changed by the name of the website.
+ #### Services
 
-<p align="center">
-<img src="/static/images/readme_images/admin.png" width="40%">
-</p>
+ #### Shop
 
-  - The admin page was separated by three sections:
-     - Authentication and Authorization, where the admin can see and manage the users on the website.
-     - Checkout, where the admin can see the orders done by the customers.
-     - Tour store, where the admin will be able to check and approve comments and see the contacts done by prospects.
+ #### Gallery
 
-<p align="center">
-<img src="/static/images/readme_images/wysiwyg.png" width="40%">
-</p>
+ #### Testamonials
 
-  - The WYSIWYG (what you see is what you get) functionality was implemented as a functionality from a third party application called [Ckeditor](https://ckeditor.com/). Where the normal text editor was changed to add more features such as:
-     - Alignment
-     - Tables
-     - Images
-     - Styling
-     - Add more html elements
-     - And much more.
-
+ #### About Us and Slides
 
 ## Features Left To Implement
-  1. Admin page graphs to display data from comments, sales and views.
-  2. Booking system to automate sales.
-  3. Add multiple images on retreat preview such as horizontal carousel.
-  4. Add tutor section for each retreat.
-  5. Add real location with maps at the bottom of each retreat detail page.
-  6. Add star based review.
+  1. 
 
 # Technologies
 
 ## Tools
 
-  - [Atom](https://atom.io/) as an IDE to develop this project.
-  - [Stripe](https://stripe.com/ie) to receive payments.
+  - [GitPod](https://gitpod.io/) as an IDE to develop this project.
+  - [VSCode](https://code.visualstudio.com/) as an IDE to develop this project using localhost for testing purposes
+  - [Stripe](https://stripe.com/) to receive payments.
   - [Heroku](https://www.heroku.com/) for hosting the application and deploy.
-  - [AWS S3](https://aws.amazon.com/s3/) was used as a cloud service to host static files.
   - [Github](https://github.com/) to share and store code remotely.
-  - [Git](https://git-scm.com/) was used to manage version control.
-  - [CkEditor](https://ckeditor.com/docs/) was used to better format texts without the need to do within the code.
-  - [Sqlite3](https://www.sqlite.org/index.html) a database provided by django for development.
-  - [PostgreSQL](https://www.postgresql.org/), a robust database provided by Heroku for production development.
-  - [Travis CI](https://travis-ci.org/) for continuous integration and testing.
-  - [Canva](https://www.canva.com/) was used to design images on the web.
   - [Balsamiq](https://balsamiq.com/) for the wireframes design.
 
 ## Libraries and frameworks
 
   - [Django](https://www.djangoproject.com/) a high level python web-framework used to design this project.
   - [Bootstrap 4](https://getbootstrap.com/) a CSS library grid used for the development of this site.
-  - [FontAwesome](https://fontawesome.com/) for the creation and implementation of icons.
-  - [Google fonts](https://fonts.google.com/) to bring custom font styling.
-  - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) a template language for python used to bring logic into templates.
-  - [Psycopg2-binary](https://pypi.org/project/psycopg2-binary/#description) used as the Python PostgreSQL adapter.
-  - [Jquery](https://jquery.com/) a Javascript library to simplify the code.
-  - [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) a library that enables python code to modify AWS service.
-  - [AOS](https://michalsnik.github.io/aos/) used to bring animation on scroll.
+  - [Themify](https://themify.me/) for the creation and implementation of icons.
+  - [Slick](https://kenwheeler.github.io/slick/) for the carousel and slider
+  - [Google fonts](https://fonts.google.com/) for custom font styling.
 
 ## Languages
 
