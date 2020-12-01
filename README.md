@@ -150,7 +150,7 @@ The Home app holds the functionality for `Title`, `Slides`, `Management` and `Co
 
 <p align="center">Click on an image to view video of the Index page</p>
 
-  [<img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">](https://www.youtube.com/watch?v=jWyOR4HXQWc) 
+  [<img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">](https://www.youtube.com/watch?v=jWyOR4HXQWc){:target="_blank" rel="noopener"} 
 
 ## Services
 <p align="center">
