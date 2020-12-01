@@ -148,6 +148,8 @@ Hunt Interiors Base holds `nav bar`, `main bar` and `footer`
 ## Home
 
   [![Watch the video]](https://www.youtube.com/watch?v=jWyOR4HXQWc)
+  [![Watch the video](https://img.youtube.com/vi/<https://www.youtube.com/watch?v=jWyOR4HXQWc>/0.jpg)](https://youtu.be/T-D1KVIuvjA)
+  
 
 
 ## Services
