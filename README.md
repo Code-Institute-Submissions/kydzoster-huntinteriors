@@ -150,47 +150,73 @@ The Home app holds the functionality for `Title`, `Slides`, `Management` and `Co
 
 <p align="center">Click on an image to view video of the Index page</p>
 
-  [<img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">](https://www.youtube.com/watch?v=jWyOR4HXQWc){:target="_blank" rel="noopener"} 
+  [<img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">](https://www.youtube.com/watch?v=jWyOR4HXQWc)
 
 
   <a href="https://www.youtube.com/watch?v=jWyOR4HXQWc"><img src="/static/images/HUNTINT/UserAction/Home.png" width="240" height="180" border="10" target="_blank" rel="noopener"/></a>
 
+
 ## Services
+The Services app holds the functionality for `Services`.
+
+<p align="center">Click on an image to view video of the Services page</p>
+
 <p align="center">
- <img src="/static/images/readme_images/retreats_page.png" width="40%">
+ <img src="/static/images/HUNTINT/UserAction/Services.png" width="40%">
  </p>
 
-  - The retreats page will display all of the retreats.
-  - However, the pagination system will only display three destinations per page to not overload the page if there are a large amount of items.
 
 ## Gallery  
-  - The page that gives the full detail about the retreat as well as the possibility to add it to cart.
-  - In addition, the formatting functionality that can be applied by the website admin.
-  - The user can also on the top right corner add the destination to cart.
+The Gallery app holds the functionality for `Gallery`.
 
-## Shop
-
-<img src="/static/images/readme_images/cart_image.png">
-
- The cart app gives the user the ability to `view`, `add` and `adjust` the cart as they wish. Including more or less retreats to their trip package.
-  - Besides the destination the user will have a card that will allow them to add how many people will go to the trip.
-  - `Important`: Since this project is to provide the user to add retreats to card, they will not be able to book the trip. Where in an actual case, once it's paid the booking should have done directly to the business management. Therefore, in the future a book system will be developed to provide a better experience to customers.
-
-## Testimonials
+<p align="center">Click on an image to view video of the Gallery page</p>
 
 <p align="center">
-<img src="/static/images/readme_images/checkout_image.png" width="40%">
-</p>
+ <img src="/static/images/HUNTINT/UserAction/Gallery.png" width="40%">
+ </p>
 
-  - The checkout application holds and manipulates the `Stripe` API. In which empowers the overall application with the e-commerce functionality.
-  - In this application is developed and performed the forms users who are willing to buy any retreat, to plot their details into the checkout application forms and finalise the purchase.
+  - Gallery can be viewed in three sections `All Gallery`, `Interiors` and `Exteriors`
+  - Each picture can be viewed seperately to find out a short description on a work accomplished in the picture.
 
+## Shop
+The bag app holds the functionality for `bag`, `checkout`, `search` and `invoice`.
+
+<p align="center">Click on an image to view video of the Shop page</p>
+
+<p align="center">
+ <img src="/static/images/HUNTINT/UserAction/Shop.png" width="40%">
+ </p>
+
+ - Shop is seperated in 5 categories: `All Furnitures`, `Bed`, `Sofa`, `Chair` and `Table`.
+ - Client can also search for a product using a search a product bar, this search bar is a global and can be viewed from any page.
+ - To view an Item need to click on View Item, it will show a product details, product image and short description
+ - Potential buy can select quantity and view a product in full scale when clicked on it.
+ - Once product is added to cart/bag it can be viewed in Shopping cart, where client can change its quantity or delete it from a cart.
+ - when client is ready to checkout he will be directed to Stripe payment section, however,
+  if client has not updated his personal details he will be directed to his profile account
+ - once payment has been made, client will receive a notification of a successful payment and an email sent to his registered email address.
+
+## Testimonials
+The Testaments app holds the functionality for `testaments` and `testament review`.
+
+<p align="center">Click on an image to view video of the Testamonial page</p>
+
+<p align="center">
+ <img src="/static/images/HUNTINT/UserAction/Testamonials.png" width="40%">
+ </p>
+
+ - Client can add a review of services received by Hunt Interiors, 
+ however, his review will have to be approved by the site admin in order to view it in Testamonials page.
 
 ## Contact Us
-  - Under the search application, a simple search functionality is used to find different destinations from the `Destinations` model by the tour title as the key word retrieved.
-  - If a user adds one or multiple destinations that is in the database, it will be retrieved and shown on destination page.
-  - If the tour title plotted on the search bar doesn't have in the data base, a message will be displayed instead, describing that destination is not yet added in the database.
+The Contact us is a part of Home app.
 
+<p align="center">Click on an image to view video of the Contact Us page</p>
+
+<p align="center">
+ <img src="/static/images/HUNTINT/UserAction/Contact.png" width="40%">
+ </p>
+ 
 ## Dashboard
 
 <p align="center">
