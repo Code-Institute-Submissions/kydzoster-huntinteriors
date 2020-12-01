@@ -146,9 +146,10 @@ Hunt Interiors Base holds `nav bar`, `main bar` and `footer`
   <img src="/static/images/HUNTINT/Account/PWReset.png">
 
 ## Home
+The Home app holds the functionality for `Title`, `Slides`, `Management` and `Contact Us`.
 
+  - Click on image to view Index page
   [<img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">](https://www.youtube.com/watch?v=jWyOR4HXQWc)
-  [![Watch the video]<img src="/static/images/HUNTINT/UserAction/Home.png">](https://www.youtube.com/watch?v=jWyOR4HXQWc)
 
 ## Services
 <p align="center">
