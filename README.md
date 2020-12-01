@@ -319,27 +319,22 @@ To make the deployment of this application to `Heroku` you will need to do the f
 | EMAIL_HOST_PASSWORD | `<your email password>`  |
 | EMAIL_HOST_USER | `<your email address>`  |
 | SECRET_KEY | `<your secret key>`  |
-
 | SOCIAL_AUTH_FACEBOOK_KEY | `<your facebook key>`  |
 | SOCIAL_AUTH_FACEBOOK_SECRET | `<your facebook secret key>`  |
 | SOCIAL_AUTH_GOOGLE_OAUTH2_KEY | `<your Google key>`  |
 | SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET | `<your Google secret key>`  |
-
 | EMAIL_ADDRESS | `<your email address>`  |
 | EMAIL_PASSWORD | `<your email password>` |
-
 | STRIPE_PUBLIC_KEY | `<your stripe public key>`  |
 | STRIPE_SECRET_KEY | `<your stripe secret key>`  |
 
   12. Add a development (postgres) database by following this link:
     `https://devcenter.heroku.com/articles/heroku-postgres-import-export`
 
-
-
 # Credits
 
 ## Media
-  - The photos used in this project came from [Pexels](https://www.pexels.com/) and official [Hunt Interiors](http://www.huntinteriors.co.uk/) website.
+  - The photos used in this project came from [Pexels](https://www.pexels.com/) and original [Hunt Interiors](http://www.huntinteriors.co.uk/) website.
 
 ## Code
   - This application was developed using [StartBootstrap](https://startbootstrap.com/templates/) templates. But during the development period, it was changed multiple times, current wireframe is not the original wireframe.
