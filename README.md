@@ -152,6 +152,10 @@ The Home app holds the functionality for `Title`, `Slides`, `Management` and `Co
 
   [<img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">](https://www.youtube.com/watch?v=jWyOR4HXQWc){:target="_blank" rel="noopener"} 
 
+
+  <a href="https://www.youtube.com/watch?v=jWyOR4HXQWc" target="_blank"><img src="/static/images/HUNTINT/UserAction/Home.png" 
+width="240" height="180" border="10" /></a>
+
 ## Services
 <p align="center">
  <img src="/static/images/readme_images/retreats_page.png" width="40%">
