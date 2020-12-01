@@ -270,6 +270,7 @@ The Dashboard is a part of Account app.
   - [Themify](https://themify.me/) for the creation and implementation of icons.
   - [Slick](https://kenwheeler.github.io/slick/) for the carousel and slider
   - [Google fonts](https://fonts.google.com/) for custom font styling.
+  - [Decouple](https://pypi.org/project/python-decouple/) for secrets as env
 
 ## Languages
 
@@ -283,91 +284,17 @@ The testing information can be found in this separated [Testing](TESTING.md) fil
 
 # Deployment
 
-For the deployment you will need tool as:
-
-  - An IDE such as [Atom](https://atom.io/) or [Visual Studio Code](https://code.visualstudio.com/).
-  - Have installed in your machine [Python 3](https://www.python.org/downloads/) and [Git](https://git-scm.com/).
-
-To continue on the process of deployment you should have accounts on the following services:
-
-  - [Stripe](https://stripe.com/ie)
-  - [AWS](https://aws.amazon.com/s3/)
-  - [Gmail](https://gmail.com)
-
 ### Instructions
-  1. Download a copy of this repository from the link https://github.com/EliasOPrado/tour-project as a download zip file. Or at your terminal do the following git command:
+  1. Open https://github.com/kydzoster/huntinteriors, hit the green Gitpod button
+  2. Run `pip install -r requirements.txt` in command line
 
-      ```
-      $ git clone https://github.com/EliasOPrado/tour-project
-      ```
-  2. If you downloaded the project as a zip file, unzip it and add it in your directory.
-  3. To not run in some unexpected behaviours during development, a virtual environment is advised to be used before the project be installed in your machine. So create a virtual environment with the command:
+  3. Migrate the models `python manage.py makemigrations` and then `python manage.py migrate`
 
-      ```
-     $ python -m venv venv
-      ```
-  4. After you already created the virtual environment folder you need to activate it:
+  4. Create superuser `python manage.py createsuperuser`
 
-      ```
-      $ source venv/bin/activate
-      ```
-  5. Install requirements.txt file.
+  5. Run Server `python manage.py runserver`, because DB is not being shared you will have to populate your DB yourself, 
+    you can do that through Django admin or through Site Management under the My Account.
 
-      ```
-      $ pip install -r requirements.txt
-      ```
-  6. Create an `env.py` file to store environment variable keys.
-
-     ```
-     import os
-
-     os.environ.setdefault('SECRET_KEY', '<secrete key>')
-     os.environ.setdefault('DATABASE_URL', '<postgres key>')
-
-     """ STRIPE API Keys """
-     os.environ.setdefault('STRIPE_PUBLISHABLE', '<stripe publishable key>')
-     os.environ.setdefault('STRIPE_SECRET', '<stripe secret key>')
-
-     """ AWS API Keys """
-     os.environ.setdefault('AWS_ACCESS_KEY_ID', '<aws access key id>')
-     os.environ.setdefault('AWS_SECRET_ACCESS_KEY', '<aws secret access key>')
-
-     """ Email Keys """
-     os.environ.setdefault('EMAIL_ADDRESS', '<your email here>')
-     os.environ.setdefault('EMAIL_PASSWORD', '<your email password here>')
-     ```
-  7. Add a git ignore file to not submit sensitive data to Github repository.
-
-     ```
-     $ touch .gitignore
-     ```
-     - Then add the `env.py` to the `.gitignore` file.
-
-     ```
-     $ git update-index --assume-unchanged env.py
-     ```
-     - Depending where the the `env.py` is locate the path will change.
-
-  8. Migrate the models to crete a database template.
-
-      ```
-      $ python manage.py migrate
-      ```
-  9. In this step you will need to create a super user to have access to the admin page.
-
-      ```
-      $ python manage.py createsuperuser
-      ```
-  10. So, after you do all the steps to create a super user you can now run the server.
-
-      ```
-      $ python manage.py runserver
-      ```
-  11. After the server is running locally add the `/admin` path at the end of the url link. It might look like this if you are not running another application.
-
-      ```
-      http://127.0.0.1:8000/admin
-      ```
 
 ### Deployment to Heroku
 
@@ -375,83 +302,55 @@ To make the deployment of this application to `Heroku` you will need to do the f
 
   1. Signup for [Heroku](https://signup.heroku.com/)
   2. Install [Heroku-CLI](https://devcenter.heroku.com/articles/heroku-cli)
-  3. After installing `Heroku toolbelt` add the following code into your termial and login into your account you already create.
-     ```
-     $ heroku login
-      Enter your Heroku credentials.
-      Email: your@email.com
-      Password (typing will be hidden):
-      Authentication successful.
-     ```
-  4. Save all the requirements into the `requirements.txt` as mentioned before with the command:
-     ```
-     $ pip freeze > requirements.txt
-     ```
-  5. Create a file named `Procfile` and add the following config.
-     ```
-     web: gunicorn main_tour_folder.wsgi
-     ```
- 6. After all the setup is done `git add .`, `git commit` and `git push` your application to a repository you created on Github.
- 7. In your `Heroku`account click new and create new app.
- 9. Select your region and create a name for your project.
-10. In your `Heroku` settings click `reveal config vars`.
-11. Add the following config variables:
+  3. In command line typ `heroku login -i` enter email and password when promted
+  4. Create a file named `Procfile` and add the following code `release: python manage.py migrate && python manage.py loaddata initial_data.json` then on the next line add `web: gunicorn hunt_interiors.wsgi`
+  5. Save all the requirements by running `pip freeze > requirements.txt` in the command line
+  6. After all the setup is done run `git add .`, `git commit` and `git push`
+  7. In your `Heroku`account click new and create new app.
+  9. Select your region and create a name for your project.
+  10. In your `Heroku` settings click `reveal config vars`.
+  11. Add the following config variables:
 
 | KEY            | VALUE         |
 |----------------|---------------|
-| AWS_ACCESS_KEY_ID | `<your aws access key>`  |
-| AWS_SECRET_ACCESS_KEY | `<your aws secret access key>`  |
-| DATABASE_URL| `<your postgres database url>`  |
-| EMAIL_ADDRESS| `<your email address>`  |
-| EMAIL_PASSWORD | `<your email password>` |
+| DATABASE_URL | `<your postgres database url>`  |
+| DEBUG | `<False>`  |
+| DISABLE_COLLECTSTATIC | `<1>`  |
+| EMAIL_HOST_PASSWORD | `<your email password>`  |
+| EMAIL_HOST_USER | `<your email address>`  |
 | SECRET_KEY | `<your secret key>`  |
-| STRIPE_PUBLISHABLE| `<your stripe publishable key>`  |
-| STRIPE_SECRET| `<your stripe secret key>`  |
-| AWS_ACCESS_KEY_ID | `<your aws access key>`  |
 
-12. Add a development (postgres) database:
-  ```
-  $ heroku addons:add heroku-postgresql:dev
-    heroku addons:add heroku-postgresql:dev
-    Adding heroku-postgresql on deploy_django... done, v13 (free)
-    Attached as HEROKU_POSTGRESQL_COPPER_URL
-    Database has been created and is available
-    ! This database is empty. If upgrading, you can transfer
-    ! data from another database with pgbackups:restore.
-    Use `heroku addons:docs heroku-postgresql` to view documentation.
+| SOCIAL_AUTH_FACEBOOK_KEY | `<your facebook key>`  |
+| SOCIAL_AUTH_FACEBOOK_SECRET | `<your facebook secret key>`  |
+| SOCIAL_AUTH_GOOGLE_OAUTH2_KEY | `<your Google key>`  |
+| SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET | `<your Google secret key>`  |
 
-  $ heroku pg:promote HEROKU_POSTGRESQL_COPPER_URL
-    Promoting HEROKU_POSTGRESQL_COPPER_URL to DATABASE_URL... done
-   ```
-13. After adding the config into your dashboard add the following commands.
-  - `$ heroku login`
-  - `heroku git:remote -a test-app-to-deploy`
-  - `$ git push heroku master`
+| EMAIL_ADDRESS | `<your email address>`  |
+| EMAIL_PASSWORD | `<your email password>` |
 
-14. On your `Heroku` dashboard click on `open app` button and check if the application is running correctly.
+| STRIPE_PUBLIC_KEY | `<your stripe public key>`  |
+| STRIPE_SECRET_KEY | `<your stripe secret key>`  |
 
-### Add static files to AWS s3
+  12. Add a development (postgres) database by following this link:
+    `https://devcenter.heroku.com/articles/heroku-postgres-import-export`
 
-1. If there is a need to add your static files to AWS S3 you can follow [this stutorial](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html). 
+
 
 # Credits
 
 ## Media
-  - The photos and video used in the project were downloaded from [Pexels](https://www.pexels.com/) and [Pixabay](https://pixabay.com/). Platforms that provides no-copyright media and free downloads.
+  - The photos used in this project came from [Pexels](https://www.pexels.com/) and official [Hunt Interiors](http://www.huntinteriors.co.uk/) website.
 
 ## Code
-  - This application was developed using [StartBootstrap](https://startbootstrap.com/templates/) templates and [snippets](https://startbootstrap.com/snippets/). But during the development good part of the original template and snippets were modified.
-  - The 404 page snippet was acquired from [Bootsnipp](https://bootsnipp.com/snippets/).
-  - The transparent navigation bar was acquired from [Bootstrapious](https://bootstrapious.com/p/transparent-navbar)
-  - The `accounts`, `cart` and `checkout` apps were recycled from the [Code Institute](https://github.com/Code-Institute-Org) lessons but modified to fit with the project purpose.
+  - This application was developed using [StartBootstrap](https://startbootstrap.com/templates/) templates. But during the development period, it was changed multiple times, current wireframe is not the original wireframe.
+  - Throughout the website I used Code Institute code from the Botique Ado project only changing bits and peaces so they would align with my project.
+
 
 ## Acknowledgment
-  - I received inspiration for this project from the [Retreat Guru](https://retreat.guru/) website.
-
-
-
-Django-heorku (https://devcenter.heroku.com/articles/django-app-configuration)
-Database (https://devcenter.heroku.com/articles/heroku-postgres-import-export)
+  - The initial start of my project was inspired by [Cocoabine youtuber](https://www.youtube.com/playlist?list=PLY4QSV0S7hD-qflv23HTWTMDCE-j3T8Xd), 
+    later I had to change some design by adding Code institute code from the Botique Ado project. After the meeting with my Mentor I was advised to
+     change my design and inspire more from the profesionals like [This](https://preview.themeforest.net/item/mint-interior-design-html-template/full_screen_preview/27515892?_ga=2.260447242.645249026.1601897287-1650349433.1566209512)
+  - Huge thanks goes to Discord and stack overflow community, especially Martin Schere, Sohal Ahmad and Gaurav Sahadev for helping me with bugs during: design, checkout and deployment.
 
 
 git push https://git.heroku.com/glacial-eyrie-71049.git
