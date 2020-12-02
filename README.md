@@ -1,7 +1,15 @@
 # Hunt Interiors
 
+<p align="center">
+![](<img src="/static/images/HUNTINT/desktop.gif" width="40%">)
+|
+![](<img src="/static/images/HUNTINT/mobile.gif" width="40%">)
+</p>
 
-<img src="static/images/HUNTINT/mockup.pdf" >
+![Mockup](<img src="static/images/HUNTINT/mockup.pdf">)
+![LiveSite](https://glacial-eyrie-71049.herokuapp.com/)
+
+
 
 Project Milestone Four - Code Institute
 
@@ -15,22 +23,28 @@ its content without any prior knowledge of websites code using custom made admin
 
 1. [UX](#UX)
     1. [User goals](#User-goals)
-    2. [Design choices](#Design-choices)
-    3. [Wireframes](#Wireframes)
+    2. [Admin goals](#Admin-goals)
+    3. [Design choices](#Design-choices)
+    4. [Wireframe](#Wireframe)
 2. [Features](#Features)
     1. [Accounts](#Accounts)
         1. [Register page](#Register-page)
         2. [Login page](#Login-page)
         3. [Reset password](#Reset-password)
-    2. [Tour store](#Tour-store)
-        1. [Home page](#Home-page)
-        2. [Retreats](#Retreats)
-        3. [Retreat details](#Retreat-details)
-    3. [Cart](#Cart)
-    4. [Checkout](#Checkout)
-    5. [Search](#Search)
-    7. [Admin page](#Admin-page)
-    8. [Features left to implement](#Features-left-to-implement)
+    2. [Home](#Home)
+    3. [Services](#Services)
+    4. [Gallery](#Gallery)
+    5. [Shop](#Shop)
+    6. [Testimonials](#Testimonials)
+    7. [Contact Us](#Contact-Us)
+    8. [Dashboard](#Dashboard)
+    9. [Site Management](#Site-Management)
+        1. [Add Services](#Add-Services)
+        2. [Add Slides](#Add-Slides)
+        3. [Add to Gallery](#Add-to-Gallery)
+        4. [Add Products](#Add-Products)
+        5. [Review Testaments](#Review-Testaments)
+    10. [Features left to implement](#Features-left-to-implement)
 3. [Technologies](#Technologies)
     1. [Tools](#Tools)
     2. [Libraries and frameworks](#Libraries-and-frameworks)
@@ -40,7 +54,6 @@ its content without any prior knowledge of websites code using custom made admin
 5. [Deployment](#Deployment)
     1. [Instructions](#Instructions)
     2. [Deployment to Heroku](#Deployment-to-Heroku)
-    3. [Add static files to AWS s3](#Add-static-files-to-AWS-s3)
 6. [Credits](#Credits)
     1. [Media](#Media)
     2. [Code](#Code)
@@ -86,7 +99,7 @@ The site owners goals are:
 ## Design choices
 Hunt Interiors website as an Interior and Exterior designer site should be easy for an eye, but also the one you would remember when visited.
 
-### Fonts
+#### Fonts
 - The font used in this project is [Poppins and Sans](https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:300,400,500,600,700).
 
 #### Styling
@@ -94,7 +107,7 @@ Hunt Interiors website as an Interior and Exterior designer site should be easy 
   - Scroll effects to give a better experience to users.
   - Icons used are [Themify](https://themify.me/)
 
-### Wireframes
+## Wireframes
 The wireframe developed for this project was built for desktop use, with taking in consideration that mobile users will also use this website.
 Wireframe was created in [Balsamiq](https://balsamiq.com/).
   - [Desktop devices](https://github.com/kydzoster/huntinteriors/blob/main/static/images/HUNTINT/mockup.pdf)
@@ -102,10 +115,6 @@ Wireframe was created in [Balsamiq](https://balsamiq.com/).
 # Features
 
 Hunt Interiors contains 7 apps: `accounts`, `bag`, `furnitures`, `gallery`, `home`, `services` and `testaments`.
-
-## Hunt Interiors Base
-
-Hunt Interiors Base holds `nav bar`, `main bar` and `footer`
 
 ## Accounts
  The accounts app holds the functionality of `dashboard/profile`, `register`, `login`, `logout` and the `password reset`.
@@ -233,15 +242,40 @@ The Dashboard is a part of Account app.
 
  - Site Admin can have easy to use basic CRUD functionality for `Services`, `Shop`, `Gallery`, `Testamonials` and `About Us and Slides`
 
- #### Services
+ ### Add Services
+ Click [Here](https://www.youtube.com/watch?v=U0OZZipW0EI) to view video of the Add Services page
+  
+<p align="center">
+ <img src="/static/images/HUNTINT/AdminAction/add-services.png" width="40%">
+ </p>
 
- #### Shop
+ ### Add Slides
+ Click [Here](https://www.youtube.com/watch?v=fWLdaiME3hI) to view video of the Add Slides and About us page
+  
+<p align="center">
+ <img src="/static/images/HUNTINT/AdminAction/add-slides.png" width="40%">
+ </p>
 
- #### Gallery
+ ### Add to Gallery
+ Click [Here](https://www.youtube.com/watch?v=H09dw3Uu10g) to view video of the Add to Gallery page
+  
+<p align="center">
+ <img src="/static/images/HUNTINT/AdminAction/add-gallery.png" width="40%">
+ </p>
 
- #### Testamonials
+ ### Add Products
+ Click [Here](https://www.youtube.com/watch?v=hanelVey-G4) to view video of the Add Products page
+  
+<p align="center">
+ <img src="/static/images/HUNTINT/AdminAction/add-product.png" width="40%">
+ </p>
 
- #### About Us and Slides
+ ### Review Testaments
+ Click [Here](https://www.youtube.com/watch?v=hQKI5xxYAn8) to view video of the Review Testaments page
+  
+<p align="center">
+ <img src="/static/images/HUNTINT/AdminAction/review.png" width="40%">
+ </p>
 
 ## Features Left To Implement
   1. 
@@ -332,7 +366,7 @@ To make the deployment of this application to `Heroku` you will need to do the f
 
 ## Code
   - This application was developed using [StartBootstrap](https://startbootstrap.com/templates/) templates. But during the development period, it was changed multiple times, current wireframe is not the original wireframe.
-  - Throughout the website I used Code Institute code from the Botique Ado project only changing bits and peaces so they would align with my project.
+  - Throughout the website I used Code Institute code from the Botique Ado project only changing bits and pieces so they would align with my project goals.
   - Django for Beginners v3 by William S. Vincent
   - Django 3 By Example 3rd ed. by Antonio Mele
 
