@@ -6,8 +6,7 @@
 <img src="/static/images/HUNTINT/mobile.gif" width="40%">
 </p>
 
-![Mockup](<img src="static/images/HUNTINT/mockup.pdf">)
-![LiveSite](https://glacial-eyrie-71049.herokuapp.com/)
+[LiveSite](https://glacial-eyrie-71049.herokuapp.com/)
 
 
 The Hunt Interiors website was developed for Code Institute as a final project.
@@ -243,35 +242,35 @@ The Dashboard is a part of Account app.
  Click [Here](https://www.youtube.com/watch?v=U0OZZipW0EI) to view video of the Add Services page
   
 <p align="center">
-  <img src="/static/images/HUNTINT/AdminAction/add-services.png" width="40%">
+  <img src="/static/images/HUNTINT/AdminActions/add-services.png" width="40%">
 </p>
 
  ### Add Slides
  Click [Here](https://www.youtube.com/watch?v=fWLdaiME3hI) to view video of the Add Slides and About us page
   
 <p align="center">
-  <img src="/static/images/HUNTINT/AdminAction/add-slides.png" width="40%">
+  <img src="/static/images/HUNTINT/AdminActions/add-slides.png" width="40%">
 </p>
 
  ### Add to Gallery
  Click [Here](https://www.youtube.com/watch?v=H09dw3Uu10g) to view video of the Add to Gallery page
   
 <p align="center">
-  <img src="/static/images/HUNTINT/AdminAction/add-gallery.png" width="40%">
+  <img src="/static/images/HUNTINT/AdminActions/add-gallery.png" width="40%">
 </p>
 
  ### Add Products
  Click [Here](https://www.youtube.com/watch?v=hanelVey-G4) to view video of the Add Products page
   
 <p align="center">
-  <img src="/static/images/HUNTINT/AdminAction/add-product.png" width="40%">
+  <img src="/static/images/HUNTINT/AdminActions/add-product.png" width="40%">
 </p>
 
  ### Review Testaments
  Click [Here](https://www.youtube.com/watch?v=hQKI5xxYAn8) to view video of the Review Testaments page
   
 <p align="center">
-  <img src="/static/images/HUNTINT/AdminAction/review.png" width="40%">
+  <img src="/static/images/HUNTINT/AdminActions/review.png" width="40%">
 </p>
 
 ## Features Left To Implement
