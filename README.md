@@ -148,21 +148,15 @@ Hunt Interiors Base holds `nav bar`, `main bar` and `footer`
 ## Home
 The Home app holds the functionality for `Title`, `Slides`, `Management` and `Contact Us`.
 
-<p align="center">Click on an image to view video of the Index page</p>
+Click [Here](https://www.youtube.com/watch?v=jWyOR4HXQWc) to view video of the Home page
 
 <p align="center">
   <img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">
 </p>
 
-[!View Video](https://www.youtube.com/watch?v=jWyOR4HXQWc)
-
-  <a href="https://www.youtube.com/watch?v=jWyOR4HXQWc"><img src="/static/images/HUNTINT/UserAction/Home.png" width="240" height="180" border="10" target="_blank" rel="noopener"/></a>
-
 
 ## Services
 The Services app holds the functionality for `Services`.
-
-<p align="center">Click on an image to view video of the Services page</p>
 
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Services.png" width="40%">
@@ -172,7 +166,7 @@ The Services app holds the functionality for `Services`.
 ## Gallery  
 The Gallery app holds the functionality for `Gallery`.
 
-<p align="center">Click on an image to view video of the Gallery page</p>
+Click [Here](https://www.youtube.com/watch?v=CPjyrHFvViA) to view video of the Gallery page
 
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Gallery.png" width="40%">
@@ -184,7 +178,7 @@ The Gallery app holds the functionality for `Gallery`.
 ## Shop
 The bag app holds the functionality for `bag`, `checkout`, `search` and `invoice`.
 
-<p align="center">Click on an image to view video of the Shop page</p>
+Click [Here](https://www.youtube.com/watch?v=QXFZefb8Mi8) to view video of the Shop page
 
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Shop.png" width="40%">
@@ -202,7 +196,7 @@ The bag app holds the functionality for `bag`, `checkout`, `search` and `invoice
 ## Testimonials
 The Testaments app holds the functionality for `testaments` and `testament review`.
 
-<p align="center">Click on an image to view video of the Testamonial page</p>
+Click [Here](https://www.youtube.com/watch?v=5ervA6jnC80) to view video of the Testamonials page
 
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Testamonials.png" width="40%">
@@ -214,8 +208,8 @@ The Testaments app holds the functionality for `testaments` and `testament revie
 ## Contact Us
 The Contact us is a part of Home app.
 
-<p align="center">Click [!Here](https://www.youtube.com/watch?v=rxGJX9mkcgY) to view video of the Contact Us page</p>
-
+Click [Here](https://www.youtube.com/watch?v=rxGJX9mkcgY) to view video of the Contact Us page
+  
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Contact.png" width="40%">
  </p>
