@@ -214,7 +214,7 @@ The Testaments app holds the functionality for `testaments` and `testament revie
 ## Contact Us
 The Contact us is a part of Home app.
 
-<p align="center">Click on an image to view video of the Contact Us page</p>
+<p align="center">Click [!Here](https://www.youtube.com/watch?v=rxGJX9mkcgY) to view video of the Contact Us page</p>
 
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Contact.png" width="40%">
@@ -339,6 +339,8 @@ To make the deployment of this application to `Heroku` you will need to do the f
 ## Code
   - This application was developed using [StartBootstrap](https://startbootstrap.com/templates/) templates. But during the development period, it was changed multiple times, current wireframe is not the original wireframe.
   - Throughout the website I used Code Institute code from the Botique Ado project only changing bits and peaces so they would align with my project.
+  - Django for Beginners v3 by William S. Vincent
+  - Django 3 By Example 3rd ed. by Antonio Mele
 
 
 ## Acknowledgment
@@ -346,6 +348,5 @@ To make the deployment of this application to `Heroku` you will need to do the f
     later I had to change some design by adding Code institute code from the Botique Ado project. After the meeting with my Mentor I was advised to
      change my design and inspire more from the profesionals like [This](https://preview.themeforest.net/item/mint-interior-design-html-template/full_screen_preview/27515892?_ga=2.260447242.645249026.1601897287-1650349433.1566209512)
   - Huge thanks goes to Discord and stack overflow community, especially Martin Schere, Sohal Ahmad and Gaurav Sahadev for helping me with bugs during: design, checkout and deployment.
-
 
 git push https://git.heroku.com/glacial-eyrie-71049.git
