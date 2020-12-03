@@ -10,9 +10,9 @@
 
 
 The Hunt Interiors website was developed for Code Institute as a final project.
-This website is for a any client who requires an interior and exterior changes 
-for their property and moreover it is for the site owner to be able to update and create 
-its content without any prior knowledge of websites code using custom made administration tools.
+This website is for any client who requires an interior and exterior changes for 
+their property and also for the site owner to be able to update and create its content 
+without any prior knowledge of websites code using custom made administration tools.
 
 ## Table of contents
 <!--ts-->
@@ -61,35 +61,35 @@ its content without any prior knowledge of websites code using custom made admin
 ## User goals
 The target audience of Hunt Interiors are:
 - People who need interior and exterior changes to their property.
-- People who want to buy furniture.
-- Homeowners who need a reliable and trustworthy maintenance experts.
+- People who want to buy hand-made furniture created by Hunt Interiors.
+- Homeowners who need reliable and trustworthy maintenance experts.
 
 User goals:
-- Search a product bar allows to search for any furnitures added to shop
+- Search a product bar allows searching for any furniture added to the shop
 - Learn more about the company and offered services
-- View recently added furnitures on a homepage
+- View recently added furniture on a homepage
 - View recently posted reviews on a homepage
 - View My Account to Register a new account
-- View My Account to Login with an email or username or login with a facebook or google account
-- view My Account and edit your personal details or change a password under My Dashboard
+- View My Account to Login with an email or username or login with a Facebook or Google account
+- View My Account and edit your details or change a password under My Dashboard
 - View My Account to Logout from your profile
 - View services to find out services provided by Hunt Interiors
 - View Gallery to see uploaded images of completed/delivered projects
-- Click on an image to view its description and to view an image upclose/enlarged
-- View Shop to see furnitures sold by Hunt Interiors, sorted by categories
-- View an Item and its description or to choose a quantity and add to a cart or return back to all furnitures
+- Click on an image to view its description and to view an image up-close/enlarged
+- View Shop to see furniture sold by Hunt Interiors, sorted by categories
+- View an Item and its description or to choose a quantity and add to a cart or return to all products
 - After an item has been added to cart view its price and total price, update its quantity or remove it from cart
 - Securely check out and receive an email about a successful purchase
-- View Testamonials/Reviews and add your own review
+- View Testimonials/Reviews and add your review
 - Edit or delete your posted review
 - View contact us to see social platforms operated by Hunt Interiors or send a personalised message
 
 ## Admin goals
 The site owners goals are:
-- To have a Site management tools which provide easy to access most relevant CRUD options with good looking overlay
-- To be able to edit about us information and pictures from homepage
-- To be able to add new services, slides, gallery and furnitures from site management page
-- To be able to view Testamonials from website pages and approve or delete them
+- To have a Site management tools which provide easy to access most relevant CRUD options with a good looking overlay
+- To be able to edit `About Us` information and pictures from the homepage
+- To be able to add new services, slides, gallery and furniture from the site management page
+- To be able to view Testimonials from website pages and approve or delete them
 
 
 ## Design choices
@@ -105,7 +105,7 @@ Hunt Interiors website as an Interior and Exterior designer site should be easy 
 
 ## Wireframes
 The wireframe developed for this project was built for desktop use, with taking in consideration that mobile users will also use this website.
-Wireframe was created in [Balsamiq](https://balsamiq.com/).
+The wireframe was created in [Balsamiq](https://balsamiq.com/).
   - [Desktop devices](https://github.com/kydzoster/huntinteriors/blob/main/static/images/HUNTINT/mockup.pdf)
 
 # Features
@@ -121,17 +121,17 @@ Hunt Interiors contains 7 apps: `accounts`, `bag`, `furnitures`, `gallery`, `hom
 </p>
 
   - Dashboard lets you change or update your account/profile information
-  - Profile must be completed to be able to buy itms from the shop, notification will be given if profile is incomplete.
+  - Profile must be completed to be able to buy products from the shop, a notification will be given and redirect will be initiated if the profile is incomplete.
 
 ### Register page
 <p align="center">
 <img src="/static/images/HUNTINT/Account/Register.png" width="40%">
 </p>
 
-  - Username, name, email and password is required to create an account.
+  - Username, name, email and password are required to create an account.
   - Username must be unique.
   - Password should not be short, must contain at least 8 characters and should not be common.
-  - As soon as the user creates its username they are redirected to home page.
+  - As soon as the user creates its username they are redirected to the home page.
 
 ### Login page
 <p align="center">
@@ -139,21 +139,21 @@ Hunt Interiors contains 7 apps: `accounts`, `bag`, `furnitures`, `gallery`, `hom
 <img src="/static/images/HUNTINT/Account/Login.png" width="40%">
 </p>
   - Login page will ask for a username which can be a username or emailaddress and a password to login.
-  - There is also an option to login with facebook or google account
+  - There is also an option to log in with Facebook or Google account
 
 ### Forgot Password
   - Step 1: at the login page, under the password you can find the `forgot password?` link in which will lead to a form to add your account email.
   - Step 2: Add the email you registered with to reset the password.
   - Step 3: You will receive an email with a link that will allow you to add a different password sending you to a reset password form.
   - Step 4: Add a new password and confirm it.
-  - Step 5: Once the password is set you can login with the new password.
+  - Step 5: Once the password is set you can log in with the new password.
 
   <img src="/static/images/HUNTINT/Account/PWReset.png">
 
 ## Home
 The Home app holds the functionality for `Title`, `Slides`, `Management` and `Contact Us`.
 
-Click [Here](https://www.youtube.com/watch?v=jWyOR4HXQWc) to view video of the Home page
+Click [Here](https://www.youtube.com/watch?v=jWyOR4HXQWc) to view a video of the Home page
 
 <p align="center">
   <img src="/static/images/HUNTINT/UserAction/Home.png" width="40%">
@@ -171,49 +171,49 @@ The Services app holds the functionality for `Services`.
 ## Gallery  
 The Gallery app holds the functionality for `Gallery`.
 
-Click [Here](https://www.youtube.com/watch?v=CPjyrHFvViA) to view video of the Gallery page
+Click [Here](https://www.youtube.com/watch?v=CPjyrHFvViA) to view a video of the Gallery page
 
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Gallery.png" width="40%">
  </p>
 
   - Gallery can be viewed in three sections `All Gallery`, `Interiors` and `Exteriors`
-  - Each picture can be viewed seperately to find out a short description on a work accomplished in the picture.
+  - Each picture can be viewed separately to find out a short description of a work accomplished in the picture.
 
 ## Shop
 The bag app holds the functionality for `bag`, `checkout`, `search` and `invoice`.
 
-Click [Here](https://www.youtube.com/watch?v=QXFZefb8Mi8) to view video of the Shop page
+Click [Here](https://www.youtube.com/watch?v=QXFZefb8Mi8) to view a video of the Shop page
 
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Shop.png" width="40%">
  </p>
 
- - Shop is seperated in 5 categories: `All Furnitures`, `Bed`, `Sofa`, `Chair` and `Table`.
+ - Shop is separated into 5 categories: `All Furnitures`, `Bed`, `Sofa`, `Chair` and `Table`.
  - Client can also search for a product using a search a product bar, this search bar is a global and can be viewed from any page.
- - To view an Item need to click on View Item, it will show a product details, product image and short description
- - Potential buy can select quantity and view a product in full scale when clicked on it.
- - Once product is added to cart/bag it can be viewed in Shopping cart, where client can change its quantity or delete it from a cart.
- - when client is ready to checkout he will be directed to Stripe payment section, however,
-  if client has not updated his personal details he will be directed to his profile account
- - once payment has been made, client will receive a notification of a successful payment and an email sent to his registered email address.
+ - To view an Item need to click on View Item, it will show product details, product image and a short description
+ - Potential buy can select a quantity and view a product in full scale when clicked on it.
+ - Once the product is added to cart/bag it can be viewed in Shopping cart, where the client can change its quantity or delete it from a cart.
+ - when the client is ready to checkout he will be directed to Stripe payment section, however,
+  if the client has not updated his details he will be directed to his profile account
+ - once payment has been made, the client will receive a notification of a successful payment and an email sent to his registered email address.
 
 ## Testimonials
 The Testaments app holds the functionality for `testaments` and `testament review`.
 
-Click [Here](https://www.youtube.com/watch?v=5ervA6jnC80) to view video of the Testamonials page
+Click [Here](https://www.youtube.com/watch?v=5ervA6jnC80) to view a video of the Testimonials page
 
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Testamonials.png" width="40%">
  </p>
 
  - Client can add a review of services received by Hunt Interiors, 
- however, his review will have to be approved by the site admin in order to view it in Testamonials page.
+ however, his review will have to be approved by the site admin to view it in Testimonials page.
 
 ## Contact Us
-The Contact us is a part of Home app.
+Contact Us is a part of the Home app.
 
-Click [Here](https://www.youtube.com/watch?v=rxGJX9mkcgY) to view video of the Contact Us page
+Click [Here](https://www.youtube.com/watch?v=rxGJX9mkcgY) to view a video of the Contact Us page
   
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Contact.png" width="40%">
@@ -222,7 +222,7 @@ Click [Here](https://www.youtube.com/watch?v=rxGJX9mkcgY) to view video of the C
  - Client can send a personalised message, email to Hunt Interiors.
  
 ## Dashboard
-The Dashboard is a part of Account app.
+The Dashboard is a part of the Account app.
 
 <p align="center">
  <img src="/static/images/HUNTINT/UserAction/Dashboard.png" width="40%">
@@ -236,24 +236,24 @@ The Dashboard is a part of Account app.
  <img src="/static/images/HUNTINT/AdminActions/Management.png" width="40%">
  </p>
 
- - Site Admin can have easy to use basic CRUD functionality for `Services`, `Shop`, `Gallery`, `Testamonials` and `About Us and Slides`
+ - Site Admin can have easy to use basic CRUD functionality for `Services`, `Shop`, `Gallery`, `Testimonials` and `About Us and Slides`
 
  ### Add Services
- Click [Here](https://www.youtube.com/watch?v=U0OZZipW0EI) to view video of the Add Services page
+ Click [Here](https://www.youtube.com/watch?v=U0OZZipW0EI) to view a video of the Add Services page
   
 <p align="center">
   <img src="/static/images/HUNTINT/AdminActions/add-services.png" width="40%">
 </p>
 
  ### Add Slides
- Click [Here](https://www.youtube.com/watch?v=fWLdaiME3hI) to view video of the Add Slides and About us page
+ Click [Here](https://www.youtube.com/watch?v=fWLdaiME3hI) to view a video of the Add Slides and About us page
   
 <p align="center">
   <img src="/static/images/HUNTINT/AdminActions/add-slides.png" width="40%">
 </p>
 
  ### Add to Gallery
- Click [Here](https://www.youtube.com/watch?v=H09dw3Uu10g) to view video of the Add to Gallery page
+ Click [Here](https://www.youtube.com/watch?v=H09dw3Uu10g) to view a video of the Add to Gallery page
   
 <p align="center">
   <img src="/static/images/HUNTINT/AdminActions/add-gallery.png" width="40%">
@@ -274,13 +274,14 @@ The Dashboard is a part of Account app.
 </p>
 
 ## Features Left To Implement
-  1. Add starbased reviews for each Service, currently there is simple version of revies aka Testamonials.
-  2. Add most bought furniture from the shop, currently there are only recently added products.
+  1. Add star-based reviews for each Service, currently, there is a simple version of revies aka Testimonials.
+  2. Add most bought furniture from the shop, currently, there are only recently added products.
   3. Service Level agreement, Policy/Privacy Terms acknowledgement during checkout/registration process.
-  4. Allow users to view thier reviews from their Dashboard.
+  4. Allow users to view their reviews from their Dashboard.
   5. Save the purchased furniture history in their Dashboard.
-  6. Implement a live feed from the Hunt Interiors Facebooka and Instagram on a sidebar.
+  6. Implement a live feed from the Hunt Interiors Facebook and Instagram on a sidebar.
   7. Implement automated testing
+  8. Add an option to gallery to view it as a full-screen carousel
 
 # Technologies
 
@@ -309,27 +310,23 @@ The Dashboard is a part of Account app.
 
 # Testing
 
-I have used Django Unittesting for urls.py, to activate it use ```python manage.py test app_name```
+I have used Django Unit testing for urls.py, to activate it use ```python manage.py test app_name```
 
 <p align="center">
   <img src="/static/images/HUNTINT/tests.png" width="80%">
 </p>
 
-- On mobile phones I have deactivated slider in home page for About Us section and image for Testamonials section.
+- On mobile phones, I have deactivated slider in home page for About Us section and image for Testimonials section.
 - As a payment method you can use 42's continually on all fields except email and postcode
 
 # Deployment
 
 ### Instructions
   1. Open https://github.com/kydzoster/huntinteriors, hit the green Gitpod button
-  2. Run `pip install -r requirements.txt` in command line
-
+  2. Run `pip install -r requirements.txt` in the command line
   3. Migrate the models `python manage.py makemigrations` and then `python manage.py migrate`
-
   4. Create superuser `python manage.py createsuperuser`
-
-  5. Run Server `python manage.py runserver`, because DB is not being shared you will have to populate your DB yourself, 
-    you can do that through Django admin or through Site Management under the My Account.
+  5. Run Server `python manage.py runserver`, because DB is not being shared you will have to populate your DB yourself, you can do that through Django admin or Site Management under the My Account.
 
 
 ### Deployment to Heroku
@@ -338,11 +335,11 @@ To make the deployment of this application to `Heroku` you will need to do the f
 
   1. Signup for [Heroku](https://signup.heroku.com/)
   2. Install [Heroku-CLI](https://devcenter.heroku.com/articles/heroku-cli)
-  3. In command line typ `heroku login -i` enter email and password when promted
+  3. In command line type `heroku login -i` enter email and password when prompted
   4. Create a file named `Procfile` and add the following code `release: python manage.py migrate && python manage.py loaddata initial_data.json` then on the next line add `web: gunicorn hunt_interiors.wsgi`
   5. Save all the requirements by running `pip freeze > requirements.txt` in the command line
   6. After all the setup is done run `git add .`, `git commit` and `git push`
-  7. In your `Heroku`account click new and create new app.
+  7. In your `Heroku`account click new and create a new app.
   9. Select your region and create a name for your project.
   10. In your `Heroku` settings click `reveal config vars`.
   11. Add the following config variables:
@@ -374,16 +371,14 @@ To make the deployment of this application to `Heroku` you will need to do the f
   - The photos used in this project came from [Pexels](https://www.pexels.com/) and original [Hunt Interiors](http://www.huntinteriors.co.uk/) website.
 
 ## Code
-  - This application was developed using [StartBootstrap](https://startbootstrap.com/templates/) templates. But during the development period, it was changed multiple times, current wireframe is not the original wireframe.
-  - Throughout the website I used Code Institute code from the Botique Ado project only changing bits and pieces so they would align with my project goals.
+  - This application was developed using [StartBootstrap](https://startbootstrap.com/templates/) templates. But during the development period, it was changed multiple times, a current wireframe is not the original wireframe.
+  - Throughout the website, I used Code Institute code from the Boutique Ado project only changing bits and pieces so they would align with my project goals.
   - Django for Beginners v3 by William S. Vincent
   - Django 3 By Example 3rd ed. by Antonio Mele
 
 
 ## Acknowledgment
   - The initial start of my project was inspired by [Cocoabine youtuber](https://www.youtube.com/playlist?list=PLY4QSV0S7hD-qflv23HTWTMDCE-j3T8Xd), 
-    later I had to change some design by adding Code institute code from the Botique Ado project. After the meeting with my Mentor I was advised to
-     change my design and inspire more from the profesionals like [This](https://preview.themeforest.net/item/mint-interior-design-html-template/full_screen_preview/27515892?_ga=2.260447242.645249026.1601897287-1650349433.1566209512)
-  - Huge thanks goes to Discord and stack overflow community, especially Martin Schere, Sohal Ahmad and Gaurav Sahadev for helping me with bugs during: design, checkout and deployment.
-
-git push https://git.heroku.com/glacial-eyrie-71049.git
+    later I had to change some design by adding Code institute code from the Boutique Ado project. After the meeting with my Mentor, I was advised to
+     change my design and inspire more from the professionals like [This](https://preview.themeforest.net/item/mint-interior-design-html-template/full_screen_preview/27515892?_ga=2.260447242.645249026.1601897287-1650349433.1566209512)
+  - Huge thanks go to Discord and stack overflow community, especially Martin Schere, Sohal Ahmad and Gaurav Sahadev for helping me with bugs during design, checkout and deployment.
