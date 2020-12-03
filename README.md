@@ -274,7 +274,13 @@ The Dashboard is a part of Account app.
 </p>
 
 ## Features Left To Implement
-  1. 
+  1. Add starbased reviews for each Service, currently there is simple version of revies aka Testamonials.
+  2. Add most bought furniture from the shop, currently there are only recently added products.
+  3. Service Level agreement, Policy/Privacy Terms acknowledgement during checkout/registration process.
+  4. Allow users to view thier reviews from their Dashboard.
+  5. Save the purchased furniture history in their Dashboard.
+  6. Implement a live feed from the Hunt Interiors Facebooka and Instagram on a sidebar.
+  7. Implement automated testing
 
 # Technologies
 
