@@ -309,8 +309,14 @@ The Dashboard is a part of Account app.
 
 # Testing
 
-The testing information can be found in this separated [Testing](TESTING.md) file.
+I have used Django Unittesting for urls.py, to activate it use ```python manage.py test app_name```
 
+<p align="center">
+  <img src="/static/images/HUNTINT/tests.png" width="80%">
+</p>
+
+- On mobile phones I have deactivated slider in home page for About Us section and image for Testamonials section.
+- As a payment method you can use 42's continually on all fields except email and postcode
 
 # Deployment
 
@@ -358,7 +364,8 @@ To make the deployment of this application to `Heroku` you will need to do the f
 | STRIPE_PUBLIC_KEY | `<your stripe public key>`  |
 | STRIPE_SECRET_KEY | `<your stripe secret key>`  |
 
-  12. Add a development (postgres) database by following this link:
+  12. store data base to > ```python manage.py dumpdata > initial_data.json```
+  13. Add a development (postgres) database by following this link:
     `https://devcenter.heroku.com/articles/heroku-postgres-import-export`
 
 # Credits
