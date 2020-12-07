@@ -373,8 +373,8 @@ To make the deployment of this application to `Heroku` you will need to do the f
 ## Code
   - This application was developed using [StartBootstrap](https://startbootstrap.com/templates/) templates. But during the development period, it was changed multiple times, a current wireframe is not the original wireframe.
   - Throughout the website, I used Code Institute code from the Boutique Ado project only changing bits and pieces so they would align with my project goals.
-  - Django for Beginners v3 by William S. Vincent
-  - Django 3 By Example 3rd ed. by Antonio Mele
+  - Django for Beginners v3 by William S. Vincent.
+  - Django 3 By Example 3rd ed. by Antonio Mele.
 
 
 ## Acknowledgment
