@@ -5,4 +5,4 @@ __pycache__
 *.crt
 *key
 *.dump
-*initial_data
+initial_data
