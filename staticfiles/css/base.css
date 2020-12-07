@@ -494,7 +494,7 @@ button,
   display: inline-block;
   padding: 0 20px;
   border-right: 1px solid #e5e5e5;
-  color: #bcbcbd;
+  color: black;
 }
 
 @media (max-width: 575px) {
@@ -503,7 +503,7 @@ button,
   }
 }
 
-.top-header ul li a span {
+.top-header ul li a:hover {
   color: #e84444;
 }
 
