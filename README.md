@@ -6,7 +6,7 @@
 <img src="/static/images/HUNTINT/mobile.gif" width="40%">
 </p>
 
-Click [LiveSite](https://glacial-eyrie-71049.herokuapp.com/){:target="_blank" rel="noopener"} to open Hunt Interiors in a new page.
+Click [LiveSite](https://glacial-eyrie-71049.herokuapp.com/) to open Hunt Interiors Milestone Project.
 
 
 The Hunt Interiors website was developed for Code Institute as a final project.
@@ -46,7 +46,6 @@ without any prior knowledge of websites code using custom made administration to
     2. [Libraries and frameworks](#Libraries-and-frameworks)
     3. [Languages](#Languages)
 4. [Testing](#Testing)
-      - You can find the [TESTING.md](TESTING.md) file here.
 5. [Deployment](#Deployment)
     1. [Instructions](#Instructions)
     2. [Deployment to Heroku](#Deployment-to-Heroku)
