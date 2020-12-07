@@ -14,12 +14,12 @@ p .paragraph {
   font-family: "Open Sans", sans-serif;
 }
 
-.logoka {
+.logo {
   color: black;
   font-size: 25px;
 }
 
-.logokawhite {
+.logo-white {
   color: white;
   font-size: 35px;
   line-height: 45px;
@@ -654,7 +654,7 @@ button,
 
 .navigation .navbar .dropdown-item {
   position: relative;
-  color: #848484;
+  color: black;
   transition: 0.2s ease;
 }
 

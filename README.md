@@ -6,7 +6,7 @@
 <img src="/static/images/HUNTINT/mobile.gif" width="40%">
 </p>
 
-[LiveSite](https://glacial-eyrie-71049.herokuapp.com/)
+Click [LiveSite](https://glacial-eyrie-71049.herokuapp.com/){:target="_blank" rel="noopener"} to open Hunt Interiors in a new page.
 
 
 The Hunt Interiors website was developed for Code Institute as a final project.
@@ -65,31 +65,31 @@ The target audience of Hunt Interiors are:
 - Homeowners who need reliable and trustworthy maintenance experts.
 
 User goals:
-- Search a product bar allows searching for any furniture added to the shop
-- Learn more about the company and offered services
-- View recently added furniture on a homepage
-- View recently posted reviews on a homepage
-- View My Account to Register a new account
-- View My Account to Login with an email or username or login with a Facebook or Google account
-- View My Account and edit your details or change a password under My Dashboard
-- View My Account to Logout from your profile
-- View services to find out services provided by Hunt Interiors
-- View Gallery to see uploaded images of completed/delivered projects
-- Click on an image to view its description and to view an image up-close/enlarged
-- View Shop to see furniture sold by Hunt Interiors, sorted by categories
-- View an Item and its description or to choose a quantity and add to a cart or return to all products
-- After an item has been added to cart view its price and total price, update its quantity or remove it from cart
-- Securely check out and receive an email about a successful purchase
-- View Testimonials/Reviews and add your review
-- Edit or delete your posted review
-- View contact us to see social platforms operated by Hunt Interiors or send a personalised message
+- As a user I should be able to search a product from the shop when typing into a searchbar
+- As a user I should be able to learn more about the company and offered services
+- As a user I should be able to view recently added furniture on a homepage
+- As a user I should be able to view recently posted reviews on a homepage
+- As a user I should be able to view My Account to Register a new account
+- As a user I should be able to view My Account to Login with an email or username or login with a Facebook or Google account
+- As a user I should be able to view My Account and edit my personal details or change a password under My Dashboard
+- As a user I should be able to view My Account to Logout from my profile
+- As a user I should be able to view services to find out services provided by Hunt Interiors
+- As a user I should be able to view Gallery to see uploaded images of completed/delivered projects
+- As a user I should be able to click on an image to view its description and to view an image up-close/enlarged
+- As a user I should be able to view Shop to see furniture sold by Hunt Interiors, sorted by categories
+- As a user I should be able to view an Item and its description or to choose a quantity and add to a cart or return to all products
+- As a user I should be able to add a product to cart view its price and total price, update its quantity or remove it from cart
+- As a user I should be able to securely check out and receive an email about a successful purchase
+- As a user I should be able to view Testimonials/Reviews and add new review about the services or purchased products
+- As a user I should be able to edit or delete my posted reviews
+- As a user I should be able to view Contact Us page to see social platforms operated by Hunt Interiors or send a personalised message
 
 ## Admin goals
 The site owners goals are:
-- To have a Site management tools which provide easy to access most relevant CRUD options with a good looking overlay
-- To be able to edit `About Us` information and pictures from the homepage
-- To be able to add new services, slides, gallery and furniture from the site management page
-- To be able to view Testimonials from website pages and approve or delete them
+- As an admin I should be able to have a Site management tools which provide easy to access most relevant CRUD options with a good looking overlay
+- As an admin I should be able to edit `About Us` information and pictures from the homepage
+- As an admin I should be able to add new services, slides, gallery and furniture from the site management page or edit them from their current location
+- As an admin I should be able to view Testimonials from website pages and approve or delete them
 
 
 ## Design choices
@@ -318,6 +318,7 @@ I have used Django Unit testing for urls.py, to activate it use ```python manage
 
 - On mobile phones, I have deactivated slider in home page for About Us section and image for Testimonials section.
 - As a payment method you can use 42's continually on all fields except email and postcode
+- I had to add `!DOCTYPE html` inside each html document before the actual html code, otherwise it gives `doctype must be declared` error when using GitPod
 
 # Deployment
 
