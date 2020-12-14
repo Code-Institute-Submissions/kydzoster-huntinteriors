@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
 from pathlib import Path
 from decouple import config
 
@@ -30,7 +31,7 @@ DOMAIN_URL = "https://glacial-eyrie-71049.herokuapp.com/"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['glacial-eyrie-71049.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -132,24 +133,17 @@ WSGI_APPLICATION = 'hunt_interiors.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d7hm5nqbr0rbd7",
-        "HOST": "ec2-54-224-124-241.compute-1.amazonaws.com",
-        "PORT": 5432,
-        "USER": "vdespjtpkrcztn",
-        "PASSWORD": "b962f936a00925f6c8ad06cac0cb7b1e64339b58f433cffa7ee8f319348fd712"
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
