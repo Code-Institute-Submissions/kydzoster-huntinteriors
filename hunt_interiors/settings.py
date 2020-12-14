@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
 from pathlib import Path
 from decouple import config
 
@@ -129,23 +130,17 @@ WSGI_APPLICATION = 'hunt_interiors.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d7hm5nqbr0rbd7",
-        "HOST": "ec2-54-224-124-241.compute-1.amazonaws.com",
-        "PORT": 5432,
-        "USER": "vdespjtpkrcztn",
-        "PASSWORD": "b962f936a00925f6c8ad06cac0cb7b1e64339b58f433cffa7ee8f319348fd712"
+if 'DATABASE_URL':
+    DATABASES = {
+        'default': dj_database_url.parse('postgres://frdvuzrrebfwux:89eaf145978172bf5a6e6f16c7d3c561eebcda3d5e78e980b12fb521d3a1f5eb@ec2-54-246-115-40.eu-west-1.compute.amazonaws.com:5432/dec34vbugvhb6r')
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
