@@ -146,7 +146,7 @@ DATABASES = {
         "HOST": "ec2-54-224-124-241.compute-1.amazonaws.com",
         "PORT": 5432,
         "USER": "vdespjtpkrcztn",
-        "PASSWORD": config('PASSWORD')
+        "PASSWORD": "b962f936a00925f6c8ad06cac0cb7b1e64339b58f433cffa7ee8f319348fd712"
     }
 }
 
