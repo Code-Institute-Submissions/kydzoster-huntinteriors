@@ -381,4 +381,4 @@ To make the deployment of this application to `Heroku` you will need to do the f
   - The initial start of my project was inspired by [Cocoabine youtuber](https://www.youtube.com/playlist?list=PLY4QSV0S7hD-qflv23HTWTMDCE-j3T8Xd), 
     later I had to change some design by adding Code institute code from the Boutique Ado project. After the meeting with my Mentor, I was advised to
      change my design and inspire more from the professionals like [This](https://preview.themeforest.net/item/mint-interior-design-html-template/full_screen_preview/27515892?_ga=2.260447242.645249026.1601897287-1650349433.1566209512)
-  - Huge thanks go to Discord and stack overflow community, especially Martin Schere, Sohal Ahmad and Gaurav Sahadev for helping me with bugs during design, checkout and deployment.
+  - Huge thanks go to Discord and stack overflow community, especially Martin Schere, Sohal Ahmad and Gaurav Sahdev for helping me with bugs during design, checkout and deployment.
