@@ -1,0 +1,722 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$eplsWzwH1a8E$FLh72Tstted4rn5zv8UegmdGUJFxjvAmkSxmp9FSPgE=",
+        "last_login": "2020-10-27T13:20:33.149Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "Admin",
+        "last_name": "Admin",
+        "email": "admin@admin.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-10-15T16:45:35Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$bKYM49ljalek$51NZ24RQxGgapLHrWdDdcYOa6Vsz8vVClhFBYCw/VVA=",
+        "last_login": "2020-11-03T15:15:22.709Z",
+        "is_superuser": true,
+        "username": "liene",
+        "first_name": "Liene",
+        "last_name": "Liepa88",
+        "email": "liene@liene.lv",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-10-26T18:50:01Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$F1B8J3wRlg2i$NyGItUlJABYKI/ta/cuHklE/ndGUrJWnEDUKRCs8wEQ=",
+        "last_login": "2020-11-01T09:50:58.682Z",
+        "is_superuser": false,
+        "username": "testuser",
+        "first_name": "Test",
+        "last_name": "",
+        "email": "test@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-10-27T15:35:48.435Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ohte3mkjmlw5zg253vzypf59wsvych3u",
+    "fields": {
+        "session_data": ".eJxVjMuKg0AQRf-l1kGiVj_ichaBIbgIIsyspKq7Ojom9qB2YAj590kgm2zvOffcIJATjnHslpVWgQqaC-2vx_lqj1ymcm6-2kG333Uyf5_1ePhNsAGmE1Q3KKDK7xvoKK19lxaZu8E_AgbeNiY3yvQE_oemU8xcnNZ54OypZC-6ZHX0cv54uW-Bnpb-8ZYC0YbSokartCowiEVlvWcOaHJrDYlyakdGi-wcetwW7LTjXOcBSw_3f0OjTVo:1kaJ4s:v5hh1RDTvQG_LAr8C1ASUktoQDNH9mj8duW4fMNFWJU",
+        "expire_date": "2020-11-18T13:43:54.081Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "vekydy213ppma8ei2e7dirjcwvz2jeg1",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hChA0xduu8ZCDCDVA0kpV0Z765NutDtf-_9l_BhW4vfOi9-JnERTpx-txjSg-sO6B7qrcnU6rrMUe6KPGiXUyN-Xg_376CEXr41awDMA4IFNNZoyIxgkCjGDE4husAmmTE4yzwmIDjrmGyKyqoMA4n3B9E3N8c:1kXTWW:YIkUkupFMhL7azX1xZ7kPQcEKwqZiBynaDXWavPO1pI",
+        "expire_date": "2020-11-10T18:16:44.886Z"
+    }
+},
+{
+    "model": "home.slides",
+    "pk": 1,
+    "fields": {
+        "title": "1",
+        "image": "photo1.jpg"
+    }
+},
+{
+    "model": "home.slides",
+    "pk": 2,
+    "fields": {
+        "title": "2",
+        "image": "photo2.jpg"
+    }
+},
+{
+    "model": "home.slides",
+    "pk": 3,
+    "fields": {
+        "title": "3",
+        "image": "photo3.jpg"
+    }
+},
+{
+    "model": "home.slides",
+    "pk": 4,
+    "fields": {
+        "title": "4",
+        "image": "photo4.jpg"
+    }
+},
+{
+    "model": "home.slides",
+    "pk": 5,
+    "fields": {
+        "title": "5",
+        "image": "photo5.jpg"
+    }
+},
+{
+    "model": "home.slides",
+    "pk": 6,
+    "fields": {
+        "title": "6",
+        "image": "photo7.jpg"
+    }
+},
+{
+    "model": "home.maincontent",
+    "pk": 1,
+    "fields": {
+        "title": "Hunt Interiors",
+        "description": "Hunt Interiors Founded in 2005, Hunt Interiors soon became the company of choice of many discerning homeowners in London and the Southeast.\r\n\r\nOur customers rely on us for our expertise and range of specialised services.\r\n\r\nOur professional site take-over task force is also available to those dissatisfied with their existing design/build team. It's never too late to save your project.\r\n\r\nWith a network of highly skilled tradesmen (all with exceptional years of experience) we also offer interior design consultants if needed."
+    }
+},
+{
+    "model": "gallery.img",
+    "pk": 1,
+    "fields": {
+        "category": "Interiors",
+        "name": "12",
+        "description": "12",
+        "image": "2-2.jpeg"
+    }
+},
+{
+    "model": "gallery.img",
+    "pk": 2,
+    "fields": {
+        "category": "Interiors",
+        "name": "13",
+        "description": "13",
+        "image": "2015-03-25_09.58.43.jpg"
+    }
+},
+{
+    "model": "gallery.img",
+    "pk": 3,
+    "fields": {
+        "category": "Interiors",
+        "name": "4",
+        "description": "4",
+        "image": "20140910_121801.jpg"
+    }
+},
+{
+    "model": "gallery.img",
+    "pk": 4,
+    "fields": {
+        "category": "Interiors",
+        "name": "5",
+        "description": "5",
+        "image": "00000394.jpg"
+    }
+},
+{
+    "model": "gallery.img",
+    "pk": 5,
+    "fields": {
+        "category": "Exteriors",
+        "name": "55",
+        "description": "55",
+        "image": "IMG_20180717_115342164.jpg"
+    }
+},
+{
+    "model": "gallery.img",
+    "pk": 6,
+    "fields": {
+        "category": "Exteriors",
+        "name": "66",
+        "description": "66",
+        "image": "photo1_zkV4eNr.jpg"
+    }
+},
+{
+    "model": "gallery.img",
+    "pk": 7,
+    "fields": {
+        "category": "Exteriors",
+        "name": "77",
+        "description": "77",
+        "image": "photo2_0iQYMMQ.jpg"
+    }
+},
+{
+    "model": "gallery.img",
+    "pk": 8,
+    "fields": {
+        "category": "Exteriors",
+        "name": "88",
+        "description": "88",
+        "image": "photo5_44QKor3.jpg"
+    }
+},
+{
+    "model": "testaments.testament",
+    "pk": 1,
+    "fields": {
+        "title": "Great Services",
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem earum possimus eos alias voluptatem placeat at quaerat soluta officia vitae, iste odit, in voluptatum iure reiciendis ullam. Voluptatem, nam!\r\n\r\n\r\n Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem earum possimus eos alias voluptatem placeat at quaerat soluta officia vitae, iste odit, in voluptatum iure reiciendis ullam. Voluptatem, nam!",
+        "date": "2020-10-26T19:01:48.494Z",
+        "author": [
+            "liene"
+        ],
+        "approved": false
+    }
+},
+{
+    "model": "testaments.testament",
+    "pk": 2,
+    "fields": {
+        "title": "lalala",
+        "body": "I have been a client of Hunt Interiors for almost three years and have found their property management services to be of the highest standard. \r\nAs an overseas landlord with a property in London, I needed a trustworthy and efficient service provider. \r\n\r\nHunt Interiors has consistently solved a range of issues, kept my property in great condition and provided excellent customer service.",
+        "date": "2020-10-26T19:35:55.338Z",
+        "author": [
+            "liene"
+        ],
+        "approved": true
+    }
+},
+{
+    "model": "testaments.testament",
+    "pk": 4,
+    "fields": {
+        "title": "Superb Services",
+        "body": "Services provided was superb, definitely will use them again.",
+        "date": "2020-10-27T15:38:09.218Z",
+        "author": [
+            "testuser"
+        ],
+        "approved": true
+    }
+},
+{
+    "model": "furnitures.category",
+    "pk": 1,
+    "fields": {
+        "name": "chair"
+    }
+},
+{
+    "model": "furnitures.category",
+    "pk": 2,
+    "fields": {
+        "name": "table"
+    }
+},
+{
+    "model": "furnitures.category",
+    "pk": 3,
+    "fields": {
+        "name": "sofa"
+    }
+},
+{
+    "model": "furnitures.category",
+    "pk": 4,
+    "fields": {
+        "name": "bed"
+    }
+},
+{
+    "model": "furnitures.product",
+    "pk": 1,
+    "fields": {
+        "category": 2,
+        "name": "Table",
+        "sku": null,
+        "description": "Wooden table",
+        "price": "64.99",
+        "image_url": null,
+        "image": "00000381.jpg",
+        "created_at": "2020-10-30T12:40:45.441Z"
+    }
+},
+{
+    "model": "furnitures.product",
+    "pk": 2,
+    "fields": {
+        "category": 1,
+        "name": "Baron Style Chair",
+        "sku": null,
+        "description": "Baron Style Chair",
+        "price": "79.00",
+        "image_url": null,
+        "image": "00000079.jpg",
+        "created_at": "2020-10-30T12:40:45.441Z"
+    }
+},
+{
+    "model": "furnitures.product",
+    "pk": 3,
+    "fields": {
+        "category": 3,
+        "name": "Burgundian Sofa",
+        "sku": null,
+        "description": "Nice sofa for everyday use",
+        "price": "263.00",
+        "image_url": null,
+        "image": "00000203.jpg",
+        "created_at": "2020-11-04T13:07:16.989Z"
+    }
+},
+{
+    "model": "furnitures.product",
+    "pk": 4,
+    "fields": {
+        "category": 3,
+        "name": "Burgundian Sofa",
+        "sku": null,
+        "description": "Nice sofa for everyday use",
+        "price": "263.00",
+        "image_url": null,
+        "image": "00000203_ml6PVuS.jpg",
+        "created_at": "2020-11-04T13:08:40.767Z"
+    }
+},
+{
+    "model": "furnitures.product",
+    "pk": 5,
+    "fields": {
+        "category": 4,
+        "name": "Kings Bed",
+        "sku": null,
+        "description": "king-sized bed for rich people",
+        "price": "456.00",
+        "image_url": null,
+        "image": "00000915.jpg",
+        "created_at": "2020-11-04T13:15:36.544Z"
+    }
+},
+{
+    "model": "furnitures.product",
+    "pk": 7,
+    "fields": {
+        "category": 2,
+        "name": "ttt",
+        "sku": null,
+        "description": "ttt",
+        "price": "333.00",
+        "image_url": null,
+        "image": "00000380.jpg",
+        "created_at": "2020-11-04T13:23:16.826Z"
+    }
+},
+{
+    "model": "services.services",
+    "pk": 1,
+    "fields": {
+        "title": "Property Maintenance",
+        "image": "photo3_6ERdFlp.jpg",
+        "description": "If you own or are planning on owning a property for rental or live abroad, be sure to need a reliable (maintenance provider) We have some great plans available for landlords and clients who don't want to use an estate agent, who will only hand the job out to an under-qualified person who has no skills and just wants to rush the job and mask the problem, we are dedicated to SOLVING THE PROBLEM.\r\n\r\nAfter a site visit, we will assess the problem, the client will receive pictures of the job before we start, this will be sent to them via email or WhatsApp, you can also talk freely on the application anywhere in the world, The job will not start until the client gives the full go-ahead. Our mobile phones are on 24hrs a day 365 days of the year, our vans are fully loaded and can deal with any situation put in front of us. Plywood is always carried on board for burglaries or forced entries.\r\n\r\nWe are happy to deal with the tenant on your behalf if instructed by the landlord.\r\nOur Concept is for us to take care of the situation, where the client has no stress or problems with a company who knows what they are doing."
+    }
+},
+{
+    "model": "services.services",
+    "pk": 2,
+    "fields": {
+        "title": "Kitchens",
+        "image": "photo1_9YWc5id.jpg",
+        "description": "We have installed many brands of kitchens: MFI, Yonaka, Wicks, B&Q, Magnet, Ikea, DIY Kitchens, Howdens (but to name but a few).\r\n\r\nWe can design and plan your kitchen, we will send a surveyor over who will go through everything in fine detail after this has been done you will receive a kitchen floor plan, which our installation team can work from.\r\n\r\nOur kitchen installations are guaranteed.\r\nWe will remove your old kitchen and dispose of it free of charge."
+    }
+},
+{
+    "model": "services.services",
+    "pk": 3,
+    "fields": {
+        "title": "Exterior Design",
+        "image": "photo5_lvGD5je.jpg",
+        "description": "Despite the name, we also do exterior works, from simple fencing and decking to a complete garden makeover.\r\n\r\nFrom traditional cottage garden to ultra-modern, an outdoor space can easily be transformed into the most fantastic room in the house. Somewhere you can relax, entertain, cook and interact with nature. \r\n\r\nWe also offer a range of exterior building services, such as shop fronts, cladding and balcony renovation."
+    }
+},
+{
+    "model": "bag.purchasedproduct",
+    "pk": 1,
+    "fields": {
+        "product": 1,
+        "quantity": 1
+    }
+},
+{
+    "model": "bag.purchasedproduct",
+    "pk": 2,
+    "fields": {
+        "product": 1,
+        "quantity": 1
+    }
+},
+{
+    "model": "bag.purchasedproduct",
+    "pk": 3,
+    "fields": {
+        "product": 2,
+        "quantity": 1
+    }
+},
+{
+    "model": "bag.invoice",
+    "pk": "1",
+    "fields": {
+        "user": null,
+        "created_at": "2020-11-03T15:05:49.077Z",
+        "shipping_cost": "6.50",
+        "checkout_session_id": "cs_test_v5KF0hTDQPPvtwa5LnUDSJ4ldiwOBKXfiMYOprOMaM9C0RZ8FbKTBqZq",
+        "products": [
+            1
+        ]
+    }
+},
+{
+    "model": "bag.invoice",
+    "pk": "482S9GVMn2Ke4mumaqLcH2",
+    "fields": {
+        "user": [
+            "liene"
+        ],
+        "created_at": "2020-11-04T11:43:12.859Z",
+        "shipping_cost": "7.90",
+        "checkout_session_id": "cs_test_7oWu4YalTfaG4bmIKFq7chGI58bue57Ha3eFo6kjqnv9gyNdAwdid5UC",
+        "products": [
+            3
+        ]
+    }
+},
+{
+    "model": "bag.invoice",
+    "pk": "HZFZyGeRPXvToirKLYf7WG",
+    "fields": {
+        "user": [
+            "liene"
+        ],
+        "created_at": "2020-11-04T11:27:20.638Z",
+        "shipping_cost": "6.50",
+        "checkout_session_id": "cs_test_sz7ZYrR82Iy1Fs7Hvn2V4nrhEwoLtpo4iDFWjcBxfxcfSpOZfKHOBliY",
+        "products": [
+            2
+        ]
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2020-10-15T16:47:45.352Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "home",
+            "maincontent"
+        ],
+        "object_id": "1",
+        "object_repr": "Hunt Interiors",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2020-10-15T17:13:52.180Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "furnitures",
+            "category"
+        ],
+        "object_id": "1",
+        "object_repr": "chair",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2020-10-15T17:13:56.547Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "furnitures",
+            "category"
+        ],
+        "object_id": "2",
+        "object_repr": "table",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2020-10-15T17:14:02.962Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "furnitures",
+            "category"
+        ],
+        "object_id": "3",
+        "object_repr": "sofa",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2020-10-15T17:14:28.335Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "furnitures",
+            "category"
+        ],
+        "object_id": "4",
+        "object_repr": "bed",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2020-10-15T17:15:18.830Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "furnitures",
+            "product"
+        ],
+        "object_id": "1",
+        "object_repr": "Table",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2020-10-24T12:07:58.611Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "1",
+        "object_repr": "admin",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2020-10-24T14:14:16.667Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "2",
+        "object_repr": "liene",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2020-10-24T14:14:16.710Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "3",
+        "object_repr": "liene1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2020-10-24T14:14:16.743Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "4",
+        "object_repr": "liene2",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2020-10-24T14:14:16.808Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "5",
+        "object_repr": "liene3",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2020-10-26T17:43:36.511Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "furnitures",
+            "product"
+        ],
+        "object_id": "2",
+        "object_repr": "Baron Style Chair",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2020-10-26T18:49:31.235Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "6",
+        "object_repr": "liene",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2020-10-27T15:11:59.262Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "7",
+        "object_repr": "liene",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"
+    }
+},
+{
+    "model": "account.profile",
+    "pk": 6,
+    "fields": {
+        "user": [
+            "liene"
+        ],
+        "photo": ""
+    }
+},
+{
+    "model": "account.profile",
+    "pk": 7,
+    "fields": {
+        "user": [
+            "testuser"
+        ],
+        "photo": ""
+    }
+}
+]
