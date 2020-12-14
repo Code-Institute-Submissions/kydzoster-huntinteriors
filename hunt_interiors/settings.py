@@ -142,7 +142,7 @@ WSGI_APPLICATION = 'hunt_interiors.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config('NAME'),
+        "NAME": "d7hm5nqbr0rbd7",
         "HOST": "ec2-54-224-124-241.compute-1.amazonaws.com",
         "PORT": 5432,
         "USER": config('USER'),
