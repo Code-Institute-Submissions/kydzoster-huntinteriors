@@ -132,9 +132,13 @@ WSGI_APPLICATION = 'hunt_interiors.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "d7hm5nqbr0rbd7",
+        "HOST": "ec2-54-224-124-241.compute-1.amazonaws.com",
+        "PORT": 5432,
+        "USER": "vdespjtpkrcztn",
+        "PASSWORD": "b962f936a00925f6c8ad06cac0cb7b1e64339b58f433cffa7ee8f319348fd712"
     }
 }
 
