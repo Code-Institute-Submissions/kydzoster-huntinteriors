@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'furnitures',
     'services',
     'bag',
+
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -129,24 +131,12 @@ WSGI_APPLICATION = 'hunt_interiors.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d7hm5nqbr0rbd7",
-        "HOST": "ec2-54-224-124-241.compute-1.amazonaws.com",
-        "PORT": 5432,
-        "USER": "vdespjtpkrcztn",
-        "PASSWORD": "b962f936a00925f6c8ad06cac0cb7b1e64339b58f433cffa7ee8f319348fd712"
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -206,5 +196,15 @@ STANDARD_DELIVERY_PERCENTAGE = 20
 
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
+
+# S3 BUCKETS CONFIG
+AWS_ACCESS_KEY_ID = 'AKIAR3IH5NGNGLTT4BEM'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'glacial-eyrie-71049'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_REGION_NAME = 'eu-west-2'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 django_heroku.settings(locals())
