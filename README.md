@@ -1,4 +1,4 @@
-# Hunt Interiors.
+# Hunt Interiors
 
 <p align="center">
 <img src="/static/images/HUNTINT/desktop.gif">
